@@ -1,0 +1,62 @@
+.menux a
+{
+	text-decoration: none;
+	font-size: 25px;
+	position: relative;
+	top: 25px;
+	left: 10px;
+	margin-right: 20px;
+	color: black;
+}
+.menux a:hover{
+	text-decoration: none;
+	color: #3CD87B;
+}
+.tabla th
+{
+  background-color: #3CD87B;
+  color: white;
+  width: 100%;
+  margin:0;
+}         
+
+.tabla #folio
+{
+
+	width: 20%;
+}
+
+.tabla #divi
+{
+	width: 20%;
+}
+.tabla #ctd, .tabla #cpra, .tabla #vta
+{
+	width: 20%;
+} 
+.tabla #vta
+{
+	width: 20%;
+} 
+
+.botonx
+{
+	background-color: #3CD87B;
+	color: white;
+	border-radius: 15px;
+	font-size: 12px;
+}
+
+.botonx:hover
+{
+	text-decoration: none;
+	color: black;
+	z-index: 4;
+	text-shadow: 1px 1px 1px #66FF99;
+}
+
+
+#boton
+{
+	color: #3CD87B;
+}
