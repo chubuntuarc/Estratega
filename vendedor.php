@@ -118,18 +118,17 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Adicionales</h4>
                                     <p class="text-subhead text-light">Movimientos distintos a compra/venta</p>
+                                    
                                 </div>
                                 <span>Divisa</span>
                                 <select>
-                                    <option>Dolar</option>
+                                    <option>Dollar</option>
                                     <option>Dll Can</option>
                                     <option>Euro</option>
                                 </select>
                                 <br>
-                                <p>Cantidad</p><span>Cotización</span>
-                                <br>
-                                <textarea cols="40"></textarea>
-
+                                <input type="text" placeholder="Cantidad">
+                                <input type="text" placeholder="Tipo de Cambio">
                                 <div class="panel-footer text-right">
                                 </div>
 

@@ -146,8 +146,8 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
                                     $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
                                     mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                    $query = "INSERT INTO adicionales (concepto, comentario, tipo, cantidad,documento)
-                                    VALUES ('{$_POST['concepto']}','{$_POST['comentario']}','{$_POST['movimiento']}',{$_POST['cantidad']},'{$_POST['documento']}')";
+                                    $query = "INSERT INTO adicionales (concepto, comentario, tipo, cantidad,documento,usuario)
+                                    VALUES ('{$_POST['concepto']}','{$_POST['comentario']}','{$_POST['movimiento']}',{$_POST['cantidad']},'{$_POST['documento']}','$nom')";
                                     $resultado = mysql_query($query);
                                     mysql_close();
                                     }
@@ -424,7 +424,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         <?php 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            $query = "SELECT * FROM adicionales order by folio_adicional desc";
+            $query = "SELECT * FROM adicionales where usuario = '$nom'order by folio_adicional desc";
             $resultado = mysql_query($query);
 
         while ($fila = mysql_fetch_array($resultado)) { 
@@ -492,6 +492,22 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 </div>
                             </div>
                         </div>    
+
+
+                        <div class="row" >
+                        <div class="item col-xs-12 col-lg-4">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="panel-heading">
+                                    <h4 class="text-headline margin-none">Divisas</h4>
+                                    <p class="text-subhead text-light">Precio actual de las principales divisas</p>
+                                </div>
+                                <iframe frameborder="0" scrolling="no" height="62" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.mx.forexprostools.com/quotes_bar.php?tab_1=1532,39,101,1&tab_2=&tab_3=23660,27,172,166,175&curr-name-color=%230059B0&inner-text-color=%23666666&green-text-color=%23008000&red-text-color=%23FF0000"></iframe><br /><div style="width:860"><span style="float:left"><span style="font-size: 11px;color: #black;text-decoration: none;">Las Cotizacines estan Proveídas por <a href="http://mx.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com México</a></span></div>
+                                </div>
+                                <div class="panel-footer text-right">
+                                </div>
+
+
+                                 </div></div>
                                   
     <!-- Footer -->
     <footer class="footer">
