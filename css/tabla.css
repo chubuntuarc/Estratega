@@ -1,3 +1,16 @@
+.desglose #registraMov
+{
+	position: relative;
+	width: 100%;
+}
+#totalx 
+{
+	position: relative;
+	top: 100px;
+	left: 50px;
+	height: 200px;
+	font-size: 850%;
+}
 .menux a
 {
 	text-decoration: none;

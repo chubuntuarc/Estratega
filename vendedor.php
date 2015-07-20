@@ -97,43 +97,55 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             </div>
         </div>
     </div>
-    <div class="container">
+     <div class="container">
         <div class="page-section">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 ">
                     <div class="panel panel-default">
-                      
-                          
+                        <div class="media v-middle">
+                            <div class="media-left">
                                 <div class="bg-green-400 text-white">
+                                    <div class="panel-body">
+                                        <i class="fa fa-credit-card fa-fw fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <div class="inputacion">
+                                <form method="post" >
+                                 <select name="divisa">
+                                        <option>Dollar</option>
+                                        <option>Dll Can</option>
+                                        <option>Euro</option>
+                                    </select>
+                                    <input name="cantidad" type="text" placeholder="Cantidad" >
+                                     <select name="movimiento">
+                                        <option>Compra</option>
+                                        <option>Venta</option>
+                                    </select>
+                                    <input name="cambio" type="text" placeholder="Tipo de Cambio"  required>
+                                   
+                                    
+                                    <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="registra" value="Aceptar">
+                                </form>   
+                                </div> 
 
-                          
+
+                            </div>
+                            <!--Mostrar movimientos adicionales-->
+                           
                              </div>
 
                     </div>
 
+
+
                     <div class="row" data-toggle="isotope">
 
                         <div class="item col-xs-12 col-lg-9">
-                            <div class="panel panel-default paper-shadow" data-z="0.5">
-                                <div class="panel-heading">
-                                    <h4 class="text-headline margin-none">Adicionales</h4>
-                                    <p class="text-subhead text-light">Movimientos distintos a compra/venta</p>
-                                    
-                                </div>
-                                <span>Divisa</span>
-                                <select>
-                                    <option>Dollar</option>
-                                    <option>Dll Can</option>
-                                    <option>Euro</option>
-                                </select>
-                                <br>
-                                <input type="text" placeholder="Cantidad">
-                                <input type="text" placeholder="Tipo de Cambio">
-                                <div class="panel-footer text-right">
-                                </div>
+                                <p id="totalx">$1,500.00</p>
 
-
-                                 </div></div>
+                                 </div>
                     <div class="row" >
                         <div class="item col-xs-12 col-lg-3">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
@@ -141,6 +153,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <h4 class="text-headline margin-none">Desglose</h4>
                                     <p class="text-subhead text-light">Desglose de moneda</p>
                                 </div>
+                                <form method="post" class="desglose">
                                 <div class="tabla ">
     <table>
         <thead>
@@ -150,6 +163,18 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             </tr>
         </thead>
         <tbody>
+        <tr>
+            <td>1000.00</td>
+            <td><input type="text" placeholder="0"></td>
+        </tr>
+        <tr>
+            <td>500.00</td>
+            <td><input type="text" placeholder="0"></td>
+        </tr>
+        <tr>
+            <td>200.00</td>
+            <td><input type="text" placeholder="0"></td>
+        </tr>
         <tr>
             <td>100.00</td>
             <td><input type="text" placeholder="0"></td>
@@ -178,8 +203,22 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             <td>1.00</td>
             <td><input type="text" placeholder="0"></td>
         </tr> 
+         <tr>
+            <td></td>
+            <td><input type="text" placeholder="Total" readonly></td>
+        </tr> 
+         <tr>
+            <td></td>
+            <td><input type="text" placeholder="Diferencia" readonly></td>
+        </tr> 
+        <tr>
+            <td></td>
+            <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="registraMov" value="Registrar"></td>
+        </tr> 
         </tbody>
     </table>
+   
+    </form>
 </div>
                                 <div class="panel-footer text-right">
                                 </div>

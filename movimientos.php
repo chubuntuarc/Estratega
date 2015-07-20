@@ -192,8 +192,9 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         while ($fila = mysql_fetch_array($resultado)) { 
                     $pesos = $fila[cantidad] * $fila[tipo_cambio];
                     $x = number_format($pesos,2);
+                    $y = number_format($fila[cantidad]);
                     echo "<tr>";
-                    echo "<td> $fila[id_movimiento] </td><td> $fila[divisa] </td><td>$fila[cantidad]</td>
+                    echo "<td> $fila[id_movimiento] </td><td> $fila[divisa] </td><td>$y</td>
                     <td>$$x</td><td>$$fila[tipo_cambio]</td>";
                     echo "</tr>";
         }
@@ -233,8 +234,9 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         while ($fila = mysql_fetch_array($resultado)) { 
             $pesos = $fila[cantidad] * $fila[tipo_cambio];
             $x = number_format($pesos,2);
+            $y = number_format($fila[cantidad]);
             echo "<tr>";
-            echo "<td> $fila[id_movimiento] </td><td> $fila[divisa] </td><td>$fila[cantidad]</td>
+            echo "<td> $fila[id_movimiento] </td><td> $fila[divisa] </td><td>$y</td>
             <td>$$x</td><td>$$fila[tipo_cambio]</td>";
             echo "</tr>";
         }
@@ -298,12 +300,13 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             $query = "SELECT SUM(cantidad) as total , divisa, tipo_cambio FROM movimientos where tipo_movimiento = 'Compra' and divisa = 'Dollar' and usuario = '$nom'";
             $resultado = mysql_query($query);
         while ($fila = mysql_fetch_array($resultado)) { 
-            $suma = $fila[total];
+            $suma = number_format($fila[total]);
             $x = number_format($tipo,2);
             $y = number_format($tipo2,2);
+            $w = number_format($suma2);
             echo "<tr>";
             echo "<td> Dollar </td><td>$suma</td>
-            <td>$suma2</td><td>$$x</td><td>$$y</td>";
+            <td>$w</td><td>$$x</td><td>$$y</td>";
             echo "</tr>";
         }
              ?>
@@ -341,12 +344,13 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             $query = "SELECT SUM(cantidad) as total , divisa, tipo_cambio FROM movimientos where tipo_movimiento = 'Compra' and divisa = 'Dollar Can' and usuario = '$nom'";
             $resultado = mysql_query($query);
         while ($fila = mysql_fetch_array($resultado)) { 
-            $suma = $fila[total];
+            $suma = number_format($fila[total]);
             $x = number_format($tipo,2);
             $y = number_format($tipo2,2);
+            $w = number_format($suma3);
             echo "<tr>";
-            echo "<td> Dollar Can </td><td>$suma</td>
-            <td>$suma3</td><td>$$x</td><td>$$y</td>";
+            echo "<td> Dll Can </td><td>$suma</td>
+            <td>$w</td><td>$$x</td><td>$$y</td>";
             echo "</tr>";
         }
              
@@ -384,12 +388,13 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             $query = "SELECT SUM(cantidad) as total , divisa, tipo_cambio FROM movimientos where tipo_movimiento = 'Compra' and divisa = 'Euro' and usuario = '$nom'";
             $resultado = mysql_query($query);
         while ($fila = mysql_fetch_array($resultado)) { 
-            $suma = $fila[total];
+            $suma = number_format($fila[total]);
             $x = number_format($tipo,2);
             $y = number_format($tipo2,2);
+            $w = number_format($suma4);
             echo "<tr>";
             echo "<td> Euro </td><td>$suma</td>
-            <td>$suma4</td><td>$$x</td><td>$$y</td>";
+            <td>$w</td><td>$$x</td><td>$$y</td>";
             echo "</tr>";
         }
              ?>
@@ -495,7 +500,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
 
                         <div class="row" >
-                        <div class="item col-xs-12 col-lg-4">
+                        <div class="item col-xs-12 col-lg-12">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Divisas</h4>
