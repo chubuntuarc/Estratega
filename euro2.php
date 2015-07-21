@@ -21,7 +21,7 @@ while ($fila = mysql_fetch_array($resultado)) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Estratega Venta Dólares</title>
+    <title>Estratega Compra Euros</title>
     <script src="js/script.js"></script>
     <meta http-equiv="refresh" content="300;URL=vendedor.php" />
     <!-- Compressed Vendor BUNDLE
@@ -29,6 +29,32 @@ while ($fila = mysql_fetch_array($resultado)) {
     <link href="css/vendor.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/vendedor.css">
+     <script language="javascript" type="text/javascript">
+                function changeTest ( form ) 
+                {
+                    form.pesosConv.value ="$" + form.divisaConv.value * form.tipoCambioConv.value
+                }               
+            </script>
+             <script language="javascript" type="text/javascript">
+                function changeTesta ( form ) 
+                {
+                    form.pesosConv.value ="$" + form.divisaConv.value * form.tipoCambioConv.value
+                }               
+            </script>
+            
+             <script language="javascript" type="text/javascript">
+                function changeTestr ( form ) 
+                {
+                  form.divisaConv.value = "$" + form.pesosConv.value / form.tipoCambioConv.value
+                }               
+            </script>
+
+             <script language="javascript" type="text/javascript">
+                function changeTestx ( form ) 
+                {
+                  form.totalConv.value ="$" + form.pesosConv.value
+                }               
+            </script>
     <!-- Compressed Theme BUNDLE
 Note: The bundle includes all the custom styling required for the current theme, however
 it was tweaked for the current theme/module and does NOT include ALL of the standalone modules;
@@ -56,33 +82,6 @@ This variant is to be used when loading the separate styling modules -->
     <link href="css/module-colors-background.min.css" rel="stylesheet" />
     <link href="css/module-colors-buttons.min.css" rel="stylesheet" />
     <link href="css/module-colors-text.min.css" rel="stylesheet" />
-    <script language="javascript" type="text/javascript">
-                function changeTest ( form ) 
-                {
-                    form.pesosConv.value ="$" + form.divisaConv.value * form.tipoCambioConv.value
-                }               
-            </script>
-             <script language="javascript" type="text/javascript">
-                function changeTesta ( form ) 
-                {
-                    form.pesosConv.value ="$" + form.divisaConv.value * form.tipoCambioConv.value
-                }               
-            </script>
-            
-             <script language="javascript" type="text/javascript">
-                function changeTestr ( form ) 
-                {
-                  form.divisaConv.value = "$" + form.pesosConv.value / form.tipoCambioConv.value
-                }               
-            </script>
-
-             <script language="javascript" type="text/javascript">
-                function changeTestx ( form ) 
-                {
-                  form.totalConv.value ="$" + form.pesosConv.value
-                }               
-            </script>
-            
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
 WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
@@ -101,7 +100,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 </div>
                 <div class="menux col-xs-3 col-lg-9">
                     <a href="movimientos.php" >Movimientos</a>
-                    <a href="vendedor2.php">Compra</a>
+                    <a href="euro.php">Venta</a>
                 </div>
                     
             </div>
@@ -134,7 +133,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                         <div class="media v-middle">
                             <div class="media-left">
                                 <div class="bg-green-400 text-white">
-                                    <div class="panel-body" id="venta">
+                                    <div class="panel-body" id="compra">
                                     </div></div></div>
                             <div class="media-body"></div></div></div>
                              
@@ -142,39 +141,37 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                         <div class="item col-xs-12 col-lg-9">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
-                                    <h4 class="text-headline margin-none">Venta</h4>
+                                    <h4 class="text-headline margin-none">Compra</h4>
                                 </div>
                                 <div class="tabla ">
                                 <form>
-                                  <div id="parte1">
-                                    <input id="divisaConv" type="text" placeholder="Dólares" onkeyup="changeTest(this.form)" name="divisaConv">
+                                <div id="partea">
+                                    <input id="divisaConv" type="text" placeholder="Euros" onkeyup="changeTest(this.form)" name="divisaConv">
                                 </div>
-                                <div id="parte4">
-                                <a id="seleccionado" href="vendedor.php">Dólares</a>
-                                <a href="canada.php">Canadienses</a>
-                                <a href="euro.php">Euros</a>
-                               </div>  
-                                <div id="parte2">
-                                    <?php 
+                                <div id="parteb">
+                                 <?php 
                                     $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
                                     mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                    $query = "SELECT * FROM ajuste_cambio";
+                                    $query = "SELECT * FROM ajuste_cambio_compra";
                                     $resultado = mysql_query($query);
                                    
                                     while ($fila = mysql_fetch_array($resultado)) {
-                                         $GLOBALS['xyz'] = $fila[dollar];
-                                        
-                                            
+                                         $GLOBALS['xyz'] = $fila[euro];
+
                                         }
                                        
                                      ?>
                                     <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeyup="changeTesta(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>">
                                 </div>
-                                <div id="parte3">
+                                <div id="partec">
                                     <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="changeTestr(this.form)" name="pesosConv">
                                 </div>
-                                </form>
-                             </div><div class="panel-footer text-right"> </div></div> </div>
+                                <div id="parted">
+                                <a href="vendedor2.php">Dólares</a>
+                                <a href="canada2.php">Canadienses</a>
+                                <a id="seleccionadod"  href="euro2.php">Euros</a></div>
+                             </div></form>
+                             <div class="panel-footer text-right"> </div></div> </div>
                               
                     <div class="row" data-toggle="isotope">
 
@@ -192,9 +189,8 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 </div>
                                 <form method="post" class="desglose">
                                 <div class="tabla ">
-
     <table>
-        <thead>
+        <thead id="tabCompra">
             <tr>
                 <th >Denominación</th>
                 <th id="cant">Cantidad</th>
@@ -243,7 +239,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         </tr> 
          <tr>
             <td></td>
-            <td><input id="totalConv" name="totalConv" type="text" placeholder="Total" onkeyup="changeTestx(this.form)" readonly></td>
+            <td><input type="text" placeholder="Total" readonly></td>
         </tr> 
          <tr>
             <td></td>
@@ -268,7 +264,6 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         <strong>Control de Gastos</strong> v1.0.0 &copy; Copyright 2015
     </footer>
     <!-- // Footer -->
-
     <!-- Separate Vendor Script Bundles -->
     <script src="js/vendor-core.min.js"></script>
     <script src="js/vendor-countdown.min.js"></script>

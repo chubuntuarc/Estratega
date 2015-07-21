@@ -21,7 +21,7 @@ while ($fila = mysql_fetch_array($resultado)) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Estratega Venta Dólares</title>
+    <title>Estratega Venta Canadienses</title>
     <script src="js/script.js"></script>
     <meta http-equiv="refresh" content="300;URL=vendedor.php" />
     <!-- Compressed Vendor BUNDLE
@@ -101,7 +101,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 </div>
                 <div class="menux col-xs-3 col-lg-9">
                     <a href="movimientos.php" >Movimientos</a>
-                    <a href="vendedor2.php">Compra</a>
+                    <a href="canada2.php">Compra</a>
                 </div>
                     
             </div>
@@ -147,11 +147,11 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <div class="tabla ">
                                 <form>
                                   <div id="parte1">
-                                    <input id="divisaConv" type="text" placeholder="Dólares" onkeyup="changeTest(this.form)" name="divisaConv">
+                                    <input id="divisaConv" type="text" placeholder="Dll Can" onkeyup="changeTest(this.form)" name="divisaConv">
                                 </div>
                                 <div id="parte4">
-                                <a id="seleccionado" href="vendedor.php">Dólares</a>
-                                <a href="canada.php">Canadienses</a>
+                                <a href="vendedor.php">Dólares</a>
+                                <a id="seleccionado"  href="canada.php">Canadienses</a>
                                 <a href="euro.php">Euros</a>
                                </div>  
                                 <div id="parte2">
@@ -162,7 +162,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     $resultado = mysql_query($query);
                                    
                                     while ($fila = mysql_fetch_array($resultado)) {
-                                         $GLOBALS['xyz'] = $fila[dollar];
+                                         $GLOBALS['xyz'] = $fila[dll_can];
                                         
                                             
                                         }

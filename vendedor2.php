@@ -146,7 +146,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <div class="tabla ">
                                 <form>
                                 <div id="partea">
-                                    <input id="divisaConv" type="text" placeholder="Divisa" onkeyup="changeTest(this.form)" name="divisaConv">
+                                    <input id="divisaConv" type="text" placeholder="Dólares" onkeyup="changeTest(this.form)" name="divisaConv">
                                 </div>
                                 <div id="parteb">
                                  <?php 
@@ -168,8 +168,8 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 </div>
                                 <div id="parted">
                                 <a id="seleccionadod" href="vendedor2.php">Dólares</a>
-                                <a href="">Canadienses</a>
-                                <a href="">Euros</a></div>
+                                <a href="canada2.php">Canadienses</a>
+                                <a href="euro2.php">Euros</a></div>
                              </div></form>
                              <div class="panel-footer text-right"> </div></div> </div>
                               
