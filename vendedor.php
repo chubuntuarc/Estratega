@@ -118,6 +118,24 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <h4 class="text-headline margin-none">Venta</h4>
                                 </div>
                                 <div class="tabla ">
+                                <div id="parte1">
+                                    <input type="text" placeholder="Divisa">
+                                </div>
+                                <div id="parte2">
+                                    <input type="text" placeholder="Cambio">
+                                </div>
+                                <div id="parte3">
+                                    <input type="text" placeholder="Pesos">
+                                </div>
+                                <div id="parte4">
+                                <div id="selDivisa">
+                                    <span>Divisa</span>
+                                    <select id="seleccionDivisa">
+                                        <option>Dollar</option>
+                                        <option>Dll Can</option>
+                                        <option>Euro</option>
+                                    </select>
+                                </div></div>
                              </div><div class="panel-footer text-right"> </div></div> </div>
                               
                     <div class="row" data-toggle="isotope">
