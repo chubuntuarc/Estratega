@@ -74,7 +74,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                 </div>
                 <div class="menux col-xs-3 col-lg-9">
                     <a href="movimientos.php" >Movimientos</a>
-                    <a href="vendedor2.php">Compra</a>
+                    <a href="vendedor.php">Venta</a>
                 </div>
                     
             </div>
@@ -107,7 +107,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                         <div class="media v-middle">
                             <div class="media-left">
                                 <div class="bg-green-400 text-white">
-                                    <div class="panel-body" id="venta">
+                                    <div class="panel-body" id="compra">
                                     </div></div></div>
                             <div class="media-body"></div></div></div>
                              
@@ -115,7 +115,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                         <div class="item col-xs-12 col-lg-9">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
-                                    <h4 class="text-headline margin-none">Venta</h4>
+                                    <h4 class="text-headline margin-none">Compra</h4>
                                 </div>
                                 <div class="tabla ">
                              </div><div class="panel-footer text-right"> </div></div> </div>
@@ -137,7 +137,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <form method="post" class="desglose">
                                 <div class="tabla ">
     <table>
-        <thead>
+        <thead id="tabCompra">
             <tr>
                 <th >Denominación</th>
                 <th id="cant">Cantidad</th>

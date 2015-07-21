@@ -1,0 +1,18 @@
+.tabla
+{
+	height: 400px;
+}
+#venta
+{
+	width: 1200px;
+	background-color: #3CD87B;
+}
+#compra
+{
+	width: 1200px;
+	background-color: #FF4747;
+}
+#tabCompra th
+{
+	background-color: #FF4747;
+}
