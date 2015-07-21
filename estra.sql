@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 21-07-2015 a las 20:01:20
+-- Tiempo de generación: 22-07-2015 a las 00:09:41
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.5.24
 
@@ -35,14 +35,59 @@ CREATE TABLE IF NOT EXISTS `adicionales` (
   `documento` varchar(50) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `usuario` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `adicionales`
 --
 
 INSERT INTO `adicionales` (`folio_adicional`, `concepto`, `comentario`, `tipo`, `cantidad`, `documento`, `fecha`, `usuario`) VALUES
-(1, 'Agua', 'Pago del agua', 'Salida', 300.00, 'DbConnection.inc.php', '2015-07-20 17:52:08', 'admin');
+(1, 'Agua', 'Pago del agua', 'Salida', 300.00, 'DbConnection.inc.php', '2015-07-20 17:52:08', 'admin'),
+(2, 'Otro', 'Test', 'Salida', 300.00, '', '2015-07-21 18:52:27', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ajuste_cambio`
+--
+
+CREATE TABLE IF NOT EXISTS `ajuste_cambio` (
+  `id_ajuste` int(11) NOT NULL,
+  `dollar` float(6,2) NOT NULL,
+  `dll_can` float(6,2) NOT NULL,
+  `euro` float(6,2) NOT NULL,
+  `fecha_ajuste` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `usuario` varchar(30) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ajuste_cambio`
+--
+
+INSERT INTO `ajuste_cambio` (`id_ajuste`, `dollar`, `dll_can`, `euro`, `fecha_ajuste`, `usuario`) VALUES
+(1, 16.00, 12.36, 17.51, '2015-07-21 20:48:36', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ajuste_cambio_compra`
+--
+
+CREATE TABLE IF NOT EXISTS `ajuste_cambio_compra` (
+  `id_ajuste` int(11) NOT NULL,
+  `dollar` float(6,2) NOT NULL,
+  `dll_can` float(6,2) NOT NULL,
+  `euro` float(6,2) NOT NULL,
+  `fecha_ajuste` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `usuario` varchar(30) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ajuste_cambio_compra`
+--
+
+INSERT INTO `ajuste_cambio_compra` (`id_ajuste`, `dollar`, `dll_can`, `euro`, `fecha_ajuste`, `usuario`) VALUES
+(1, 15.90, 10.00, 16.70, '2015-07-21 22:02:35', '');
 
 -- --------------------------------------------------------
 
@@ -140,6 +185,18 @@ ALTER TABLE `adicionales`
   ADD PRIMARY KEY (`folio_adicional`);
 
 --
+-- Indices de la tabla `ajuste_cambio`
+--
+ALTER TABLE `ajuste_cambio`
+  ADD PRIMARY KEY (`id_ajuste`);
+
+--
+-- Indices de la tabla `ajuste_cambio_compra`
+--
+ALTER TABLE `ajuste_cambio_compra`
+  ADD PRIMARY KEY (`id_ajuste`);
+
+--
 -- Indices de la tabla `cajas`
 --
 ALTER TABLE `cajas`
@@ -165,7 +222,17 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `adicionales`
 --
 ALTER TABLE `adicionales`
-  MODIFY `folio_adicional` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `folio_adicional` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `ajuste_cambio`
+--
+ALTER TABLE `ajuste_cambio`
+  MODIFY `id_ajuste` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `ajuste_cambio_compra`
+--
+ALTER TABLE `ajuste_cambio_compra`
+  MODIFY `id_ajuste` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `cajas`
 --

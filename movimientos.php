@@ -409,7 +409,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                     </div>
 
                      <div class="row" >
-                        <div class="item col-xs-12 col-lg-4">
+                        <div class="item col-xs-4 col-lg-4">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Adicionales</h4>
@@ -448,7 +448,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
                                  </div></div>
                     <div class="row" >
-                        <div class="item col-xs-12 col-lg-4">
+                        <div class="item col-xs-8 col-lg-4">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Situación</h4>
@@ -498,7 +498,101 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                             </div>
                         </div>    
 
+  <div class="row" >
+                        <div class="item col-xs-8 col-lg-4">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="panel-heading">
+                                    <h4 class="text-headline margin-none">Tipo de cambio / Venta</h4>
+                                    <p class="text-subhead text-light">Ajuste de tipos de cambio a la venta</p>
+                                </div>
+                                <div class="tabla ">
+                                <form method="post">
+                                    <table>
+                                    <thead>
+                                        <tr>
+                                            <th id="divsi">Divisa</th>
+                                            <th id="cant">Tipo de cambio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                           <td>Dólar</td>
+                                           <td><input type="text" name="dolarAjuste"></td>
+                                       </tr>
+                                       <tr>
+                                           <td>Dólar Can</td>
+                                           <td><input type="text" name="canAjuste"></td>
+                                       </tr>
+                                       <tr>
+                                           <td>Euro</td>
+                                           <td><input type="text" name="euroAjuste"></td>
+                                       </tr>
+                                       <tr>
+                                           <td></td>
+                                           <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="ajustar" value="Ajustar"></td>
+                                       </tr>
+                                    </tbody>
+                                </table>
+                                </form>
+                                <?php 
+                                $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+                                mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+                                $query = "INSERT INTO ajuste_cambio (dollar, dll_can, euro,usuario) VALUES ({$_POST[dolarAjuste]},{$_POST[canAjuste]},{$_POST[euroAjuste]},'$nom')";
+                                $resultado = mysql_query($query);
+                                 ?>
+                                </div>
+                                <div class="panel-footer text-right">
+                                </div>
+                            </div>
+                        </div>    
 
+                         <div class="row" >
+                        <div class="item col-xs-8 col-lg-4">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="panel-heading">
+                                    <h4 class="text-headline margin-none">Tipo de cambio / Compra</h4>
+                                    <p class="text-subhead text-light">Ajuste de tipos de cambio a la compra</p>
+                                </div>
+                                <div class="tabla ">
+                                <form method="post">
+                                    <table>
+                                    <thead>
+                                        <tr>
+                                            <th id="divsi">Divisa</th>
+                                            <th id="cant">Tipo de cambio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                           <td>Dólar</td>
+                                           <td><input type="text" name="dolarCompra"></td>
+                                       </tr>
+                                       <tr>
+                                           <td>Dólar Can</td>
+                                           <td><input type="text" name="canCompra"></td>
+                                       </tr>
+                                       <tr>
+                                           <td>Euro</td>
+                                           <td><input type="text" name="euroCompra"></td>
+                                       </tr>
+                                       <tr>
+                                           <td></td>
+                                           <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="ajustar" value="Ajustar"></td>
+                                       </tr>
+                                    </tbody>
+                                </table>
+                                </form>
+                                <?php 
+                                $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+                                mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+                                $query = "INSERT INTO ajuste_cambio_compra (dollar, dll_can, euro,usuario) VALUES ({$_POST[dolarCompra]},{$_POST[canCompra]},{$_POST[euroCompra]},'$nom')";
+                                $resultado = mysql_query($query);
+                                 ?>
+                                </div>
+                                <div class="panel-footer text-right">
+                                </div>
+                            </div>
+                        </div>   
                         <div class="row" >
                         <div class="item col-xs-12 col-lg-12">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
@@ -513,6 +607,10 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
 
                                  </div></div>
+
+
+
+
                                   
     <!-- Footer -->
     <footer class="footer">

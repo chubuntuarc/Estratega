@@ -29,7 +29,7 @@ height: 31%;
 {
 	width: 99%;
 	height: 99%;
-	font-size: 60px;
+	font-size: 80px;
 	box-shadow: 3px 3px 3px #3CD87B;
 }
 #parte2
@@ -44,7 +44,7 @@ height: 31%;
 {
 	width: 99%;
 	height: 99%;
-	font-size: 60px;
+	font-size: 80px;
 	box-shadow: 3px 3px 3px #3CD87B;
 }
 #parte3
@@ -59,7 +59,7 @@ height: 42%;
 {
 	width: 99%;
 	height: 99%;
-	font-size: 60px;
+	font-size: 90px;
 	box-shadow: 3px 3px 3px #3CD87B;
 }
 #parte4
@@ -70,6 +70,21 @@ height: 42%;
 	height: 10%;
 	border-top: dotted;
 	border-color:  #3CD87B;
+	text-align: center;
+}
+#parte4 a
+{
+	color: black;
+	font-size: 20px;
+}
+#parte4 a:hover
+{
+	color: #3CD87B;
+	text-decoration: none;
+}
+#seleccionado
+{
+	text-shadow: 2px 2px 2px #3CD87B;;
 }
 #partea
 {
@@ -83,7 +98,7 @@ height: 31%;
 {
 	width: 99%;
 	height: 99%;
-	font-size: 60px;
+	font-size: 80px;
 	box-shadow: 3px 3px 3px #FF4747;
 }
 #parteb
@@ -98,7 +113,7 @@ height: 31%;
 {
 	width: 99%;
 	height: 99%;
-	font-size: 60px;
+	font-size: 80px;
 	box-shadow: 3px 3px 3px #FF4747;
 }
 #partec
@@ -113,7 +128,7 @@ height: 42%;
 {
 	width: 99%;
 	height: 99%;
-	font-size: 60px;
+	font-size: 90px;
 	box-shadow: 3px 3px 3px #FF4747;
 }
 #parted
@@ -124,6 +139,21 @@ height: 42%;
 	height: 10%;
 	border-top: dotted;
 	border-color:  #FF4747;
+	text-align: center;
+}
+#parted a
+{
+	color: black;
+	font-size: 20px;
+}
+#parted a:hover
+{
+	color: #FF4747;
+	text-decoration: none;
+}
+#seleccionadod
+{
+	text-shadow: 2px 2px 2px #FF4747;
 }
 #selDivisa
 {

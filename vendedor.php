@@ -21,7 +21,7 @@ while ($fila = mysql_fetch_array($resultado)) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Estratega Venta</title>
+    <title>Estratega Venta Dólares</title>
     <script src="js/script.js"></script>
     <meta http-equiv="refresh" content="300;URL=vendedor.php" />
     <!-- Compressed Vendor BUNDLE
@@ -56,6 +56,33 @@ This variant is to be used when loading the separate styling modules -->
     <link href="css/module-colors-background.min.css" rel="stylesheet" />
     <link href="css/module-colors-buttons.min.css" rel="stylesheet" />
     <link href="css/module-colors-text.min.css" rel="stylesheet" />
+    <script language="javascript" type="text/javascript">
+                function changeTest ( form ) 
+                {
+                    form.pesosConv.value ="$" + form.divisaConv.value * form.tipoCambioConv.value
+                }               
+            </script>
+             <script language="javascript" type="text/javascript">
+                function changeTesta ( form ) 
+                {
+                    form.pesosConv.value ="$" + form.divisaConv.value * form.tipoCambioConv.value
+                }               
+            </script>
+            
+             <script language="javascript" type="text/javascript">
+                function changeTestr ( form ) 
+                {
+                  form.divisaConv.value = "$" + form.pesosConv.value / form.tipoCambioConv.value
+                }               
+            </script>
+
+             <script language="javascript" type="text/javascript">
+                function changeTestx ( form ) 
+                {
+                  form.totalConv.value ="$" + form.pesosConv.value
+                }               
+            </script>
+            
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
 WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
@@ -118,24 +145,35 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <h4 class="text-headline margin-none">Venta</h4>
                                 </div>
                                 <div class="tabla ">
-                                <div id="parte1">
-                                    <input type="text" placeholder="Divisa">
-                                </div>
-                                <div id="parte2">
-                                    <input type="text" placeholder="Cambio">
-                                </div>
-                                <div id="parte3">
-                                    <input type="text" placeholder="Pesos">
+                                <form>
+                                  <div id="parte1">
+                                    <input id="divisaConv" type="text" placeholder="Divisa" onkeyup="changeTest(this.form)" name="divisaConv">
                                 </div>
                                 <div id="parte4">
-                                <div id="selDivisa">
-                                    <span>Divisa</span>
-                                    <select id="seleccionDivisa">
-                                        <option>Dollar</option>
-                                        <option>Dll Can</option>
-                                        <option>Euro</option>
-                                    </select>
-                                </div></div>
+                                <a id="seleccionado" href="vendedor.php">Dólares</a>
+                                <a href="">Canadienses</a>
+                                <a href="">Euros</a>
+                               </div>  
+                                <div id="parte2">
+                                    <?php 
+                                    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+                                    mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+                                    $query = "SELECT * FROM ajuste_cambio";
+                                    $resultado = mysql_query($query);
+                                   
+                                    while ($fila = mysql_fetch_array($resultado)) {
+                                         $GLOBALS['xyz'] = $fila[dollar];
+                                        
+                                            
+                                        }
+                                       
+                                     ?>
+                                    <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeyup="changeTesta(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>">
+                                </div>
+                                <div id="parte3">
+                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="changeTestr(this.form)" name="pesosConv">
+                                </div>
+                                </form>
                              </div><div class="panel-footer text-right"> </div></div> </div>
                               
                     <div class="row" data-toggle="isotope">
@@ -146,7 +184,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                  </div>
                                  </div>
                     <div class="row" >
-                        <div class="item col-xs-12 col-lg-3">
+                        <div class="item col-xs-4 col-lg-3">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Desglose</h4>
@@ -154,6 +192,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 </div>
                                 <form method="post" class="desglose">
                                 <div class="tabla ">
+
     <table>
         <thead>
             <tr>
@@ -204,7 +243,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         </tr> 
          <tr>
             <td></td>
-            <td><input type="text" placeholder="Total" readonly></td>
+            <td><input id="totalConv" name="totalConv" type="text" placeholder="Total" onkeyup="changeTestx(this.form)" readonly></td>
         </tr> 
          <tr>
             <td></td>
@@ -229,30 +268,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         <strong>Control de Gastos</strong> v1.0.0 &copy; Copyright 2015
     </footer>
     <!-- // Footer -->
-    <!-- Inline Script for colors and config objects; used by various external scripts; -->
-    <script>
-    var colors = {
-        "danger-color": "#e74c3c",
-        "success-color": "#81b53e",
-        "warning-color": "#f0ad4e",
-        "inverse-color": "#2c3e50",
-        "info-color": "#2d7cb5",
-        "default-color": "#6e7882",
-        "default-light-color": "#cfd9db",
-        "purple-color": "#9D8AC7",
-        "mustard-color": "#d4d171",
-        "lightred-color": "#e15258",
-        "body-bg": "#f6f6f6"
-    };
-    var config = {
-        theme: "html",
-        skins: {
-            "default": {
-                "primary-color": "#42a5f5"
-            }
-        }
-    };
-    </script>
+
     <!-- Separate Vendor Script Bundles -->
     <script src="js/vendor-core.min.js"></script>
     <script src="js/vendor-countdown.min.js"></script>
@@ -294,106 +310,3 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     <script src="js/theme-core.min.js"></script>
 </body>
 </html>
-
-
-
-<?php 
-//Metodo registra para entradas y salidas de dinero
-error_reporting(0);
-                                    if ('registra' == true) {
-                                    $GLOBALS['host'] = "localhost";
-                                    $GLOBALS['user'] = "root";
-                                    $GLOBALS['pw'] = "";
-                                    $GLOBALS['db'] = "estra";
-                                    $GLOBALS['divi'] = $_POST['divisa'];
-                                    $GLOBALS['movi'] = $_POST['movimiento'];
-                                    $GLOBALS['cant'] = $_POST['cantidad'];
-                                    $GLOBALS['camb'] = $_POST['cambio'];
-
-                                    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-                                    mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                    $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio, tipo_movimiento,usuario)
-                                    VALUES ({$_POST['cantidad']},'{$_POST['divisa']}',{$_POST['cambio']},'{$_POST['movimiento']}','$nom')";
-                                    $resultado = mysql_query($query);
-                                    mysql_close();
-                                    }
-                                    ?>
-
-                                    <?php 
-                                    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-                                    mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                    $query = "SELECT * from cajas where usuario = '$nom'";
-                                    $resultado = mysql_query($query);
-                                    while ($fila = mysql_fetch_array($resultado)) { 
-                                    $GLOBALS['dolarr'] = $fila[dolares];
-                                    $GLOBALS['Can'] = $fila[dlls_can];
-                                    $GLOBALS['Euro'] = $fila[euros];
-                                    $GLOBALS['pess'] = $fila[pesos];
-                                    }
-                                     ?>
-                                    <?php 
-                                    if ($movi == "Compra") {
-                                        if ($divi == "Dollar") {
-                                            $nuevoDolar = $dolarr + $cant;
-                                            $nuevoPeso = $cant * $camb;
-                                            $calculo = $pess - $nuevoPeso;
-                                            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-                                            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                            $query = "UPDATE cajas set dolares='$nuevoDolar', pesos=$calculo where usuario = '$nom'";
-                                            $resultado = mysql_query($query);
-                                            mysql_close();
-                                        }
-                                        elseif ($divi == "Dollar Can") {
-                                            $nuevoCan = $Can + $cant;
-                                            $nuevoPeso = $cant * $camb;
-                                            $calculo = $pess - $nuevoPeso;
-                                            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-                                            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                            $query = "UPDATE cajas set dlls_can='$nuevoCan', pesos=$calculo where usuario = '$nom'";
-                                            $resultado = mysql_query($query);
-                                            mysql_close();
-                                        }
-                                        elseif ($divi == "Euro") {
-                                            $nuevoEuro = $Euro + $cant;
-                                            $nuevoPeso = $cant * $camb;
-                                            $calculo = $pess - $nuevoPeso;
-                                            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-                                            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                            $query = "UPDATE cajas set euros='$nuevoEuro', pesos=$calculo where usuario = '$nom'";
-                                            $resultado = mysql_query($query);
-                                            mysql_close();
-                                        }
-                                    }
-                                    elseif ($movi == "Venta") {
-                                        if ($divi == "Dollar") {
-                                            $nuevoDolar = $dolarr - $cant;
-                                            $nuevoPeso = $cant * $camb;
-                                            $calculo = $pess + $nuevoPeso;
-                                            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-                                            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                            $query = "UPDATE cajas set dolares='$nuevoDolar', pesos=$calculo where usuario = '$nom'";
-                                            $resultado = mysql_query($query);
-                                            mysql_close();
-                                        }
-                                        elseif ($divi == "Dollar Can") {
-                                            $nuevoCan = $Can - $cant;
-                                            $nuevoPeso = $cant * $camb;
-                                            $calculo = $pess + $nuevoPeso;
-                                            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-                                            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                            $query = "UPDATE cajas set dlls_can='$nuevoCan', pesos=$calculo where usuario = '$nom'";
-                                            $resultado = mysql_query($query);
-                                            mysql_close();
-                                        }
-                                        elseif ($divi == "Euro") {
-                                            $nuevoEuro = $Euro - $cant;
-                                            $nuevoPeso = $cant * $camb;
-                                            $calculo = $pess + $nuevoPeso;
-                                            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-                                            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                            $query = "UPDATE cajas set euros='$nuevoEuro', pesos=$calculo where usuario = '$nom'";
-                                            $resultado = mysql_query($query);
-                                            mysql_close();
-                                        }
-                                    }
-?>
