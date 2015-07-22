@@ -293,8 +293,42 @@ while ($fila = mysql_fetch_array($resultado)) {
     <?php 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Euro',{$_POST['cambioInsertar']},'Compra','$nom')";
+            $query = "SELECT * FROM cajas WHERE usuario = '$nom'";
             $resultado = mysql_query($query);
+            while ($fila = mysql_fetch_array($resultado)) {
+                $GLOBALS['dolarAnt'] = $fila[euros];
+                $GLOBALS['pesosAnt'] = $fila[pesos];
+            }
+     ?>
+    <?php 
+            $dll = $_POST['dolaresInsertar'];
+            $cambio = $_POST['cambioInsertar'];
+            $peso = $dll * $cambio;
+            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+            if ($pesosAnt > $peso) {
+                $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Euro',{$_POST['cambioInsertar']},'Compra','$nom')";
+                $resultado = mysql_query($query);
+            }
+            else
+            {
+                 ?> <script>alert("No cuenta con suficiente efectivo en caja");</script><?php            
+            }
+            
+     ?>
+     <?php 
+            $dolar = $_POST['dolaresInsertar'];
+            $nuevoDolar = $dolarAnt + $dolar;
+            $dll = $_POST['dolaresInsertar'];
+            $cambio = $_POST['cambioInsertar'];
+            $peso = $dll * $cambio;
+            $nuevoPeso = $pesosAnt - $peso;
+            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+            if ($pesosAnt > $peso) {
+               $query = "UPDATE cajas SET euros = $nuevoDolar, pesos = $nuevoPeso WHERE usuario = '$nom'";
+               $resultado = mysql_query($query);
+            }
      ?>
 </div>
                                 <div class="panel-footer text-right">

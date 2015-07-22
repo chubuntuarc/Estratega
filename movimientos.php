@@ -21,7 +21,7 @@ while ($fila = mysql_fetch_array($resultado)) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Estratega Venta</title>
+    <title>Estratega Movimientos</title>
     <script src="js/script.js"></script>
     <meta http-equiv="refresh" content="300;URL=vendedor.php" />
     <!-- Compressed Vendor BUNDLE
@@ -313,7 +313,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
              <?php 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            $query = "SELECT SUM(cantidad) as total2 FROM movimientos where tipo_movimiento = 'Venta' and divisa = 'Dollar Can' and usuario = '$nom'";
+            $query = "SELECT SUM(cantidad) as total2 FROM movimientos where tipo_movimiento = 'Venta' and divisa = 'Dll Can' and usuario = '$nom'";
             $resultado = mysql_query($query);
             while ($fila = mysql_fetch_array($resultado)) { 
             $GLOBALS['suma3'] = $fila[total2];
@@ -324,7 +324,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             <?php 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            $query = "SELECT AVG(tipo_cambio) as tipo from movimientos where tipo_movimiento = 'Compra' and divisa = 'Dollar Can' and usuario = '$nom' ";
+            $query = "SELECT AVG(tipo_cambio) as tipo from movimientos where tipo_movimiento = 'Compra' and divisa = 'Dll Can' and usuario = '$nom' ";
             $resultado = mysql_query($query);
             while ($fila = mysql_fetch_array($resultado)) { 
             $GLOBALS['tipo'] = $fila[tipo];
@@ -333,7 +333,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             <?php 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            $query = "SELECT AVG(tipo_cambio) as tipo from movimientos where tipo_movimiento = 'Venta' and divisa = 'Dollar Can' and usuario = '$nom'";
+            $query = "SELECT AVG(tipo_cambio) as tipo from movimientos where tipo_movimiento = 'Venta' and divisa = 'Dll Can' and usuario = '$nom'";
             $resultado = mysql_query($query);
             while ($fila = mysql_fetch_array($resultado)) { 
             $GLOBALS['tipo2'] = $fila[tipo];
@@ -341,7 +341,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
              <?php 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            $query = "SELECT SUM(cantidad) as total , divisa, tipo_cambio FROM movimientos where tipo_movimiento = 'Compra' and divisa = 'Dollar Can' and usuario = '$nom'";
+            $query = "SELECT SUM(cantidad) as total , divisa, tipo_cambio FROM movimientos where tipo_movimiento = 'Compra' and divisa = 'Dll Can' and usuario = '$nom'";
             $resultado = mysql_query($query);
         while ($fila = mysql_fetch_array($resultado)) { 
             $suma = number_format($fila[total]);

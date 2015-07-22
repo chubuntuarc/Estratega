@@ -306,8 +306,38 @@ This variant is to be used when loading the separate styling modules -->
     <?php 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Venta','$nom')";
+            $query = "SELECT * FROM cajas WHERE usuario = '$nom'";
             $resultado = mysql_query($query);
+            while ($fila = mysql_fetch_array($resultado)) {
+                $GLOBALS['dolarAnt'] = $fila[dolares];
+                $GLOBALS['pesosAnt'] = $fila[pesos];
+            }
+     ?>
+    <?php 
+            $dolar = $_POST['dolaresInsertar'];
+            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+            if ($dolarAnt > $dolar) {
+                $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Venta','$nom')";
+                $resultado = mysql_query($query);
+            }
+            else
+            {
+                 ?> <script>alert("No cuenta con suficientes dólares en caja");</script><?php            
+            }
+            
+     ?>
+     <?php 
+            $dolar = $_POST['dolaresInsertar'];
+            $nuevoDolar = $dolarAnt - $dolar;
+            $peso = $_POST['totalConv'];
+            $nuevoPeso = $pesosAnt + $peso;
+            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+            if ($dolarAnt > $dolar) {
+               $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso WHERE usuario = '$nom'";
+               $resultado = mysql_query($query);
+            }
      ?>
 </div>
                                 <div class="panel-footer text-right">
