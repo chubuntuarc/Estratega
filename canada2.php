@@ -29,56 +29,86 @@ while ($fila = mysql_fetch_array($resultado)) {
     <link href="css/vendor.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/vendedor.css">
-     <script language="javascript" type="text/javascript">
-                function changeTest ( form ) 
+     <!--Funciones para realizar la conversión-->
+            <script language="javascript" type="text/javascript">
+                function conPesos ( form ) 
                 {
-                    form.pesosConv.value ="$" + form.divisaConv.value * form.tipoCambioConv.value
+                    form.pesosConv.value =form.divisaConv.value * form.tipoCambioConv.value
                 }               
             </script>
              <script language="javascript" type="text/javascript">
-                function changeTesta ( form ) 
+                function conPesos2 ( form ) 
                 {
-                    form.pesosConv.value ="$" + form.divisaConv.value * form.tipoCambioConv.value
+                    form.pesosConv.value =form.divisaConv.value * form.tipoCambioConv.value
                 }               
             </script>
             
              <script language="javascript" type="text/javascript">
-                function changeTestr ( form ) 
+                function conDivisa ( form ) 
                 {
-                  form.divisaConv.value = "$" + form.pesosConv.value / form.tipoCambioConv.value
+                  form.divisaConv.value = form.pesosConv.value / form.tipoCambioConv.value
                 }               
             </script>
-  <script language="javascript" type="text/javascript">
-                function changeTestx ( form ) 
-                {
-                  $("#pesosConv").keyup(function () {
-                $("#totalConv").val("$" + $("#pesosConv").val());}); } 
-    
-            </script>
+
+            <!--Funciones para igualar valores -->
+            <!--Funciones en el campo de divisa-->
+            <script language="javascript" type="text/javascript">
+                function divisa1 ( form ) 
+                { $("#divisaConv").keyup(function () {
+                    $("#totalConv").val($("#pesosConv").val()); });
+                 } </script>
+                              
+             <script language="javascript" type="text/javascript">
+                function divisa2 ( form ) 
+                { $("#divisaConv").keyup(function () {
+                    $("#dolaresInsertar").val($("#divisaConv").val()); }); 
+                }  </script>             
 
             <script language="javascript" type="text/javascript">
-                function changeTestz ( form ) 
-                {
-                  $("#divisaConv").keyup(function () {
-    //saco el valor accediendo a un input de tipo text y name = nombre2 y lo asigno a uno con name = nombre3 
-    $("#totalConv").val($("#pesosConv").val());
-    });  
-                }               
-            </script>
+                function divisa3 ( form ) 
+                { $("#divisaConv").keyup(function () {
+                    $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
+                } </script>             
+            
+            <!--Funciones en el campo de Tipo de cambio-->
+            <script language="javascript" type="text/javascript">
+                function cambio1 ( form ) 
+                { $("#tipoCambioConv").keyup(function () {
+                    $("#totalConv").val($("#pesosConv").val()); }); 
+                } </script> 
 
-    <!-- Compressed Theme BUNDLE
-Note: The bundle includes all the custom styling required for the current theme, however
-it was tweaked for the current theme/module and does NOT include ALL of the standalone modules;
-The bundle was generated using modern frontend development tools that are provided with the package
-To learn more about the development process, please refer to the documentation. -->
-    <!-- <link href="css/theme.bundle.min.css" rel="stylesheet"> -->
-    <!-- Compressed Theme CORE
-This variant is to be used when loading the separate styling modules -->
+            <script language="javascript" type="text/javascript">
+                function cambio2 ( form ) 
+                { $("#tipoCambioConv").keyup(function () {
+                    $("#dolaresInsertar").val($("#divisaConv").val()); }); 
+                } </script> 
+
+            <script language="javascript" type="text/javascript">
+                function cambio3 ( form ) 
+                { $("#tipoCambioConv").keyup(function () {
+                    $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
+                } </script>                
+            
+            <!--Funciones en el campo de Pesos-->
+            <script language="javascript" type="text/javascript">
+                function pesos1 ( form ) 
+                { $("#pesosConv").keyup(function () {
+                    $("#totalConv").val($("#pesosConv").val()); }); 
+                } </script> 
+
+            <script language="javascript" type="text/javascript">
+                function pesos2 ( form ) 
+                { $("#pesosConv").keyup(function () {
+                    $("#dolaresInsertar").val($("#divisaConv").val()); }); 
+                } </script> 
+
+            <script language="javascript" type="text/javascript">
+                function pesos3 ( form ) 
+                { $("#pesosConv").keyup(function () {
+                    $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
+                } </script>
+
     <link href="css/theme-core.min.css" rel="stylesheet">
-    <!-- Standalone Modules
-    As a convenience, we provide the entire UI framework broke down in separate modules
-    Some of the standalone modules may have not been used with the current theme/module
-    but ALL modules are 100% compatible -->
     <link href="css/module-essentials.min.css" rel="stylesheet" />
     <link href="css/module-material.min.css" rel="stylesheet" />
     <link href="css/module-layout.min.css" rel="stylesheet" />
@@ -93,13 +123,7 @@ This variant is to be used when loading the separate styling modules -->
     <link href="css/module-colors-background.min.css" rel="stylesheet" />
     <link href="css/module-colors-buttons.min.css" rel="stylesheet" />
     <link href="css/module-colors-text.min.css" rel="stylesheet" />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
-    <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+
 </head>
 <body>
 
@@ -157,7 +181,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <div class="tabla ">
                                 <form>
                                 <div id="partea">
-                                    <input id="divisaConv" type="text" placeholder="Dll Can" onkeyup="changeTest(this.form)" onkeypress="changeTestz(this.form)" name="divisaConv">
+                                    <input id="divisaConv" type="text" placeholder="Dll Can" onkeyup="conPesos(this.form)" onkeypress="divisa1(this.form);divisa2(this.form);divisa3(this.form)" name="divisaConv">
                                 </div>
                                 <div id="parteb">
                                  <?php 
@@ -172,10 +196,10 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                         }
                                        
                                      ?>
-                                    <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeyup="changeTesta(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>">
+                                    <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeyup="conPesos2(this.form)" onkeypress="cambio1(this.form);cambio2(this.form);cambio3(this.form)"  name="tipoCambioConv" value="<?php echo "$xyz"; ?>">
                                 </div>
                                 <div id="partec">
-                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="changeTestr(this.form)" onkeypress="changeTestx(this.form)" name="pesosConv">
+                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="conDivisa(this.form)" onkeypress="pesos1(this.form);pesos2(this.form);pesos3(this.form)" name="pesosConv">
                                 </div>
                                 <div id="parted">
                                 <a href="vendedor2.php">Dólares</a>
@@ -258,12 +282,20 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         </tr> 
         <tr>
             <td></td>
+            <input type="hidden" id="dolaresInsertar" name="dolaresInsertar">
+            <input type="hidden" id="cambioInsertar" name="cambioInsertar">
             <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="registraMov" value="Registrar"></td>
         </tr> 
         </tbody>
     </table>
    
     </form>
+    <?php 
+            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+            $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dll Can',{$_POST['cambioInsertar']},'Compra','$nom')";
+            $resultado = mysql_query($query);
+     ?>
 </div>
                                 <div class="panel-footer text-right">
                                 </div>
