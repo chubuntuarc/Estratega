@@ -638,32 +638,40 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <div class="panel-footer text-right">
                                 </div>
 <div>
-    <form>
-    <input type="submit" id="cierre" value="Finalizar">
+    <form method="post">
+    <input type="submit" name="cierre" id="cierre" value="Finalizar">
     </form>
     <?php 
-    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+    if (isset($_POST['cierre'])) {
+        $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
     mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
     $query = "INSERT INTO historico_movimiento SELECT * FROM movimientos where usuario = '$nom'";
     $resultado = mysql_query($query);
+    }
      ?>
      <?php 
-    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+     if (isset($_POST['cierre'])) {
+         $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
     mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
     $query = "DELETE FROM movimientos WHERE usuario = '$nom'";
     $resultado = mysql_query($query);
+     }
      ?>
      <?php 
-    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+     if (isset($_POST['cierre'])) {
+         $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
     mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
     $query = "INSERT INTO historico_adicional SELECT * FROM adicionales where usuario = '$nom'";
     $resultado = mysql_query($query);
+     }
      ?>
      <?php 
-    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+     if (isset($_POST['cierre'])) {
+        $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
     mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
     $query = "DELETE FROM adicionales WHERE usuario = '$nom'";
     $resultado = mysql_query($query);
+     }
      ?>
 </div>
 
