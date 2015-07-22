@@ -465,9 +465,10 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             $resultado = mysql_query($query);
 
         while ($fila = mysql_fetch_array($resultado)) { 
+            $cant = number_format($fila[cantidad]);
             echo "<tr>";
             echo "<td> $fila[folio_adicional] </td><td> $fila[concepto] </td><td>$fila[tipo]</td>
-            <td>$$fila[cantidad]</td>";
+            <td>$$cant</td>";
             echo "</tr>";
         }
              ?>
@@ -638,7 +639,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 </div>
 <div>
     <form>
-        <a href="login.php" name="cierre" id="cierre">Finalizar</a>
+    <input type="submit" id="cierre" value="Finalizar">
     </form>
 </div>
 
