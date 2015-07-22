@@ -48,11 +48,21 @@ while ($fila = mysql_fetch_array($resultado)) {
                   form.divisaConv.value = "$" + form.pesosConv.value / form.tipoCambioConv.value
                 }               
             </script>
-
-             <script language="javascript" type="text/javascript">
+ <script language="javascript" type="text/javascript">
                 function changeTestx ( form ) 
                 {
-                  form.totalConv.value ="$" + form.pesosConv.value
+                  $("#pesosConv").keyup(function () {
+                $("#totalConv").val("$" + $("#pesosConv").val());}); } 
+    
+            </script>
+
+            <script language="javascript" type="text/javascript">
+                function changeTestz ( form ) 
+                {
+                  $("#divisaConv").keyup(function () {
+    //saco el valor accediendo a un input de tipo text y name = nombre2 y lo asigno a uno con name = nombre3 
+    $("#totalConv").val($("#pesosConv").val());
+    });  
                 }               
             </script>
     <!-- Compressed Theme BUNDLE
@@ -146,7 +156,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <div class="tabla ">
                                 <form>
                                 <div id="partea">
-                                    <input id="divisaConv" type="text" placeholder="Euros" onkeyup="changeTest(this.form)" name="divisaConv">
+                                    <input id="divisaConv" type="text" placeholder="Euros" onkeyup="changeTest(this.form)" onkeypress="changeTestz(this.form)"  name="divisaConv">
                                 </div>
                                 <div id="parteb">
                                  <?php 
@@ -164,7 +174,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeyup="changeTesta(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>">
                                 </div>
                                 <div id="partec">
-                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="changeTestr(this.form)" name="pesosConv">
+                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="changeTestr(this.form)" onkeypress="changeTestx(this.form)"  name="pesosConv">
                                 </div>
                                 <div id="parted">
                                 <a href="vendedor2.php">Dólares</a>
@@ -239,7 +249,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         </tr> 
          <tr>
             <td></td>
-            <td><input type="text" placeholder="Total" readonly></td>
+            <td><input id="totalConv" type="text" placeholder="Total" readonly></td>
         </tr> 
          <tr>
             <td></td>

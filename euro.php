@@ -76,13 +76,23 @@ This variant is to be used when loading the separate styling modules -->
                 }               
             </script>
 
-             <script language="javascript" type="text/javascript">
+              <script language="javascript" type="text/javascript">
                 function changeTestx ( form ) 
                 {
-                  form.totalConv.value ="$" + form.pesosConv.value
+                  $("#pesosConv").keyup(function () {
+                $("#totalConv").val("$" + $("#pesosConv").val());}); } 
+    
+            </script>
+
+            <script language="javascript" type="text/javascript">
+                function changeTestz ( form ) 
+                {
+                  $("#divisaConv").keyup(function () {
+    //saco el valor accediendo a un input de tipo text y name = nombre2 y lo asigno a uno con name = nombre3 
+    $("#totalConv").val($("#pesosConv").val());
+    });  
                 }               
             </script>
-            
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
 WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
@@ -147,7 +157,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <div class="tabla ">
                                 <form>
                                   <div id="parte1">
-                                    <input id="divisaConv" type="text" placeholder="Euros" onkeyup="changeTest(this.form)" name="divisaConv">
+                                    <input id="divisaConv" type="text" placeholder="Euros" onkeyup="changeTest(this.form)" onkeypress="changeTestz(this.form)"  name="divisaConv">
                                 </div>
                                 <div id="parte4">
                                 <a href="vendedor.php">Dólares</a>
@@ -171,7 +181,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeyup="changeTesta(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>">
                                 </div>
                                 <div id="parte3">
-                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="changeTestr(this.form)" name="pesosConv">
+                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="changeTestr(this.form)" onkeypress="changeTestx(this.form)" name="pesosConv">
                                 </div>
                                 </form>
                              </div><div class="panel-footer text-right"> </div></div> </div>
