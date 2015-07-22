@@ -1,0 +1,17 @@
+#cierre
+{
+	background-color: #3CD87B;
+	border-radius: 10px;
+	border-color: black;
+	color: white;
+	font-size: 20px;
+	padding: 3px;
+	text-shadow: 2px 2px 2px gray;
+}
+
+#cierre:hover
+{
+	color: black;
+	text-shadow: 2px 2px 2px white;
+	text-decoration: none;
+}

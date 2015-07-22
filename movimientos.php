@@ -28,6 +28,7 @@ while ($fila = mysql_fetch_array($resultado)) {
     Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
     <link href="css/vendor.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
+    <link rel="stylesheet" type="text/css" href="css/cierre.css">
     <!-- Compressed Theme BUNDLE
 Note: The bundle includes all the custom styling required for the current theme, however
 it was tweaked for the current theme/module and does NOT include ALL of the standalone modules;
@@ -548,15 +549,15 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <tbody>
                                        <tr>
                                            <td>Dólar</td>
-                                           <td><input type="text" name="dolarAjuste"></td>
+                                           <td><input type="text" name="dolarAjuste" required></td>
                                        </tr>
                                        <tr>
                                            <td>Dólar Can</td>
-                                           <td><input type="text" name="canAjuste"></td>
+                                           <td><input type="text" name="canAjuste" required></td>
                                        </tr>
                                        <tr>
                                            <td>Euro</td>
-                                           <td><input type="text" name="euroAjuste"></td>
+                                           <td><input type="text" name="euroAjuste" required></td>
                                        </tr>
                                        <tr>
                                            <td></td>
@@ -596,15 +597,15 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <tbody>
                                        <tr>
                                            <td>Dólar</td>
-                                           <td><input type="text" name="dolarCompra"></td>
+                                           <td><input type="text" name="dolarCompra" required></td>
                                        </tr>
                                        <tr>
                                            <td>Dólar Can</td>
-                                           <td><input type="text" name="canCompra"></td>
+                                           <td><input type="text" name="canCompra" required></td>
                                        </tr>
                                        <tr>
                                            <td>Euro</td>
-                                           <td><input type="text" name="euroCompra"></td>
+                                           <td><input type="text" name="euroCompra" required></td>
                                        </tr>
                                        <tr>
                                            <td></td>
@@ -635,7 +636,11 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 </div>
                                 <div class="panel-footer text-right">
                                 </div>
-
+<div>
+    <form>
+        <a href="login.php" name="cierre" id="cierre">Finalizar</a>
+    </form>
+</div>
 
                                  </div></div>
 

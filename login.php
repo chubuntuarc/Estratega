@@ -32,7 +32,7 @@
 			$query = "SELECT * from usuarios where usuario = '{$_POST['usuario']}' and pass = '{$_POST['clave']}'";
 			$resultado = mysql_query($query);
 			if ($resultado > 0) {
-				header('Location: vendedor.php');
+				header('Location: movimientos.php');
 			}
 			else
 			{
