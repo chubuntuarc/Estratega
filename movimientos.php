@@ -152,6 +152,37 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     mysql_close();
                                     }
                                     ?>
+                                    <?php 
+                                    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+                                    mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+                                    $query = "SELECT * FROM cajas WHERE usuario = '$nom'";
+                                    $resultado = mysql_query($query);
+                                    while ($fila = mysql_fetch_array($resultado)) {
+                                        $GLOBALS['pesosAnt'] = $fila[pesos];
+                                    }
+                                     ?>
+                                    <?php 
+                                    $peso = $cantidad;
+                                    $nuevoPeso = $pesosAnt + $peso;
+                                    $nuevoPeso2 = $pesosAnt - $peso;
+                                    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+                                    mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+                                    if ($movment == "Entrada") {
+                                            $query = "UPDATE cajas SET pesos = $nuevoPeso WHERE usuario = '$nom'";
+                                            $resultado = mysql_query($query);
+                                    }
+                                     elseif ($movment == "Salida") {
+                                            if ($pesosAnt > $peso) {
+                                                $query = "UPDATE cajas SET pesos = $nuevoPeso2 WHERE usuario = '$nom'";
+                                                $resultado = mysql_query($query);
+                                            }
+                                            else
+                                            {
+                                                ?> <script>alert("No cuenta con suficiente efectivo en caja");</script><?php 
+                                            }
+                                        }
+                                   
+                                    ?>
                                 </form>   
                                 </div> 
 
