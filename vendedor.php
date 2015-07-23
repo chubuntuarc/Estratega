@@ -20,10 +20,9 @@ while ($fila = mysql_fetch_array($resultado)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Jesus Arciniega">
     <title>Estratega Venta Dólares</title>
     <script src="js/script.js"></script>
-    <meta http-equiv="refresh" content="300;URL=vendedor.php" />
     <!-- Compressed Vendor BUNDLE
     Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
     <link href="css/vendor.min.css" rel="stylesheet">

@@ -23,7 +23,6 @@ while ($fila = mysql_fetch_array($resultado)) {
     <meta name="author" content="">
     <title>Estratega Compra Euros</title>
     <script src="js/script.js"></script>
-    <meta http-equiv="refresh" content="300;URL=vendedor.php" />
     <!-- Compressed Vendor BUNDLE
     Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
     <link href="css/vendor.min.css" rel="stylesheet">
