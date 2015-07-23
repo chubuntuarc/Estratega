@@ -276,7 +276,7 @@ This variant is to be used when loading the separate styling modules -->
                 }  </script>
             <td><input id="MIL" type="text" placeholder="0" tabindex=4 onkeypress="pesos1000(this.form);pesos1001(this.form)"></td>
             <input type="hidden" id="pesoValMil" name="pesoValMil">
-            <td><input type="text" placeholder="0" tabindex=15></td>
+            <td><input type="text" readonly=""></td>
         </tr>
         <tr>
             <td>500.00</td>
@@ -291,7 +291,7 @@ This variant is to be used when loading the separate styling modules -->
                 }  </script>
             <td><input id="500" type="text" placeholder="0" tabindex=5 onkeypress="pesos500(this.form);pesos501(this.form)"></td>
             <input type="hidden" id="pesoVal500" name="pesoVal500">
-            <td><input type="text" placeholder="0" tabindex=16></td>
+            <td><input type="text" readonly=""></td>
         </tr>
         <tr>
             <td>200.00</td>
@@ -306,7 +306,7 @@ This variant is to be used when loading the separate styling modules -->
                 }  </script>
             <td><input id="200" type="text" placeholder="0" tabindex=6 onkeypress="pesos200(this.form);pesos201(this.form)"></td>
             <input type="hidden" id="pesoVal200" name="pesoVal200">
-            <td><input type="text" placeholder="0" tabindex=17></td>
+            <td><input type="text" readonly=""></td>
         </tr>
         <tr>
             <td>100.00</td>
@@ -321,7 +321,17 @@ This variant is to be used when loading the separate styling modules -->
                 }  </script>
             <td><input id="100" type="text" placeholder="0" tabindex=7 onkeypress="pesos100(this.form);pesos101(this.form)"></td>
             <input type="hidden" id="pesoVal100" name="pesoVal100">
-            <td><input type="text" placeholder="0" tabindex=18></td>
+            <script language="javascript" type="text/javascript">
+                function dolares100 ( form ) 
+                { $("#100Dll").keyup(function () {
+                    $("#dolarVal100").val($("#100Dll").val() * 100); }); 
+                }
+                function dolares101 ( form ) 
+                { $("#100Dll").keyup(function () {
+                    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="100Dll" type="text" placeholder="0" tabindex=15 onkeypress="dolares100(this.form);dolares101(this.form)"></td>
+            <input type="hidden" id="dolarVal100" name="dolarVal100">
         </tr>
         <tr>
             <td>50.00</td>
@@ -336,7 +346,17 @@ This variant is to be used when loading the separate styling modules -->
                 }  </script>
             <td><input id="50" type="text" placeholder="0" tabindex=8 onkeypress="pesos50(this.form);pesos51(this.form)"></td>
             <input type="hidden" id="pesoVal50" name="pesoVal50">
-            <td><input type="text" placeholder="0" tabindex=19></td>
+            <script language="javascript" type="text/javascript">
+                function dolares50 ( form ) 
+                { $("#50Dll").keyup(function () {
+                    $("#dolarVal50").val($("#50Dll").val() * 50); }); 
+                }
+                function dolares51 ( form ) 
+                { $("#50Dll").keyup(function () {
+                    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="50Dll" type="text" placeholder="0" tabindex=16 onkeypress="dolares50(this.form);dolares51(this.form)"></td>
+            <input type="hidden" id="dolarVal50" name="dolarVal50">
         </tr>  
         <tr>
             <td>20.00</td>
@@ -351,7 +371,17 @@ This variant is to be used when loading the separate styling modules -->
                 }  </script>
             <td><input id="20" type="text" placeholder="0" tabindex=9 onkeypress="pesos20(this.form);pesos21(this.form)"></td>
             <input type="hidden" id="pesoVal20" name="pesoVal20">
-            <td><input type="text" placeholder="0" tabindex=20></td>
+            <script language="javascript" type="text/javascript">
+                function dolares20 ( form ) 
+                { $("#20Dll").keyup(function () {
+                    $("#dolarVal20").val($("#20Dll").val() * 20); }); 
+                }
+                function dolares21 ( form ) 
+                { $("#20Dll").keyup(function () {
+                    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val() - $("#dolarVal20").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="20Dll" type="text" placeholder="0" tabindex=17 onkeypress="dolares20(this.form);dolares21(this.form)"></td>
+            <input type="hidden" id="dolarVal20" name="dolarVal20">
         </tr> 
         <tr>
             <td>10.00</td>
@@ -366,27 +396,108 @@ This variant is to be used when loading the separate styling modules -->
                 }  </script>
             <td><input id="10" type="text" placeholder="0" tabindex=10 onkeypress="pesos10(this.form);pesos11(this.form)"></td>
             <input type="hidden" id="pesoVal10" name="pesoVal10">
-            <td><input type="text" placeholder="0" tabindex=21></td>
+            <script language="javascript" type="text/javascript">
+                function dolares10 ( form ) 
+                { $("#10Dll").keyup(function () {
+                    $("#dolarVal10").val($("#10Dll").val() * 10); }); 
+                }
+                function dolares11 ( form ) 
+                { $("#10Dll").keyup(function () {
+                    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val() - $("#dolarVal20").val() - $("#dolarVal10").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="10Dll" type="text" placeholder="0" tabindex=18 onkeypress="dolares10(this.form);dolares11(this.form)"></td>
+            <input type="hidden" id="dolarVal10" name="dolarVal10">
         </tr> 
         <tr>
             <td>5.00</td>
-            <td><input type="text" placeholder="0" tabindex=11></td>
-            <td><input type="text" placeholder="0" tabindex=22></td>
+            <script language="javascript" type="text/javascript">
+                function pesos5 ( form ) 
+                { $("#5").keyup(function () {
+                    $("#pesoVal5").val($("#5").val() * 5); }); 
+                }
+                function pesos5b ( form ) 
+                { $("#5").keyup(function () {
+                    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="5" type="text" placeholder="0" tabindex=11 onkeypress="pesos5(this.form);pesos5b(this.form)"></td>
+            <input type="hidden" id="pesoVal5" name="pesoVal5">
+            <script language="javascript" type="text/javascript">
+                function dolares5 ( form ) 
+                { $("#5Dll").keyup(function () {
+                    $("#dolarVal5").val($("#5Dll").val() * 5); }); 
+                }
+                function dolares5b ( form ) 
+                { $("#5Dll").keyup(function () {
+                    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val() - $("#dolarVal20").val() - $("#dolarVal10").val() - $("#dolarVal5").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="5Dll" type="text" placeholder="0" tabindex=19 onkeypress="dolares5(this.form);dolares5b(this.form)"></td>
+            <input type="hidden" id="dolarVal5" name="dolarVal5">
+
         </tr> 
         <tr>
             <td>2.00</td>
-            <td><input type="text" placeholder="0" tabindex=12></td>
-            <td><input type="text" placeholder="0" tabindex=23></td>
+            <script language="javascript" type="text/javascript">
+                function pesos2 ( form ) 
+                { $("#2").keyup(function () {
+                    $("#pesoVal2").val($("#2").val() * 2); }); 
+                }
+                function pesos2b ( form ) 
+                { $("#2").keyup(function () {
+                    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val() - $("#pesoVal2").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="2" type="text" placeholder="0" tabindex=12 onkeypress="pesos2(this.form);pesos2b(this.form)"></td>
+            <input type="hidden" id="pesoVal2" name="pesoVal2">
+            <script language="javascript" type="text/javascript">
+                function dolares2 ( form ) 
+                { $("#2Dll").keyup(function () {
+                    $("#dolarVal2").val($("#2Dll").val() * 2); }); 
+                }
+                function dolares2b ( form ) 
+                { $("#2Dll").keyup(function () {
+                    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val() - $("#dolarVal20").val() - $("#dolarVal10").val() - $("#dolarVal5").val() - $("#dolarVal2").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="2Dll" type="text" placeholder="0" tabindex=20 onkeypress="dolares2(this.form);dolares2b(this.form)"></td>
+            <input type="hidden" id="dolarVal2" name="dolarVal2">
         </tr> 
         <tr>
             <td>1.00</td>
-            <td><input id="pesoVal1" type="text" placeholder="0" tabindex=13></td>
-            <td><input type="text" placeholder="0" tabindex=24></td>
+             <script language="javascript" type="text/javascript">
+                function pesos1 ( form ) 
+                { $("#1").keyup(function () {
+                    $("#pesoVal1").val($("#1").val() * 1); }); 
+                }
+                function pesos1b ( form ) 
+                { $("#1").keyup(function () {
+                    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val() - $("#pesoVal2").val() - $("#pesoVal1").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="1" type="text" placeholder="0" tabindex=13 onkeypress="pesos1(this.form);pesos1b(this.form)"></td>
+            <input type="hidden" id="pesoVal1" name="pesoVal1">
+            <script language="javascript" type="text/javascript">
+                function dolares1 ( form ) 
+                { $("#1Dll").keyup(function () {
+                    $("#dolarVal1").val($("#1Dll").val() * 1); }); 
+                }
+                function dolares1b ( form ) 
+                { $("#1Dll").keyup(function () {
+                    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val() - $("#dolarVal20").val() - $("#dolarVal10").val() - $("#dolarVal5").val() - $("#dolarVal2").val() - $("#dolarVal1").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="1Dll" type="text" placeholder="0" tabindex=21 onkeypress="dolares1(this.form);dolares1b(this.form)"></td>
+            <input type="hidden" id="dolarVal1" name="dolarVal1">
         </tr> 
          <tr>
             <td>0.50</td>
-            <td><input type="text" placeholder="0" tabindex=14></td>
-            <td><input type="text" placeholder="0" tabindex=25></td>
+            <script language="javascript" type="text/javascript">
+                function pesos05 ( form ) 
+                { $("#05").keyup(function () {
+                    $("#pesoVal05").val($("#05").val() * 0.5); }); 
+                }
+                function pesos05b ( form ) 
+                { $("#05").keyup(function () {
+                    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val() - $("#pesoVal2").val() - $("#pesoVal1").val() - $("#pesoVal05").val()).toFixed(2)); }); 
+                }  </script>
+            <td><input id="05" type="text" placeholder="0" tabindex=14 onkeypress="pesos05(this.form);pesos05b(this.form)"></td>
+            <input type="hidden" id="pesoVal05" name="pesoVal05">
+            <td><input type="text" readonly="" ></td>
         </tr> 
          <tr>
             <td></td>
@@ -402,7 +513,7 @@ This variant is to be used when loading the separate styling modules -->
             <td></td>
             <input type="hidden" id="dolaresInsertar" name="dolaresInsertar">
             <input type="hidden" id="cambioInsertar" name="cambioInsertar">
-            <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="registraMov" value="Registrar" tabindex=26></td>
+            <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="registraMov" value="Registrar" tabindex=22></td>
         </tr> 
         </tbody>
     </table>
