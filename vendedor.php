@@ -274,7 +274,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#MIL").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="MIL" type="text" placeholder="0" tabindex=4 onkeypress="pesos1000(this.form);pesos1001(this.form)"></td>
+            <td><input id="MIL" name="MIL" type="text" placeholder="0" tabindex=4 onkeypress="pesos1000(this.form);pesos1001(this.form)"></td>
             <input type="hidden" id="pesoValMil" name="pesoValMil">
             <td><input type="text" readonly=""></td>
         </tr>
@@ -289,7 +289,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#500").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="500" type="text" placeholder="0" tabindex=5 onkeypress="pesos500(this.form);pesos501(this.form)"></td>
+            <td><input id="500" name="500" type="text" placeholder="0" tabindex=5 onkeypress="pesos500(this.form);pesos501(this.form)"></td>
             <input type="hidden" id="pesoVal500" name="pesoVal500">
             <td><input type="text" readonly=""></td>
         </tr>
@@ -304,7 +304,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#200").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="200" type="text" placeholder="0" tabindex=6 onkeypress="pesos200(this.form);pesos201(this.form)"></td>
+            <td><input id="200" name="200" type="text" placeholder="0" tabindex=6 onkeypress="pesos200(this.form);pesos201(this.form)"></td>
             <input type="hidden" id="pesoVal200" name="pesoVal200">
             <td><input type="text" readonly=""></td>
         </tr>
@@ -319,7 +319,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#100").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="100" type="text" placeholder="0" tabindex=7 onkeypress="pesos100(this.form);pesos101(this.form)"></td>
+            <td><input id="100" name="100" type="text" placeholder="0" tabindex=7 onkeypress="pesos100(this.form);pesos101(this.form)"></td>
             <input type="hidden" id="pesoVal100" name="pesoVal100">
             <script language="javascript" type="text/javascript">
                 function dolares100 ( form ) 
@@ -344,7 +344,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#50").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="50" type="text" placeholder="0" tabindex=8 onkeypress="pesos50(this.form);pesos51(this.form)"></td>
+            <td><input id="50" name="50" type="text" placeholder="0" tabindex=8 onkeypress="pesos50(this.form);pesos51(this.form)"></td>
             <input type="hidden" id="pesoVal50" name="pesoVal50">
             <script language="javascript" type="text/javascript">
                 function dolares50 ( form ) 
@@ -369,7 +369,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#20").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="20" type="text" placeholder="0" tabindex=9 onkeypress="pesos20(this.form);pesos21(this.form)"></td>
+            <td><input id="20" name="20" type="text" placeholder="0" tabindex=9 onkeypress="pesos20(this.form);pesos21(this.form)"></td>
             <input type="hidden" id="pesoVal20" name="pesoVal20">
             <script language="javascript" type="text/javascript">
                 function dolares20 ( form ) 
@@ -394,7 +394,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#10").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="10" type="text" placeholder="0" tabindex=10 onkeypress="pesos10(this.form);pesos11(this.form)"></td>
+            <td><input id="10" name="10" type="text" placeholder="0" tabindex=10 onkeypress="pesos10(this.form);pesos11(this.form)"></td>
             <input type="hidden" id="pesoVal10" name="pesoVal10">
             <script language="javascript" type="text/javascript">
                 function dolares10 ( form ) 
@@ -419,7 +419,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#5").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="5" type="text" placeholder="0" tabindex=11 onkeypress="pesos5(this.form);pesos5b(this.form)"></td>
+            <td><input id="5" name="5" type="text" placeholder="0" tabindex=11 onkeypress="pesos5(this.form);pesos5b(this.form)"></td>
             <input type="hidden" id="pesoVal5" name="pesoVal5">
             <script language="javascript" type="text/javascript">
                 function dolares5 ( form ) 
@@ -445,7 +445,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#2").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val() - $("#pesoVal2").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="2" type="text" placeholder="0" tabindex=12 onkeypress="pesos2(this.form);pesos2b(this.form)"></td>
+            <td><input id="2" name="2" type="text" placeholder="0" tabindex=12 onkeypress="pesos2(this.form);pesos2b(this.form)"></td>
             <input type="hidden" id="pesoVal2" name="pesoVal2">
             <script language="javascript" type="text/javascript">
                 function dolares2 ( form ) 
@@ -470,7 +470,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#1").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val() - $("#pesoVal2").val() - $("#pesoVal1").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="1" type="text" placeholder="0" tabindex=13 onkeypress="pesos1(this.form);pesos1b(this.form)"></td>
+            <td><input id="1" name="1" type="text" placeholder="0" tabindex=13 onkeypress="pesos1(this.form);pesos1b(this.form)"></td>
             <input type="hidden" id="pesoVal1" name="pesoVal1">
             <script language="javascript" type="text/javascript">
                 function dolares1 ( form ) 
@@ -495,7 +495,7 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#05").keyup(function () {
                     $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val() - $("#pesoVal2").val() - $("#pesoVal1").val() - $("#pesoVal05").val()).toFixed(2)); }); 
                 }  </script>
-            <td><input id="05" type="text" placeholder="0" tabindex=14 onkeypress="pesos05(this.form);pesos05b(this.form)"></td>
+            <td><input id="05" name="05" type="text" placeholder="0" tabindex=14 onkeypress="pesos05(this.form);pesos05b(this.form)"></td>
             <input type="hidden" id="pesoVal05" name="pesoVal05">
             <td><input type="text" readonly="" ></td>
         </tr> 
@@ -531,11 +531,16 @@ This variant is to be used when loading the separate styling modules -->
      ?>
     <?php 
             $dolar = $_POST['dolaresInsertar'];
+            $difPeso = $_POST['totalDif'];
+            $difDolar = $_POST['totalDllDif'];
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($dolarAnt > $dolar) {
+            if ($dolarAnt >= $dolar && $difPeso < 0.20 && $difDolar == 0.00) {
                 $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Venta','$nom')";
                 $resultado = mysql_query($query);
+            }
+            elseif ($difPeso > 0.20 || $difDolar != 0.00) {
+                ?> <script>alert("No se realizo el desglose correctamente");</script><?php 
             }
             else
             {
@@ -550,11 +555,30 @@ This variant is to be used when loading the separate styling modules -->
             $nuevoPeso = $pesosAnt + $peso;
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($dolarAnt > $dolar) {
+            if ($dolarAnt >= $dolar) {
                $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso WHERE usuario = '$nom'";
                $resultado = mysql_query($query);
             }
      ?>
+     <!--Insertar valores del desglose
+     <?php 
+            $dolar = $_POST['dolaresInsertar'];
+            $difPeso = $_POST['totalDif'];
+            $difDolar = $_POST['totalDllDif'];
+            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+            if ($dolarAnt >= $dolar && $difPeso < 0.10 && $difDolar == 0.00) {
+                $query = "INSERT INTO desglose_pesos (a,b,c,d,e,f,g,h,i,j,tipo,usuario) VALUES (1,1,1,0,0,0,0,0,1,1,'Venta','$nom')";
+                $resultado = mysql_query($query);
+            }
+            elseif ($difPeso > 0.10 || $difDolar != 0.00) {
+                ?> <script>alert("No se realizo el desglose correctamente");</script><?php 
+            }
+            else
+            {
+                 ?> <script>alert("No cuenta con suficientes dólares en caja");</script><?php            
+            }
+     ?>-->
 </div>
                                 <div class="panel-footer text-right">
                                 </div>
