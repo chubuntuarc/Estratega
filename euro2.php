@@ -32,20 +32,20 @@ while ($fila = mysql_fetch_array($resultado)) {
             <script language="javascript" type="text/javascript">
                 function conPesos ( form ) 
                 {
-                    form.pesosConv.value =form.divisaConv.value * form.tipoCambioConv.value
+                    form.pesosConv.value = (form.divisaConv.value * form.tipoCambioConv.value).toFixed(2)
                 }               
             </script>
              <script language="javascript" type="text/javascript">
                 function conPesos2 ( form ) 
                 {
-                    form.pesosConv.value =form.divisaConv.value * form.tipoCambioConv.value
+                    form.pesosConv.value = (form.divisaConv.value * form.tipoCambioConv.value).toFixed(2)
                 }               
             </script>
             
              <script language="javascript" type="text/javascript">
                 function conDivisa ( form ) 
                 {
-                  form.divisaConv.value = form.pesosConv.value / form.tipoCambioConv.value
+                  form.divisaConv.value = (form.pesosConv.value / form.tipoCambioConv.value).toFixed(2)
                 }               
             </script>
 

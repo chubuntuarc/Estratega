@@ -23,7 +23,7 @@ while ($fila = mysql_fetch_array($resultado)) {
     <meta name="author" content="">
     <title>Estratega Movimientos</title>
     <script src="js/script.js"></script>
-    <meta http-equiv="refresh" content="300;URL=vendedor.php" />
+    <!--<meta http-equiv="refresh" content="300;URL=vendedor.php" />  Actualización automatica-->
     <!-- Compressed Vendor BUNDLE
     Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
     <link href="css/vendor.min.css" rel="stylesheet">

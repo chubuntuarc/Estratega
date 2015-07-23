@@ -59,20 +59,20 @@ This variant is to be used when loading the separate styling modules -->
             <script language="javascript" type="text/javascript">
                 function conPesos ( form ) 
                 {
-                    form.pesosConv.value =form.divisaConv.value * form.tipoCambioConv.value
+                    form.pesosConv.value = (form.divisaConv.value * form.tipoCambioConv.value).toFixed(2)
                 }               
             </script>
              <script language="javascript" type="text/javascript">
                 function conPesos2 ( form ) 
                 {
-                    form.pesosConv.value =form.divisaConv.value * form.tipoCambioConv.value
+                    form.pesosConv.value =(form.divisaConv.value * form.tipoCambioConv.value).toFixed(2)
                 }               
             </script>
             
              <script language="javascript" type="text/javascript">
                 function conDivisa ( form ) 
                 {
-                  form.divisaConv.value = form.pesosConv.value / form.tipoCambioConv.value
+                  form.divisaConv.value = (form.pesosConv.value / form.tipoCambioConv.value).toFixed(2)
                 }               
             </script>
 
@@ -83,15 +83,21 @@ This variant is to be used when loading the separate styling modules -->
                 { $("#divisaConv").keyup(function () {
                     $("#totalConv").val($("#pesosConv").val()); });
                  } </script>
+
+            <script language="javascript" type="text/javascript">
+                function divisa2 ( form ) 
+                { $("#divisaConv").keyup(function () {
+                    $("#totalDllConv").val($("#divisaConv").val()); });
+                 } </script>
                               
              <script language="javascript" type="text/javascript">
-                function divisa2 ( form ) 
+                function divisa3 ( form ) 
                 { $("#divisaConv").keyup(function () {
                     $("#dolaresInsertar").val($("#divisaConv").val()); }); 
                 }  </script>             
 
             <script language="javascript" type="text/javascript">
-                function divisa3 ( form ) 
+                function divisa4 ( form ) 
                 { $("#divisaConv").keyup(function () {
                     $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
                 } </script>             
@@ -106,11 +112,17 @@ This variant is to be used when loading the separate styling modules -->
             <script language="javascript" type="text/javascript">
                 function cambio2 ( form ) 
                 { $("#tipoCambioConv").keyup(function () {
+                    $("#totalDllConv").val($("#divisaConv").val()); });
+                 } </script>
+                     
+            <script language="javascript" type="text/javascript">
+                function cambio3 ( form ) 
+                { $("#tipoCambioConv").keyup(function () {
                     $("#dolaresInsertar").val($("#divisaConv").val()); }); 
                 } </script> 
 
             <script language="javascript" type="text/javascript">
-                function cambio3 ( form ) 
+                function cambio4 ( form ) 
                 { $("#tipoCambioConv").keyup(function () {
                     $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
                 } </script>                
@@ -125,11 +137,17 @@ This variant is to be used when loading the separate styling modules -->
             <script language="javascript" type="text/javascript">
                 function pesos2 ( form ) 
                 { $("#pesosConv").keyup(function () {
+                    $("#totalDllConv").val($("#divisaConv").val()); });
+                 } </script>    
+
+            <script language="javascript" type="text/javascript">
+                function pesos3 ( form ) 
+                { $("#pesosConv").keyup(function () {
                     $("#dolaresInsertar").val($("#divisaConv").val()); }); 
                 } </script> 
 
             <script language="javascript" type="text/javascript">
-                function pesos3 ( form ) 
+                function pesos4 ( form ) 
                 { $("#pesosConv").keyup(function () {
                     $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
                 } </script>
@@ -182,7 +200,7 @@ This variant is to be used when loading the separate styling modules -->
                             <div class="media-body"></div></div></div>
                              
                         <div class="row" >
-                        <div class="item col-xs-12 col-lg-9">
+                        <div class="item col-xs-12 col-lg-8">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Venta</h4>
@@ -190,7 +208,7 @@ This variant is to be used when loading the separate styling modules -->
                                 <div class="tabla ">
                                 <form>
                                   <div id="parte1">
-                                    <input id="divisaConv" type="text" placeholder="Dólares" onkeyup="conPesos(this.form)" onkeypress="divisa1(this.form);divisa2(this.form);divisa3(this.form)"  name="divisaConv">
+                                    <input id="divisaConv" type="text" placeholder="Dólares" onkeyup="conPesos(this.form)" onkeypress="divisa1(this.form);divisa2(this.form);divisa3(this.form);divisa4(this.form)"  name="divisaConv">
                                 </div>
                                 <div id="parte4">
                                 <a id="seleccionado" href="vendedor.php">Dólares</a>
@@ -211,10 +229,10 @@ This variant is to be used when loading the separate styling modules -->
                                         }
                                        
                                      ?>
-                                    <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeyup="conPesos2(this.form)" onkeypress="cambio1(this.form);cambio2(this.form);cambio3(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>">
+                                    <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeyup="conPesos2(this.form)" onkeypress="cambio1(this.form);cambio2(this.form);cambio3(this.form);cambio4(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>">
                                 </div>
                                 <div id="parte3">
-                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="conDivisa(this.form)" onkeypress="pesos1(this.form);pesos2(this.form);pesos3(this.form)" name="pesosConv">
+                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="conDivisa(this.form)" onkeypress="pesos1(this.form);pesos2(this.form);pesos3(this.form);pesos4(this.form)" name="pesosConv">
                                 </div>
                                </form>
                              </div><div class="panel-footer text-right"> </div></div> </div>
@@ -227,7 +245,7 @@ This variant is to be used when loading the separate styling modules -->
                                  </div>
                                  </div>
                     <div class="row" >
-                        <div class="item col-xs-4 col-lg-3">
+                        <div class="item col-xs-4 col-lg-4">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Desglose</h4>
@@ -240,56 +258,69 @@ This variant is to be used when loading the separate styling modules -->
         <thead>
             <tr>
                 <th >Denominación</th>
-                <th id="cant">Cantidad</th>
+                <th id="cant">Pesos</th>
+                <th>Dólares</th>
             </tr>
         </thead>
         <tbody>
         <tr>
             <td>1000.00</td>
             <td><input type="text" placeholder="0"></td>
+            <td><input type="text" placeholder="0"></td>
         </tr>
         <tr>
             <td>500.00</td>
+            <td><input type="text" placeholder="0"></td>
             <td><input type="text" placeholder="0"></td>
         </tr>
         <tr>
             <td>200.00</td>
             <td><input type="text" placeholder="0"></td>
+            <td><input type="text" placeholder="0"></td>
         </tr>
         <tr>
             <td>100.00</td>
+            <td><input type="text" placeholder="0"></td>
             <td><input type="text" placeholder="0"></td>
         </tr>
         <tr>
             <td>50.00</td>
             <td><input type="text" placeholder="0"></td>
+            <td><input type="text" placeholder="0"></td>
         </tr>  
         <tr>
             <td>20.00</td>
+            <td><input type="text" placeholder="0"></td>
             <td><input type="text" placeholder="0"></td>
         </tr> 
         <tr>
             <td>10.00</td>
             <td><input type="text" placeholder="0"></td>
+            <td><input type="text" placeholder="0"></td>
         </tr> 
         <tr>
             <td>5.00</td>
+            <td><input type="text" placeholder="0"></td>
             <td><input type="text" placeholder="0"></td>
         </tr> 
         <tr>
             <td>2.00</td>
             <td><input type="text" placeholder="0"></td>
+            <td><input type="text" placeholder="0"></td>
         </tr> 
         <tr>
             <td>1.00</td>
+            <td><input type="text" placeholder="0"></td>
             <td><input type="text" placeholder="0"></td>
         </tr> 
          <tr>
             <td></td>
             <td><input id="totalConv" name="totalConv" type="text" placeholder="Total" readonly></td>
+            <td><input id="totalDllConv" name="totalDllConv" type="text" placeholder="Total" readonly></td>
         </tr> 
          <tr>
             <td></td>
+            <td><input type="text" placeholder="Diferencia" readonly></td>
             <td><input type="text" placeholder="Diferencia" readonly></td>
         </tr> 
         <tr>
