@@ -23,90 +23,13 @@ while ($fila = mysql_fetch_array($resultado)) {
     <meta name="author" content="">
     <title>Estratega Compra Euros</title>
     <script src="js/script.js"></script>
-    <!-- Compressed Vendor BUNDLE
-    Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
-    <link href="css/vendor.min.css" rel="stylesheet">
+    <!--Funciones de desglose y conversión de divisas-->
+    <script type="text/javascript" src="js/desglose.js"></script>
+    <!--Adicionales-->
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/vendedor.css">
-     <!--Funciones para realizar la conversión-->
-            <script language="javascript" type="text/javascript">
-                function conPesos ( form ) 
-                {
-                    form.pesosConv.value = (form.divisaConv.value * form.tipoCambioConv.value).toFixed(2)
-                }               
-            </script>
-             <script language="javascript" type="text/javascript">
-                function conPesos2 ( form ) 
-                {
-                    form.pesosConv.value = (form.divisaConv.value * form.tipoCambioConv.value).toFixed(2)
-                }               
-            </script>
-            
-             <script language="javascript" type="text/javascript">
-                function conDivisa ( form ) 
-                {
-                  form.divisaConv.value = (form.pesosConv.value / form.tipoCambioConv.value).toFixed(2)
-                }               
-            </script>
-
-            <!--Funciones para igualar valores -->
-            <!--Funciones en el campo de divisa-->
-            <script language="javascript" type="text/javascript">
-                function divisa1 ( form ) 
-                { $("#divisaConv").keyup(function () {
-                    $("#totalConv").val($("#pesosConv").val()); });
-                 } </script>
-                              
-             <script language="javascript" type="text/javascript">
-                function divisa2 ( form ) 
-                { $("#divisaConv").keyup(function () {
-                    $("#dolaresInsertar").val($("#divisaConv").val()); }); 
-                }  </script>             
-
-            <script language="javascript" type="text/javascript">
-                function divisa3 ( form ) 
-                { $("#divisaConv").keyup(function () {
-                    $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
-                } </script>             
-            
-            <!--Funciones en el campo de Tipo de cambio-->
-            <script language="javascript" type="text/javascript">
-                function cambio1 ( form ) 
-                { $("#tipoCambioConv").keyup(function () {
-                    $("#totalConv").val($("#pesosConv").val()); }); 
-                } </script> 
-
-            <script language="javascript" type="text/javascript">
-                function cambio2 ( form ) 
-                { $("#tipoCambioConv").keyup(function () {
-                    $("#dolaresInsertar").val($("#divisaConv").val()); }); 
-                } </script> 
-
-            <script language="javascript" type="text/javascript">
-                function cambio3 ( form ) 
-                { $("#tipoCambioConv").keyup(function () {
-                    $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
-                } </script>                
-            
-            <!--Funciones en el campo de Pesos-->
-            <script language="javascript" type="text/javascript">
-                function pesos1 ( form ) 
-                { $("#pesosConv").keyup(function () {
-                    $("#totalConv").val($("#pesosConv").val()); }); 
-                } </script> 
-
-            <script language="javascript" type="text/javascript">
-                function pesos2 ( form ) 
-                { $("#pesosConv").keyup(function () {
-                    $("#dolaresInsertar").val($("#divisaConv").val()); }); 
-                } </script> 
-
-            <script language="javascript" type="text/javascript">
-                function pesos3 ( form ) 
-                { $("#pesosConv").keyup(function () {
-                    $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
-                } </script>
-
+    <!--Elementos por defecto-->
+    <link href="css/vendor.min.css" rel="stylesheet">
     <link href="css/theme-core.min.css" rel="stylesheet">
     <link href="css/module-essentials.min.css" rel="stylesheet" />
     <link href="css/module-material.min.css" rel="stylesheet" />
@@ -172,7 +95,7 @@ while ($fila = mysql_fetch_array($resultado)) {
                             <div class="media-body"></div></div></div>
                              
                         <div class="row" >
-                        <div class="item col-xs-12 col-lg-9">
+                        <div class="item col-xs-12 col-lg-8">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Compra</h4>
@@ -180,7 +103,7 @@ while ($fila = mysql_fetch_array($resultado)) {
                                 <div class="tabla ">
                                 <form>
                                 <div id="partea">
-                                    <input id="divisaConv" type="text" placeholder="Euros" onkeyup="conPesos(this.form)" onkeypress="divisa1(this.form);divisa2(this.form);divisa3(this.form)"  name="divisaConv">
+                                    <input id="divisaConv" type="text" placeholder="Euros" onkeyup="conPesos(this.form)" onkeypress="divisa1(this.form);divisa2(this.form);divisa3(this.form);divisa4(this.form)" name="divisaConv" tabindex=1 autofocus>
                                 </div>
                                 <div id="parteb">
                                  <?php 
@@ -195,10 +118,10 @@ while ($fila = mysql_fetch_array($resultado)) {
                                         }
                                        
                                      ?>
-                                    <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeyup="conPesos2(this.form)" onkeypress="cambio1(this.form);cambio2(this.form);cambio3(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>">
+                                    <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeyup="conPesos2(this.form)" onkeypress="cambio1(this.form);cambio2(this.form);cambio3(this.form);cambio4(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>" tabindex=2>
                                 </div>
                                 <div id="partec">
-                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="conDivisa(this.form)" onkeypress="pesos1(this.form);pesos2(this.form);pesos3(this.form)"  name="pesosConv">
+                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeyup="conDivisa(this.form)" onkeypress="pesos1(this.form);pesos2(this.form);pesos3(this.form);;pesos4(this.form)" name="pesosConv" tabindex=3>
                                 </div>
                                 <div id="parted">
                                 <a href="vendedor2.php">Dólares</a>
@@ -215,7 +138,7 @@ while ($fila = mysql_fetch_array($resultado)) {
                                  </div>
                                  </div>
                     <div class="row" >
-                        <div class="item col-xs-4 col-lg-3">
+                        <div class="item col-xs-4 col-lg-4">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Desglose</h4>
@@ -227,63 +150,100 @@ while ($fila = mysql_fetch_array($resultado)) {
         <thead id="tabCompra">
             <tr>
                 <th >Denominación</th>
-                <th id="cant">Cantidad</th>
+                <th id="cant">Pesos</th>
+                <th>Dólares</th>
             </tr>
         </thead>
         <tbody>
         <tr>
             <td>1000.00</td>
-            <td><input type="text" placeholder="0"></td>
+            <td><input id="MIL" name="MIL" type="text" placeholder="0" tabindex=4 onkeypress="pesos1000(this.form);pesos1001(this.form)"></td>
+            <input type="hidden" id="pesoValMil" name="pesoValMil">
+            <td><input type="text" readonly=""></td>
         </tr>
         <tr>
             <td>500.00</td>
-            <td><input type="text" placeholder="0"></td>
+            <td><input id="500" name="500" type="text" placeholder="0" tabindex=5 onkeypress="pesos500(this.form);pesos501(this.form)"></td>
+            <input type="hidden" id="pesoVal500" name="pesoVal500">
+            <td><input type="text" readonly=""></td>
         </tr>
         <tr>
             <td>200.00</td>
-            <td><input type="text" placeholder="0"></td>
+            <td><input id="200" name="200" type="text" placeholder="0" tabindex=6 onkeypress="pesos200(this.form);pesos201(this.form)"></td>
+            <input type="hidden" id="pesoVal200" name="pesoVal200">
+            <td><input type="text" readonly=""></td>
         </tr>
         <tr>
             <td>100.00</td>
-            <td><input type="text" placeholder="0"></td>
+            <td><input id="100" name="100" type="text" placeholder="0" tabindex=7 onkeypress="pesos100(this.form);pesos101(this.form)"></td>
+            <input type="hidden" id="pesoVal100" name="pesoVal100">
+            <td><input id="100Dll" type="text" placeholder="0" tabindex=15 onkeypress="dolares100(this.form);dolares101(this.form)"></td>
+            <input type="hidden" id="dolarVal100" name="dolarVal100">
         </tr>
         <tr>
             <td>50.00</td>
-            <td><input type="text" placeholder="0"></td>
+            <td><input id="50" name="50" type="text" placeholder="0" tabindex=8 onkeypress="pesos50(this.form);pesos51(this.form)"></td>
+            <input type="hidden" id="pesoVal50" name="pesoVal50">
+            <td><input id="50Dll" type="text" placeholder="0" tabindex=16 onkeypress="dolares50(this.form);dolares51(this.form)"></td>
+            <input type="hidden" id="dolarVal50" name="dolarVal50">
         </tr>  
         <tr>
             <td>20.00</td>
-            <td><input type="text" placeholder="0"></td>
+            <td><input id="20" name="20" type="text" placeholder="0" tabindex=9 onkeypress="pesos20(this.form);pesos21(this.form)"></td>
+            <input type="hidden" id="pesoVal20" name="pesoVal20">
+            <td><input id="20Dll" type="text" placeholder="0" tabindex=17 onkeypress="dolares20(this.form);dolares21(this.form)"></td>
+            <input type="hidden" id="dolarVal20" name="dolarVal20">
         </tr> 
         <tr>
             <td>10.00</td>
-            <td><input type="text" placeholder="0"></td>
+            <td><input id="10" name="10" type="text" placeholder="0" tabindex=10 onkeypress="pesos10(this.form);pesos11(this.form)"></td>
+            <input type="hidden" id="pesoVal10" name="pesoVal10">
+            <td><input id="10Dll" type="text" placeholder="0" tabindex=18 onkeypress="dolares10(this.form);dolares11(this.form)"></td>
+            <input type="hidden" id="dolarVal10" name="dolarVal10">
         </tr> 
         <tr>
             <td>5.00</td>
-            <td><input type="text" placeholder="0"></td>
+            <td><input id="5" name="5" type="text" placeholder="0" tabindex=11 onkeypress="pesos5(this.form);pesos5b(this.form)"></td>
+            <input type="hidden" id="pesoVal5" name="pesoVal5">
+            <td><input id="5Dll" type="text" placeholder="0" tabindex=19 onkeypress="dolares5(this.form);dolares5b(this.form)"></td>
+            <input type="hidden" id="dolarVal5" name="dolarVal5">
+
         </tr> 
         <tr>
             <td>2.00</td>
-            <td><input type="text" placeholder="0"></td>
+            <td><input id="2" name="2" type="text" placeholder="0" tabindex=12 onkeypress="pesos2(this.form);pesos2b(this.form)"></td>
+            <input type="hidden" id="pesoVal2" name="pesoVal2">
+            <td><input id="2Dll" type="text" placeholder="0" tabindex=20 onkeypress="dolares2(this.form);dolares2b(this.form)"></td>
+            <input type="hidden" id="dolarVal2" name="dolarVal2">
         </tr> 
         <tr>
             <td>1.00</td>
-            <td><input type="text" placeholder="0"></td>
+            <td><input id="1" name="1" type="text" placeholder="0" tabindex=13 onkeypress="pesos1(this.form);pesos1b(this.form)"></td>
+            <input type="hidden" id="pesoVal1" name="pesoVal1">
+            <td><input id="1Dll" type="text" placeholder="0" tabindex=21 onkeypress="dolares1(this.form);dolares1b(this.form)"></td>
+            <input type="hidden" id="dolarVal1" name="dolarVal1">
+        </tr> 
+         <tr>
+            <td>0.50</td>
+            <td><input id="05" name="05" type="text" placeholder="0" tabindex=14 onkeypress="pesos05(this.form);pesos05b(this.form)"></td>
+            <input type="hidden" id="pesoVal05" name="pesoVal05">
+            <td><input type="text" readonly="" ></td>
         </tr> 
          <tr>
             <td></td>
-            <td><input id="totalConv" type="text" placeholder="Total" readonly></td>
+            <td><input id="totalConv" name="totalConv" type="text" placeholder="Total" readonly></td>
+            <td><input id="totalDllConv" name="totalDllConv" type="text" placeholder="Total" readonly></td>
         </tr> 
          <tr>
             <td></td>
-            <td><input type="text" placeholder="Diferencia" readonly></td>
+            <td><input id="totalDif" name="totalDif" type="text" placeholder="Diferencia" readonly></td>
+            <td><input id="totalDllDif" type="text" placeholder="Diferencia" readonly></td>
         </tr> 
         <tr>
             <td></td>
             <input type="hidden" id="dolaresInsertar" name="dolaresInsertar">
             <input type="hidden" id="cambioInsertar" name="cambioInsertar">
-            <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="registraMov" value="Registrar"></td>
+            <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="registraMov" value="Registrar" tabindex=22></td>
         </tr> 
         </tbody>
     </table>
@@ -305,9 +265,12 @@ while ($fila = mysql_fetch_array($resultado)) {
             $peso = $dll * $cambio;
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($pesosAnt > $peso) {
+            if ($pesosAnt >= $peso && $difPeso < 0.20 && $difDolar == 0.00) {
                 $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Euro',{$_POST['cambioInsertar']},'Compra','$nom')";
                 $resultado = mysql_query($query);
+            }
+            elseif ($difPeso > 0.20 || $difDolar != 0.00) {
+                ?> <script>alert("No se realizo el desglose correctamente");</script><?php 
             }
             else
             {
@@ -324,7 +287,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             $nuevoPeso = $pesosAnt - $peso;
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($pesosAnt > $peso) {
+            if ($pesosAnt >= $peso) {
                $query = "UPDATE cajas SET euros = $nuevoDolar, pesos = $nuevoPeso WHERE usuario = '$nom'";
                $resultado = mysql_query($query);
             }

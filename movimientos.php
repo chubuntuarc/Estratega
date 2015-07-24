@@ -633,6 +633,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <h4 class="text-headline margin-none">Divisas</h4>
                                     <p class="text-subhead text-light">Precio actual de las principales divisas</p>
                                 </div>
+                                
                                 <iframe frameborder="0" scrolling="no" height="62" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.mx.forexprostools.com/quotes_bar.php?tab_1=1532,39,101,1&tab_2=&tab_3=23660,27,172,166,175&curr-name-color=%230059B0&inner-text-color=%23666666&green-text-color=%23008000&red-text-color=%23FF0000"></iframe><br /><div style="width:860"><span style="float:left"><span style="font-size: 11px;color: #black;text-decoration: none;">Las Cotizacines estan Proveídas por <a href="http://mx.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com México</a></span></div>
                                 </div>
                                 <div class="panel-footer text-right">
