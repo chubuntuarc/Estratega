@@ -73,7 +73,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                     <img id="logoxx" src="images/estratega.png">
                 </div>
                 <div class="menux col-xs-3 col-lg-9">
-                    <a href="vendedor.php" >Compra / Venta</a>
+                    <a href="vendedor.php" >Operaciones</a>
                 </div>
                     
             </div>
