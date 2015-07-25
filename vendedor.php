@@ -60,7 +60,7 @@ while ($fila = mysql_fetch_array($resultado)) {
                     <img id="logoxx" src="images/estratega.png">
                 </div>
                 <div class="menux col-xs-3 col-lg-9">
-                    <a href="movimientos.php" >Movimientos</a>
+                    <a href="movimientos.php" >Información</a>
                     <a href="vendedor2.php">Compra</a>
                 </div>
                     
@@ -286,10 +286,20 @@ while ($fila = mysql_fetch_array($resultado)) {
                                     $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Venta','$nom')";
                                     $resultado = mysql_query($query);
                                  ?>
+                                 <?php 
+                                    $redondo = $_POST['totalDif'];
+                                    $nuevoRedondo = $redondoAnt - $redondo;
+                                    $query = "UPDATE cajas SET redondeo = $nuevoRedondo WHERE usuario = '$nom'";
+                                    $resultado = mysql_query($query);
+                                 ?>
                             }
                             else {
                                 <?php 
-                                    $redondo = $_POST['totalDif'];
+                                    $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES (0,'Cancelado',{$_POST['cambioInsertar']},'Venta','$nom')";
+                                    $resultado = mysql_query($query);
+                                 ?>
+                                 <?php 
+                                    $redondo = 0;
                                     $nuevoRedondo = $redondoAnt - $redondo;
                                     $query = "UPDATE cajas SET redondeo = $nuevoRedondo WHERE usuario = '$nom'";
                                     $resultado = mysql_query($query);
