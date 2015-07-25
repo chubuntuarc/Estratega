@@ -507,6 +507,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             $y = number_format($fila[dlls_can],2);
             $z = number_format($fila[euros],2);
             $z1 = number_format($fila[pesos],2);
+            $z2 = number_format($fila[redondeo],2);
             echo "<tr>";
             echo "<td> Dollar </td><td>$$x</td>";
             echo "</tr>";
@@ -518,6 +519,9 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
             echo "</tr>";
             echo "<tr>";
             echo "<td>Pesos</td><td>$$z1</td>";
+            echo "</tr>";
+            echo "<tr>";
+            echo "<td>Pesos Redondeo</td><td>$$z2</td>";
             echo "</tr>";
             
         }

@@ -1,260 +1,142 @@
-//Convertir pesos en base a la divisa y el tipo de cambio
-function conPesos ( form ) 
-{
-    form.pesosConv.value = (form.divisaConv.value * form.tipoCambioConv.value).toFixed(2)
-}  
-function conPesos2 ( form ) 
-{
-    form.pesosConv.value =(form.divisaConv.value * form.tipoCambioConv.value).toFixed(2)
-} 
-//Convertir divisa en base a los pesos y el tipo de cambio
-function conDivisa ( form ) 
-{
-  form.divisaConv.value = (form.pesosConv.value / form.tipoCambioConv.value).toFixed(2)
-}
-
- /*Funciones para igualar valores 
-            Funciones en el campo de divisa*/
-function divisa1 ( form ) 
-{ $("#divisaConv").keyup(function () {
-    $("#totalConv").val($("#pesosConv").val()); });
- } 
-
- function divisa2 ( form ) 
-{ $("#divisaConv").keyup(function () {
-    $("#totalDllConv").val($("#divisaConv").val()); });
- }
-
-function divisa3 ( form ) 
-{ $("#divisaConv").keyup(function () {
-    $("#dolaresInsertar").val($("#divisaConv").val()); }); 
-}
-
-function divisa4 ( form ) 
-{ $("#divisaConv").keyup(function () {
-    $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
-}
-
-//Funciones en el campo de Tipo de cambio
-function cambio1 ( form ) 
-{ $("#tipoCambioConv").keyup(function () {
-    $("#totalConv").val($("#pesosConv").val()); }); 
-}
-
-function cambio2 ( form ) 
-{ $("#tipoCambioConv").keyup(function () {
-    $("#totalDllConv").val($("#divisaConv").val()); });
- }
-
-function cambio3 ( form ) 
-{ $("#tipoCambioConv").keyup(function () {
-    $("#dolaresInsertar").val($("#divisaConv").val()); }); 
-}
-
-function cambio4 ( form ) 
-{ $("#tipoCambioConv").keyup(function () {
-    $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
+//Convertir valores
+//En base al input de pesos en operaciones
+function pesos ( form ) 
+{   $("#pesosConv").keyup(function () {
+    $("#divisaConv").val($("#pesosConv").val() / $("#tipoCambioConv").val()); 
+    $("#totalConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
+    $("#totalDllConv").val($("#pesosConv").val() / $("#tipoCambioConv").val()); 
+    $("#dolaresInsertar").val($("#divisaConv").val());
+    $("#cambioInsertar").val($("#tipoCambioConv").val());});
 } 
 
-//Funciones en el campo de Pesos
-function pesos1 ( form ) 
-{ $("#pesosConv").keyup(function () {
-    $("#totalConv").val($("#pesosConv").val()); }); 
-}
+//En base al input de tipo de cambio en operaciones
 
-function pesos2 ( form ) 
-{ $("#pesosConv").keyup(function () {
-    $("#totalDllConv").val($("#divisaConv").val()); });
- } 
-
-function pesos3 ( form ) 
-{ $("#pesosConv").keyup(function () {
-    $("#dolaresInsertar").val($("#divisaConv").val()); }); 
+function cambio ( form ) 
+{$("#tipoCambioConv").keyup(function () {
+    $("#pesosConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
+    $("#divisaConv").val($("#pesosConv").val() / $("#tipoCambioConv").val()); 
+    $("#totalConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
+    $("#totalDllConv").val($("#pesosConv").val() / $("#tipoCambioConv").val());
+    $("#dolaresInsertar").val($("#divisaConv").val());
+    $("#cambioInsertar").val($("#tipoCambioConv").val());});
 } 
-
-function pesos4 ( form ) 
-{ $("#pesosConv").keyup(function () {
-    $("#cambioInsertar").val($("#tipoCambioConv").val()); }); 
-} 
-
-//Funciones de desglose **Pesos**
- function pesos1000 ( form ) 
-{ $("#MIL").keyup(function () {
-    $("#pesoValMil").val($("#MIL").val() * 1000); }); 
+//En base al input de divisa en operaciones
+function divisa ( form ) 
+{$("#divisaConv").keyup(function () {
+    $("#pesosConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
+    $("#totalConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
+    $("#totalDllConv").val($("#pesosConv").val() / $("#tipoCambioConv").val());
+    $("#dolaresInsertar").val($("#divisaConv").val()); 
+    $("#cambioInsertar").val($("#tipoCambioConv").val());
+});
 }
 
-function pesos1001 ( form ) 
-{ $("#MIL").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val()).toFixed(2)); }); 
+//Diferencia entre el total y el deglose
+//Campo de 1000 pesos
+function pesos1000 ( form ) 
+{$("#MIL").keyup(function () {
+    $("#pesoValMil").val(parseFloat($("#MIL").val() * 1000));
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
+//Campo de 500 pesos
 function pesos500 ( form ) 
-{ $("#500").keyup(function () {
-    $("#pesoVal500").val($("#500").val() * 500); }); 
+{$("#500").keyup(function () {
+    $("#pesoVal500").val($("#500").val() * 500);
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
-function pesos501 ( form ) 
-{ $("#500").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val()).toFixed(2)); }); 
-}
-
+//Campo de 200 pesos
 function pesos200 ( form ) 
-{ $("#200").keyup(function () {
-    $("#pesoVal200").val($("#200").val() * 200); }); 
+{$("#200").keyup(function () {
+    $("#pesoVal200").val($("#200").val() * 200);
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
-function pesos201 ( form ) 
-{ $("#200").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val()).toFixed(2)); }); 
-}
-
+//Campo de 100 pesos
 function pesos100 ( form ) 
-{ $("#100").keyup(function () {
-    $("#pesoVal100").val($("#100").val() * 100); }); 
+{$("#100").keyup(function () {
+    $("#pesoVal100").val($("#100").val() * 100);
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
-function pesos101 ( form ) 
-{ $("#100").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val()).toFixed(2)); }); 
-}
-
+//Campo de 50 pesos
 function pesos50 ( form ) 
-{ $("#50").keyup(function () {
-    $("#pesoVal50").val($("#50").val() * 50); }); 
+{$("#50").keyup(function () {
+    $("#pesoVal50").val($("#50").val() * 50);
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
-function pesos51 ( form ) 
-{ $("#50").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val()).toFixed(2)); }); 
-}
-
+//Campo de 20 pesos
 function pesos20 ( form ) 
-{ $("#20").keyup(function () {
-    $("#pesoVal20").val($("#20").val() * 20); }); 
+{$("#20").keyup(function () {
+    $("#pesoVal20").val($("#20").val() * 20);
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
-function pesos21 ( form ) 
-{ $("#20").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val()).toFixed(2)); }); 
-}
-
+//Campo de 10 pesos
 function pesos10 ( form ) 
-{ $("#10").keyup(function () {
-    $("#pesoVal10").val($("#10").val() * 10); }); 
+{$("#10").keyup(function () {
+    $("#pesoVal10").val($("#10").val() * 10);
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
-function pesos11 ( form ) 
-{ $("#10").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val()).toFixed(2)); }); 
-}
-
+//Campo de 5 pesos
 function pesos5 ( form ) 
-{ $("#5").keyup(function () {
-    $("#pesoVal5").val($("#5").val() * 5); }); 
+{$("#5").keyup(function () {
+    $("#pesoVal5").val($("#5").val() * 5);
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
-function pesos5b ( form ) 
-{ $("#5").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val()).toFixed(2)); }); 
-}
-
+//Campo de 2 pesos
 function pesos2 ( form ) 
-{ $("#2").keyup(function () {
-    $("#pesoVal2").val($("#2").val() * 2); }); 
+{$("#2").keyup(function () {
+    $("#pesoVal2").val($("#2").val() * 2);
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
-function pesos2b ( form ) 
-{ $("#2").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val() - $("#pesoVal2").val()).toFixed(2)); }); 
-}
-
+//Campo de 1 pesos
 function pesos1 ( form ) 
-{ $("#1").keyup(function () {
-    $("#pesoVal1").val($("#1").val() * 1); }); 
+{$("#1").keyup(function () {
+    $("#pesoVal1").val($("#1").val() * 1);
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
-function pesos1b ( form ) 
-{ $("#1").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val() - $("#pesoVal2").val() - $("#pesoVal1").val()).toFixed(2)); }); 
-}
-
+//Campo de 50 centavos
 function pesos05 ( form ) 
-{ $("#05").keyup(function () {
-    $("#pesoVal05").val($("#05").val() * 0.5); }); 
+{$("#05").keyup(function () {
+    $("#pesoVal05").val($("#05").val() * .50);
+    $("#totalDif").val(parseFloat($("#totalConv").val()) - parseFloat($("#pesoValMil").val()) - parseFloat($("#pesoVal500").val()) - parseFloat($("#pesoVal200").val()) - parseFloat($("#pesoVal100").val()) - parseFloat($("#pesoVal50").val()) - parseFloat($("#pesoVal20").val()) - parseFloat($("#pesoVal10").val()) - parseFloat($("#pesoVal5").val()) - parseFloat($("#pesoVal2").val()) - parseFloat($("#pesoVal1").val()) - parseFloat($("#pesoVal05").val())); });
 }
-
-function pesos05b ( form ) 
-{ $("#05").keyup(function () {
-    $("#totalDif").val(($("#totalConv").val() - $("#pesoValMil").val() - $("#pesoVal500").val() - $("#pesoVal200").val() - $("#pesoVal100").val() - $("#pesoVal50").val() - $("#pesoVal20").val() - $("#pesoVal10").val() - $("#pesoVal5").val() - $("#pesoVal2").val() - $("#pesoVal1").val() - $("#pesoVal05").val()).toFixed(2)); }); 
-}
-
-//Funciones de desglose **Dólares**
+//Campo de 100 dólares
 function dolares100 ( form ) 
-{ $("#100Dll").keyup(function () {
-    $("#dolarVal100").val($("#100Dll").val() * 100); }); 
+{$("#100Dll").keyup(function () {
+    $("#dolarVal100").val($("#100Dll").val() * 100);
+    $("#totalDllDif").val(parseFloat($("#totalDllConv").val()) -  parseFloat($("#dolarVal100").val()) - parseFloat($("#dolarVal50").val()) - parseFloat($("#dolarVal20").val()) - parseFloat($("#dolarVal10").val()) - parseFloat($("#dolarVal5").val()) - parseFloat($("#dolarVal2").val()) - parseFloat($("#dolarVal1").val())); });
 }
-
-function dolares101 ( form ) 
-{ $("#100Dll").keyup(function () {
-    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val()).toFixed(2)); }); 
-}
-
+//Campo de 50 dólares
 function dolares50 ( form ) 
-{ $("#50Dll").keyup(function () {
-    $("#dolarVal50").val($("#50Dll").val() * 50); }); 
+{$("#50Dll").keyup(function () {
+    $("#dolarVal50").val($("#50Dll").val() * 50);
+    $("#totalDllDif").val(parseFloat($("#totalDllConv").val()) -  parseFloat($("#dolarVal100").val()) - parseFloat($("#dolarVal50").val()) - parseFloat($("#dolarVal20").val()) - parseFloat($("#dolarVal10").val()) - parseFloat($("#dolarVal5").val()) - parseFloat($("#dolarVal2").val()) - parseFloat($("#dolarVal1").val())); });
 }
-
-function dolares51 ( form ) 
-{ $("#50Dll").keyup(function () {
-    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val()).toFixed(2)); }); 
-}
-
+//Campo de 20 dólares
 function dolares20 ( form ) 
-{ $("#20Dll").keyup(function () {
-    $("#dolarVal20").val($("#20Dll").val() * 20); }); 
+{$("#20Dll").keyup(function () {
+    $("#dolarVal20").val($("#20Dll").val() * 20);
+    $("#totalDllDif").val(parseFloat($("#totalDllConv").val()) -  parseFloat($("#dolarVal100").val()) - parseFloat($("#dolarVal50").val()) - parseFloat($("#dolarVal20").val()) - parseFloat($("#dolarVal10").val()) - parseFloat($("#dolarVal5").val()) - parseFloat($("#dolarVal2").val()) - parseFloat($("#dolarVal1").val())); });
 }
-
-function dolares21 ( form ) 
-{ $("#20Dll").keyup(function () {
-    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val() - $("#dolarVal20").val()).toFixed(2)); }); 
-} 
-
+//Campo de 10 dólares
 function dolares10 ( form ) 
-{ $("#10Dll").keyup(function () {
-    $("#dolarVal10").val($("#10Dll").val() * 10); }); 
+{$("#10Dll").keyup(function () {
+    $("#dolarVal10").val($("#10Dll").val() * 10);
+    $("#totalDllDif").val(parseFloat($("#totalDllConv").val()) -  parseFloat($("#dolarVal100").val()) - parseFloat($("#dolarVal50").val()) - parseFloat($("#dolarVal20").val()) - parseFloat($("#dolarVal10").val()) - parseFloat($("#dolarVal5").val()) - parseFloat($("#dolarVal2").val()) - parseFloat($("#dolarVal1").val())); });
 }
-
-function dolares11 ( form ) 
-{ $("#10Dll").keyup(function () {
-    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val() - $("#dolarVal20").val() - $("#dolarVal10").val()).toFixed(2)); }); 
-}
-
+//Campo de 5 dólares
 function dolares5 ( form ) 
-{ $("#5Dll").keyup(function () {
-    $("#dolarVal5").val($("#5Dll").val() * 5); }); 
+{$("#5Dll").keyup(function () {
+    $("#dolarVal5").val($("#5Dll").val() * 5);
+    $("#totalDllDif").val(parseFloat($("#totalDllConv").val()) -  parseFloat($("#dolarVal100").val()) - parseFloat($("#dolarVal50").val()) - parseFloat($("#dolarVal20").val()) - parseFloat($("#dolarVal10").val()) - parseFloat($("#dolarVal5").val()) - parseFloat($("#dolarVal2").val()) - parseFloat($("#dolarVal1").val())); });
 }
-
-function dolares5b ( form ) 
-{ $("#5Dll").keyup(function () {
-    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val() - $("#dolarVal20").val() - $("#dolarVal10").val() - $("#dolarVal5").val()).toFixed(2)); }); 
-}
-
+//Campo de 2 dólares
 function dolares2 ( form ) 
-{ $("#2Dll").keyup(function () {
-    $("#dolarVal2").val($("#2Dll").val() * 2); }); 
+{$("#2Dll").keyup(function () {
+    $("#dolarVal2").val($("#2Dll").val() * 2);
+    $("#totalDllDif").val(parseFloat($("#totalDllConv").val()) -  parseFloat($("#dolarVal100").val()) - parseFloat($("#dolarVal50").val()) - parseFloat($("#dolarVal20").val()) - parseFloat($("#dolarVal10").val()) - parseFloat($("#dolarVal5").val()) - parseFloat($("#dolarVal2").val()) - parseFloat($("#dolarVal1").val())); });
 }
-
-function dolares2b ( form ) 
-{ $("#2Dll").keyup(function () {
-    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val() - $("#dolarVal20").val() - $("#dolarVal10").val() - $("#dolarVal5").val() - $("#dolarVal2").val()).toFixed(2)); }); 
-}
-
+//Campo de 1 dólares
 function dolares1 ( form ) 
-{ $("#1Dll").keyup(function () {
-    $("#dolarVal1").val($("#1Dll").val() * 1); }); 
-}
-
-function dolares1b ( form ) 
-{ $("#1Dll").keyup(function () {
-    $("#totalDllDif").val(($("#totalDllConv").val() - $("#dolarVal100").val() - $("#dolarVal50").val() - $("#dolarVal20").val() - $("#dolarVal10").val() - $("#dolarVal5").val() - $("#dolarVal2").val() - $("#dolarVal1").val()).toFixed(2)); }); 
+{$("#1Dll").keyup(function () {
+    $("#dolarVal1").val($("#1Dll").val() * 1);
+    $("#totalDllDif").val(parseFloat($("#totalDllConv").val()) -  parseFloat($("#dolarVal100").val()) - parseFloat($("#dolarVal50").val()) - parseFloat($("#dolarVal20").val()) - parseFloat($("#dolarVal10").val()) - parseFloat($("#dolarVal5").val()) - parseFloat($("#dolarVal2").val()) - parseFloat($("#dolarVal1").val())); });
 }
