@@ -106,8 +106,21 @@ while ($fila = mysql_fetch_array($resultado)) {
                                 </div>
                                 <div class="tabla ">
                                 <form>
+                               <!-- <?php 
+                                    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+                                    mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+                                    $query = "SELECT * FROM campos ";
+                                    $resultado = mysql_query($query);
+                                   
+                                    while ($fila = mysql_fetch_array($resultado)) {
+                                         $GLOBALS['divisaC'] = $fila[divisa];
+                                         $GLOBALS['pesosC'] = $fila[pesos];
+                                            
+                                        }
+                                       
+                                     ?>-->
                                   <div id="parte1">
-                                    <input id="divisaConv" type="text" placeholder="Dólares" onkeypress="divisa(this.form)"  name="divisaConv" tabindex=1 autofocus>
+                                    <input id="divisaConv" type="text" placeholder="Dólares" onkeypress="divisa(this.form)"  name="divisaConv" tabindex=1  autofocus>
                                 </div>
                                 <div id="parte4">
                                 <a id="seleccionado" href="vendedor.php">Dólares</a>
@@ -269,11 +282,24 @@ while ($fila = mysql_fetch_array($resultado)) {
                 $GLOBALS['redondoAnt'] = $fila[redondeo];
             }
      ?>
+     <!--<?php 
+            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+            $query = "UPDATE campos SET divisa = {$_POST['dolaresInsertar']},  pesos = {$_POST['totalConv']}";
+            $resultado = mysql_query($query);
+      ?>-->
     <?php 
             $dolar = $_POST['dolaresInsertar'];
             $difPeso = $_POST['totalDif'];
             $difDolar = $_POST['totalDllDif'];
             $GLOBALS['variable'];
+            $_SESSION['dolar'] = $_POST['dolaresInsertar'];
+            $_SESSION['dolarA'] = $dolarAnt;
+            $_SESSION['ttlC'] = $_POST['totalConv'];
+            $_SESSION['cambio'] = $_POST['cambioInsertar'];
+            $_SESSION['pesosA'] = $pesosAnt;
+            $_SESSION['redondo'] = $redondoAnt;
+            $_SESSION['diferencia'] =$_POST['totalDif'];
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             if ($dolarAnt >= $dolar && $difPeso == 0.00 && $difDolar == 0.00) {
@@ -285,23 +311,13 @@ while ($fila = mysql_fetch_array($resultado)) {
             }
             else
             {
-                header("Location: redondeo.php");
-                          
+                ?> <script>alert("Existe una diferencia en el desglose");
+                document.location=("redondeo.php");</script><?php   
+                                        
             }
             
      ?>
-     <?php 
-            $dolar = $_POST['dolaresInsertar'];
-            $nuevoDolar = $dolarAnt - $dolar;
-            $peso = $_POST['totalConv'];
-            $nuevoPeso = $pesosAnt + $peso;
-            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($dolarAnt >= $dolar) {
-               $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso WHERE usuario = '$nom'";
-               $resultado = mysql_query($query);
-            }
-     ?>
+     
      <!--Insertar valores del desglose
      <?php 
             $dolar = $_POST['dolaresInsertar'];

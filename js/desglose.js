@@ -23,7 +23,7 @@ function cambio ( form )
 //En base al input de divisa en operaciones
 function divisa ( form ) 
 {$("#divisaConv").keyup(function () {
-    $("#pesosConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
+    $("#pesosConv").val(($("#divisaConv").val() * $("#tipoCambioConv").val()).toLocaleString(2));
     $("#totalConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
     $("#totalDllConv").val($("#pesosConv").val() / $("#tipoCambioConv").val());
     $("#dolaresInsertar").val($("#divisaConv").val()); 

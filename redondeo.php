@@ -30,6 +30,7 @@ while ($fila = mysql_fetch_array($resultado)) {
     <!--Elementos adicionales-->
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/vendedor.css">
+    <link rel="stylesheet" type="text/css" href="css/redondeo.css">
     <!-- Elementos por defecto-->
     <link href="css/vendor.min.css" rel="stylesheet">
     <link href="css/theme-core.min.css" rel="stylesheet">
@@ -60,8 +61,8 @@ while ($fila = mysql_fetch_array($resultado)) {
                     <img id="logoxx" src="images/estratega.png">
                 </div>
                 <div class="menux col-xs-3 col-lg-9">
-                    <a href="movimientos.php" >Información</a>
-                    <a href="vendedor2.php">Compra</a>
+                   <a href="movimientos.php" >Información</a>
+                    <a href="vendedor.php"> Nueva Operación </a> 
                 </div>
                     
             </div>
@@ -76,7 +77,7 @@ while ($fila = mysql_fetch_array($resultado)) {
                 </div>
                 <div class="media-body">
                     <h1 class="text-white text-display-1 margin-v-0"><?php echo "$identificar"; ?></h1>
-                    <span><a href="login.php" class="botonx" id="logout">Cerrar sesión</a></span>
+                    
                 </div>
                 <div class="media-right">
                     <span class="label bg-blue-500">Vendedor</span>
@@ -97,7 +98,45 @@ while ($fila = mysql_fetch_array($resultado)) {
                                     <div class="panel-body" id="venta">
                                     </div></div></div>
                             <div class="media-body"></div></div></div>
-                             
+                             <div class="btns-redondeo">
+                                 
+     <form method="post">
+         <input type="submit" name="submitted" value="Aceptar Redondeo">
+         <p>Se hará un cargo por $<?php echo $_SESSION['diferencia']; ?> al redondeo.</p>
+     </form>
+     <?php 
+            session_start();
+            if (isset($_POST['submitted'])) {
+                $x = $_SESSION['dolar'];
+            $y = $_SESSION['cambio'];
+
+            $dolar = $_SESSION['dolar'];
+            $peso = $_SESSION['ttlC'];
+            $pesosAnt = $_SESSION['pesosA'];
+            $nuevoPeso = $pesosAnt + $peso;
+            $dolarAnt = $_SESSION['dolarA'];
+            $nuevoDolar = $dolarAnt - $dolar;
+            $redondo = $_SESSION['redondo'];
+            $diferencia = $_SESSION['diferencia'];
+            $nuevoRedondeo = $redondo - $diferencia;
+
+            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+                $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ($x,'Dollar',$y,'Venta','$nom')";
+                $resultado = mysql_query($query);
+                echo "Registro actualizado con éxito";
+            }
+
+            if ($dolarAnt >= $dolar) {
+               $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
+               $resultado = mysql_query($query);
+            }   
+
+
+
+                 
+     ?>
+</div>
                         
                                   
     <!-- Footer -->
