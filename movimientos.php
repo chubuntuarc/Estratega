@@ -577,7 +577,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                        </tr>
                                        <tr>
                                            <td></td>
-                                           <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="ajustar" value="Ajustar"></td>
+                                           <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="ajustar" name="ajustar" value="Ajustar"></td>
                                        </tr>
                                     </tbody>
                                 </table>
@@ -636,7 +636,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                        </tr>
                                        <tr>
                                            <td></td>
-                                           <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="ajustar" value="Ajustar"></td>
+                                           <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="ajustar" name="ajustar" value="Ajustar"></td>
                                        </tr>
                                     </tbody>
                                 </table>
