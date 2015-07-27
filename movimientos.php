@@ -544,6 +544,17 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 </div>
                                 <div class="tabla ">
                                 <form method="post">
+                                <?php 
+                                $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+                                mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+                                $query = "SELECT * FROM ajuste_cambio order by id_ajuste asc";
+                                $resultado = mysql_query($query);
+                                while ($fila = mysql_fetch_array($resultado)) {
+                                    $GLOBALS['ajusteDll'] = $fila[dollar];
+                                    $GLOBALS['ajusteCan'] = $fila[dll_can];
+                                    $GLOBALS['ajusteEur'] = $fila[euro];
+                                }
+                                 ?>
                                     <table>
                                     <thead>
                                         <tr>
@@ -554,15 +565,15 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <tbody>
                                        <tr>
                                            <td>Dólar</td>
-                                           <td><input type="text" name="dolarAjuste" required></td>
+                                           <td><input type="text" name="dolarAjuste" required value="<?php echo $ajusteDll; ?>"></td>
                                        </tr>
                                        <tr>
                                            <td>Dólar Can</td>
-                                           <td><input type="text" name="canAjuste" required></td>
+                                           <td><input type="text" name="canAjuste" required value="<?php echo $ajusteCan; ?>"></td>
                                        </tr>
                                        <tr>
                                            <td>Euro</td>
-                                           <td><input type="text" name="euroAjuste" required></td>
+                                           <td><input type="text" name="euroAjuste" required value="<?php echo $ajusteEur; ?>"></td>
                                        </tr>
                                        <tr>
                                            <td></td>
@@ -592,6 +603,17 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 </div>
                                 <div class="tabla ">
                                 <form method="post">
+                                 <?php 
+                                $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+                                mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+                                $query = "SELECT * FROM ajuste_cambio_compra order by id_ajuste asc";
+                                $resultado = mysql_query($query);
+                                while ($fila = mysql_fetch_array($resultado)) {
+                                    $GLOBALS['ajusteDllC'] = $fila[dollar];
+                                    $GLOBALS['ajusteCanC'] = $fila[dll_can];
+                                    $GLOBALS['ajusteEurC'] = $fila[euro];
+                                }
+                                 ?>
                                     <table>
                                     <thead>
                                         <tr>
@@ -602,15 +624,15 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <tbody>
                                        <tr>
                                            <td>Dólar</td>
-                                           <td><input type="text" name="dolarCompra" required></td>
+                                           <td><input type="text" name="dolarCompra" required value="<?php echo $ajusteDllC; ?>"></td>
                                        </tr>
                                        <tr>
                                            <td>Dólar Can</td>
-                                           <td><input type="text" name="canCompra" required></td>
+                                           <td><input type="text" name="canCompra" required value="<?php echo $ajusteCanC; ?>"></td>
                                        </tr>
                                        <tr>
                                            <td>Euro</td>
-                                           <td><input type="text" name="euroCompra" required></td>
+                                           <td><input type="text" name="euroCompra" required value="<?php echo $ajusteEurC; ?>"></td>
                                        </tr>
                                        <tr>
                                            <td></td>
