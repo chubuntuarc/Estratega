@@ -56,7 +56,7 @@ while ($fila = mysql_fetch_array($resultado)) {
                     <img id="logoxx" src="images/estratega.png">
                 </div>
                 <div class="menux col-xs-3 col-lg-9">
-                    <a href="movimientos.php" >Movimientos</a>
+                    <a href="movimientos.php" >Información</a>
                     <a href="vendedor.php">Venta</a>
                 </div>
                     
@@ -266,60 +266,75 @@ while ($fila = mysql_fetch_array($resultado)) {
             $peso = $dll * $cambio;
             $difPeso = $_POST['totalDif'];
             $difDolar = $_POST['totalDllDif'];
+            $dolar = $_POST['dolaresInsertar'];
+            $diferencia = $_POST['totalDif'];
+            $nuevoPeso = $pesosAnt - $peso;
+                $nuevoDolar = $dolarAnt + $dolar;
+                $nuevoRedondeo = $redondo + $diferencia;
+
+            $_SESSION['dolar'] = $_POST['dolaresInsertar'];
+            $_SESSION['dolarA'] = $dolarAnt;
+            $_SESSION['ttlC'] = $_POST['totalConv'];
+            $_SESSION['cambio'] = $_POST['cambioInsertar'];
+            $_SESSION['pesosA'] = $pesosAnt;
+            $_SESSION['redondo'] = $redondoAnt;
+            $_SESSION['diferencia'] =$_POST['totalDif'];
+            $_SESSION['tipoDivisa'] = "Dollar";
+            $_SESSION['tipoMov'] = "Compra";
+
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             if ($pesosAnt >= $peso && $difPeso == 0.00 && $difDolar == 0.00) {
                 $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Compra','$nom')";
                 $resultado = mysql_query($query);
+
+                if ($pesosAnt >= $peso) {
+               $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
+               $resultado = mysql_query($query);
+            }   
             }
-            elseif ($difPeso > 0.00 || $difDolar != 0.00 || $difPeso < 0.00) {
-                ?> <script language="javascript">var r = confirm("Agregar diferencia al redondeo?");
-                            if (r == true) {
-                                <?php 
-                                    $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Compra','$nom')";
-                                    $resultado = mysql_query($query);
-                                 ?>
-                                 <?php 
-                                    $redondo = $_POST['totalDif'];
-                                    $nuevoRedondo = $redondoAnt + $redondo;
-                                    $query = "UPDATE cajas SET redondeo = $nuevoRedondo WHERE usuario = '$nom'";
-                                    $resultado = mysql_query($query);
-                                 ?>
-                            }
-                            else {
-                                <?php 
-                                    $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES (0,'Cancelado',{$_POST['cambioInsertar']},'Venta','$nom')";
-                                    $resultado = mysql_query($query);
-                                 ?>
-                                 <?php 
-                                    $redondo = 0;
-                                    $nuevoRedondo = $redondoAnt - $redondo;
-                                    $query = "UPDATE cajas SET redondeo = $nuevoRedondo WHERE usuario = '$nom'";
-                                    $resultado = mysql_query($query);
-                                 ?>
-                            };
-                </script><?php 
+
+            elseif ($pesosAnt < $peso) {
+                    ?> <script>alert("No cuenta con suficiente efectivo en caja");</script><?php   
             }
             else
             {
-                 ?> <script>alert("No cuenta con suficientes dólares en caja");</script><?php            
+                ?> <script>alert("Existe una diferencia en el desglose");
+                document.location=("redondeo.php");</script><?php   
+                                        
             }
+           
 
             
      ?>
      <?php 
-            $dolar = $_POST['dolaresInsertar'];
-            $nuevoDolar = $dolarAnt + $dolar;
-            $dll = $_POST['dolaresInsertar'];
             $cambio = $_POST['cambioInsertar'];
-            $peso = $dll * $cambio;
+            $peso = $_POST['totalConv'];
+            $difPeso = $_POST['totalDif'];
+            $difDolar = $_POST['totalDllDif'];
+            $dolar = $_POST['dolaresInsertar'];
+            $diferencia = $_POST['totalDif'];
             $nuevoPeso = $pesosAnt - $peso;
+                $nuevoDolar = $dolarAnt + $dolar;
+                $nuevoRedondeo = $redondoAnt + $diferencia;
+
+            $_SESSION['dolar'] = $_POST['dolaresInsertar'];
+            $_SESSION['dolarA'] = $dolarAnt;
+            $_SESSION['ttlC'] = $_POST['totalConv'];
+            $_SESSION['cambio'] = $_POST['cambioInsertar'];
+            $_SESSION['pesosA'] = $pesosAnt;
+            $_SESSION['redondo'] = $redondoAnt;
+            $_SESSION['diferencia'] =$_POST['totalDif'];
+            $_SESSION['tipoDivisa'] = "Dollar";
+            $_SESSION['tipoMov'] = "Compra";
+
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($pesosAnt >= $peso) {
-               $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso WHERE usuario = '$nom'";
+            if ($pesosAnt >= $peso && $difPeso == 0.00 && $difDolar == 0.00) {
+                $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
                $resultado = mysql_query($query);
-            }
+            }            
+
      ?>
 </div>
                                 <div class="panel-footer text-right">

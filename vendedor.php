@@ -106,19 +106,6 @@ while ($fila = mysql_fetch_array($resultado)) {
                                 </div>
                                 <div class="tabla ">
                                 <form>
-                               <!-- <?php 
-                                    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-                                    mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                    $query = "SELECT * FROM campos ";
-                                    $resultado = mysql_query($query);
-                                   
-                                    while ($fila = mysql_fetch_array($resultado)) {
-                                         $GLOBALS['divisaC'] = $fila[divisa];
-                                         $GLOBALS['pesosC'] = $fila[pesos];
-                                            
-                                        }
-                                       
-                                     ?>-->
                                   <div id="parte1">
                                     <input id="divisaConv" type="text" placeholder="Dólares" onkeypress="divisa(this.form)"  name="divisaConv" tabindex=1  autofocus>
                                 </div>
@@ -282,12 +269,6 @@ while ($fila = mysql_fetch_array($resultado)) {
                 $GLOBALS['redondoAnt'] = $fila[redondeo];
             }
      ?>
-     <!--<?php 
-            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            $query = "UPDATE campos SET divisa = {$_POST['dolaresInsertar']},  pesos = {$_POST['totalConv']}";
-            $resultado = mysql_query($query);
-      ?>-->
     <?php 
             $dolar = $_POST['dolaresInsertar'];
             $difPeso = $_POST['totalDif'];
@@ -300,6 +281,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             $_SESSION['pesosA'] = $pesosAnt;
             $_SESSION['redondo'] = $redondoAnt;
             $_SESSION['diferencia'] =$_POST['totalDif'];
+            $_SESSION['tipoDivisa'] = "Dollar";
+            $_SESSION['tipoMov'] = "Venta";
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             if ($dolarAnt >= $dolar && $difPeso == 0.00 && $difDolar == 0.00) {
@@ -317,26 +300,6 @@ while ($fila = mysql_fetch_array($resultado)) {
             }
             
      ?>
-     
-     <!--Insertar valores del desglose
-     <?php 
-            $dolar = $_POST['dolaresInsertar'];
-            $difPeso = $_POST['totalDif'];
-            $difDolar = $_POST['totalDllDif'];
-            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($dolarAnt >= $dolar && $difPeso < 0.10 && $difDolar == 0.00) {
-                $query = "INSERT INTO desglose_pesos (a,b,c,d,e,f,g,h,i,j,tipo,usuario) VALUES (1,1,1,0,0,0,0,0,1,1,'Venta','$nom')";
-                $resultado = mysql_query($query);
-            }
-            elseif ($difPeso > 0.10 || $difDolar != 0.00) {
-                ?> <script>alert("No se realizo el desglose correctamente");</script><?php 
-            }
-            else
-            {
-                 ?> <script>alert("No cuenta con suficientes dólares en caja");</script><?php            
-            }
-     ?>-->
 </div>
                                 <div class="panel-footer text-right">
                                 </div>
