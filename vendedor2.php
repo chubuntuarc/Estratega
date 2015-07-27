@@ -281,6 +281,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             $_SESSION['diferencia'] =$_POST['totalDif'];
             $_SESSION['tipoDivisa'] = "Dollar";
             $_SESSION['tipoMov'] = "Compra";
+            $_SESSION['updateDivisa'] = "dolares";
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");

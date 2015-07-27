@@ -117,6 +117,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             $dolarAnt = $_SESSION['dolarA'];
             $redondo = $_SESSION['redondo'];
             $diferencia = $_SESSION['diferencia'];
+            $updateDivisa = $_SESSION['updateDivisa'];
                 $nuevoPeso = $pesosAnt + $peso;
                 $nuevoDolar = $dolarAnt - $dolar;
                 $nuevoRedondeo = $redondo - $diferencia;
@@ -130,7 +131,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             }
 
             if ($dolarAnt >= $dolar) {
-               $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
+               $query = "UPDATE cajas SET $updateDivisa = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
                $resultado = mysql_query($query);
             }   
 

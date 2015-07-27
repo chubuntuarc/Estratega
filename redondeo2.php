@@ -117,6 +117,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             $dolarAnt = $_SESSION['dolarA'];
             $redondo = $_SESSION['redondo'];
             $diferencia = $_SESSION['diferencia'];
+            $updateDivisa = $_SESSION['updateDivisa'];
                $nuevoPeso = $pesosAnt - $peso;
                 $nuevoDolar = $dolarAnt + $dolar;
                 $nuevoRedondeo = $redondo + $diferencia;

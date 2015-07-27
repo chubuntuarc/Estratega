@@ -283,6 +283,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             $_SESSION['diferencia'] =$_POST['totalDif'];
             $_SESSION['tipoDivisa'] = "Dollar";
             $_SESSION['tipoMov'] = "Venta";
+            $_SESSION['updateDivisa'] = "dolares";
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             if ($dolarAnt >= $dolar && $difPeso == 0.00 && $difDolar == 0.00) {
@@ -319,11 +320,11 @@ while ($fila = mysql_fetch_array($resultado)) {
             $_SESSION['redondo'] = $redondoAnt;
             $_SESSION['diferencia'] =$_POST['totalDif'];
             $_SESSION['tipoDivisa'] = "Dollar";
-            $_SESSION['tipoMov'] = "Compra";
+            $_SESSION['tipoMov'] = "Venta";
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($pesosAnt >= $peso && $difPeso == 0.00 && $difDolar == 0.00) {
+            if ($dolarAnt >= $dolar && $difPeso == 0.00 && $difDolar == 0.00) {
                 $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
                $resultado = mysql_query($query);
             }            
