@@ -130,7 +130,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             }
 
             if ($dolarAnt >= $dolar) {
-               $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
+               $query = "UPDATE cajas SET $updateDivisa = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
                $resultado = mysql_query($query);
             }   
 

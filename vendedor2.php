@@ -289,10 +289,6 @@ while ($fila = mysql_fetch_array($resultado)) {
                 $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Compra','$nom')";
                 $resultado = mysql_query($query);
 
-                if ($pesosAnt >= $peso) {
-               $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
-               $resultado = mysql_query($query);
-            }   
             }
 
             elseif ($pesosAnt < $peso) {
