@@ -13,19 +13,19 @@ function pesos ( form )
 
 function cambio ( form ) 
 {$("#tipoCambioConv").keyup(function () {
-    $("#pesosConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
+    $("#pesosConv").val(($("#divisaConv").val() * $("#tipoCambioConv").val()).toFixed(2));
     $("#divisaConv").val($("#pesosConv").val() / $("#tipoCambioConv").val()); 
-    $("#totalConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
-    $("#totalDllConv").val($("#pesosConv").val() / $("#tipoCambioConv").val());
+    $("#totalConv").val(($("#divisaConv").val() * $("#tipoCambioConv").val()).toFixed(2));
+    $("#totalDllConv").val(($("#pesosConv").val() / $("#tipoCambioConv").val()).toFixed(2));
     $("#dolaresInsertar").val($("#divisaConv").val());
     $("#cambioInsertar").val($("#tipoCambioConv").val());});
 } 
 //En base al input de divisa en operaciones
 function divisa ( form ) 
 {$("#divisaConv").keyup(function () {
-    $("#pesosConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
-    $("#totalConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
-    $("#totalDllConv").val($("#pesosConv").val() / $("#tipoCambioConv").val());
+    $("#pesosConv").val(($("#divisaConv").val() * $("#tipoCambioConv").val()).toFixed(2));
+    $("#totalConv").val(($("#divisaConv").val() * $("#tipoCambioConv").val()).toFixed(2));
+    $("#totalDllConv").val(($("#pesosConv").val() / $("#tipoCambioConv").val()).toFixed(2));
     $("#dolaresInsertar").val($("#divisaConv").val()); 
     $("#cambioInsertar").val($("#tipoCambioConv").val());
 });

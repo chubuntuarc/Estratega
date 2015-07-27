@@ -300,7 +300,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             else
             {
                 ?> <script>alert("Existe una diferencia en el desglose");
-                document.location=("redondeo.php");</script><?php   
+                document.location=("redondeo2.php");</script><?php   
                                         
             }
            

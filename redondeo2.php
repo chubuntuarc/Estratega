@@ -117,10 +117,9 @@ while ($fila = mysql_fetch_array($resultado)) {
             $dolarAnt = $_SESSION['dolarA'];
             $redondo = $_SESSION['redondo'];
             $diferencia = $_SESSION['diferencia'];
-                $nuevoPeso = $pesosAnt + $peso;
-                $nuevoDolar = $dolarAnt - $dolar;
-                $nuevoRedondeo = $redondo - $diferencia;
- 
+               $nuevoPeso = $pesosAnt - $peso;
+                $nuevoDolar = $dolarAnt + $dolar;
+                $nuevoRedondeo = $redondo + $diferencia;
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");

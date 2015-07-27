@@ -300,6 +300,35 @@ while ($fila = mysql_fetch_array($resultado)) {
             }
             
      ?>
+      <?php 
+            $cambio = $_POST['cambioInsertar'];
+            $peso = $_POST['totalConv'];
+            $difPeso = $_POST['totalDif'];
+            $difDolar = $_POST['totalDllDif'];
+            $dolar = $_POST['dolaresInsertar'];
+            $diferencia = $_POST['totalDif'];
+            $nuevoPeso = $pesosAnt + $peso;
+                $nuevoDolar = $dolarAnt - $dolar;
+                $nuevoRedondeo = $redondoAnt - $diferencia;
+
+            $_SESSION['dolar'] = $_POST['dolaresInsertar'];
+            $_SESSION['dolarA'] = $dolarAnt;
+            $_SESSION['ttlC'] = $_POST['totalConv'];
+            $_SESSION['cambio'] = $_POST['cambioInsertar'];
+            $_SESSION['pesosA'] = $pesosAnt;
+            $_SESSION['redondo'] = $redondoAnt;
+            $_SESSION['diferencia'] =$_POST['totalDif'];
+            $_SESSION['tipoDivisa'] = "Dollar";
+            $_SESSION['tipoMov'] = "Compra";
+
+            $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+            mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+            if ($pesosAnt >= $peso && $difPeso == 0.00 && $difDolar == 0.00) {
+                $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
+               $resultado = mysql_query($query);
+            }            
+
+     ?>
 </div>
                                 <div class="panel-footer text-right">
                                 </div>
