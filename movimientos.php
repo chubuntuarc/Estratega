@@ -652,6 +652,114 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 </div>
                             </div>
                         </div>   
+
+                        <div class="row" >
+                        <div class="item col-xs-8 col-lg-8">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="panel-heading">
+                                    <h4 class="text-headline margin-none">Arqueo</h4>
+                                    <p class="text-subhead text-light">Arqueo de caja</p>
+                                </div>
+                                <div class="tabla ">
+                                <form method="post">
+                                    <table>
+                                    <thead>
+                                        <tr>
+                                            <th id="divsi">Divisa</th>
+                                            <th id="cant">1000</th>
+                                            <th>500</th>
+                                            <th>200</th>
+                                            <th>100</th>
+                                            <th>50</th>
+                                            <th>20</th>
+                                            <th>10</th>
+                                            <th>5</th>
+                                            <th>2</th>
+                                            <th>1</th>
+                                            <th>0.50</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="arqueo">
+                                       <tr>
+                                           <td>Pesos</td>
+                                           <td><input type="text"></td>
+                                           <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+
+                                       </tr>
+                                       <tr>
+                                           <td>Dólares</td>
+                                           <td><input type="text"></td>
+                                           <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                       </tr>
+                                       <tr>
+                                           <td>Canadienses</td>
+                                           <td><input type="text"></td>
+                                           <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                       </tr>
+                                       <tr>
+                                           <td>Euros</td>
+                                           <td><input type="text"></td>
+                                           <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                          <td><input type="text"></td>
+                                       </tr>
+                                       <tr>
+                                           <td></td>
+                                           <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                           <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="ajustar" name="ajustar" value="Listo"></td>
+                                       </tr>
+                                    </tbody>
+                                </table>
+                                </form>
+                                </div>
+                                <div class="panel-footer text-right">
+                                </div>
+                            </div>
+                        </div>   
+
                         <div class="row" >
                         <div class="item col-xs-12 col-lg-12">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
