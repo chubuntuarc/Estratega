@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-07-2015 a las 18:09:26
+-- Tiempo de generación: 29-07-2015 a las 00:58:16
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.5.24
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `ajuste_cambio` (
   `euro` float(6,2) NOT NULL,
   `fecha_ajuste` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `usuario` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `ajuste_cambio`
@@ -64,7 +64,8 @@ INSERT INTO `ajuste_cambio` (`id_ajuste`, `dollar`, `dll_can`, `euro`, `fecha_aj
 (5, 16.26, 12.46, 17.85, '2015-07-25 20:40:47', 'admin'),
 (6, 16.29, 12.49, 18.07, '2015-07-27 20:52:47', 'admin'),
 (7, 16.29, 12.49, 18.09, '2015-07-27 20:55:23', 'admin'),
-(8, 16.29, 12.49, 18.07, '2015-07-27 20:56:31', 'admin');
+(8, 16.29, 12.49, 18.07, '2015-07-27 20:56:31', 'admin'),
+(9, 16.28, 12.60, 18.00, '2015-07-28 18:06:17', 'admin');
 
 -- --------------------------------------------------------
 
@@ -112,9 +113,41 @@ CREATE TABLE IF NOT EXISTS `cajas` (
 --
 
 INSERT INTO `cajas` (`id_caja`, `usuario`, `dolares`, `pesos`, `dlls_can`, `euros`, `redondeo`) VALUES
-(1, 'admin', 919.00, 5105.92, 999.00, 1001.00, -0.40),
+(1, 'admin', 435.00, 12994.77, 999.00, 1001.00, 0.00),
 (3, 'chubuntu', 100.00, 0.00, 0.00, 0.00, 0.00),
 (4, 'vubaeza', 100.00, 0.00, 0.00, 0.00, 0.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calculo_arqueo`
+--
+
+CREATE TABLE IF NOT EXISTS `calculo_arqueo` (
+  `1000` int(11) NOT NULL,
+  `500` int(11) NOT NULL,
+  `200` int(11) NOT NULL,
+  `100` int(11) NOT NULL,
+  `50` int(11) NOT NULL,
+  `20` int(11) NOT NULL,
+  `10` int(11) NOT NULL,
+  `5` int(11) NOT NULL,
+  `2` int(11) NOT NULL,
+  `1` int(11) NOT NULL,
+  `5c` int(11) NOT NULL,
+  `divisa` varchar(30) NOT NULL,
+  `usuario` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `calculo_arqueo`
+--
+
+INSERT INTO `calculo_arqueo` (`1000`, `500`, `200`, `100`, `50`, `20`, `10`, `5`, `2`, `1`, `5c`, `divisa`, `usuario`) VALUES
+(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'pesos', ''),
+(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'dolares', ''),
+(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'canadienses', ''),
+(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'euros', '');
 
 -- --------------------------------------------------------
 
@@ -837,7 +870,7 @@ CREATE TABLE IF NOT EXISTS `movimientos` (
   `tipo_movimiento` varchar(30) NOT NULL,
   `usuario` varchar(30) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `movimientos`
@@ -892,7 +925,15 @@ INSERT INTO `movimientos` (`id_movimiento`, `cantidad`, `divisa`, `tipo_cambio`,
 (162, 10, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 20:39:04'),
 (163, 10, 'Euro', 17.30, 'Compra', 'admin', '2015-07-27 20:39:54'),
 (164, 11, 'Euro', 17.30, 'Compra', 'admin', '2015-07-27 20:40:28'),
-(165, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 00:25:14');
+(165, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 00:25:14'),
+(166, 10, 'Dollar', 16.15, 'Compra', 'admin', '2015-07-28 17:30:13'),
+(167, 15, 'Dollar', 16.15, 'Compra', 'admin', '2015-07-28 17:30:47'),
+(168, 16, 'Dollar', 16.15, 'Compra', 'admin', '2015-07-28 17:31:05'),
+(169, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 17:54:44'),
+(170, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 17:55:10'),
+(171, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 17:55:43'),
+(172, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 17:55:58'),
+(173, 125, 'Dollar', 16.28, 'Venta', 'admin', '2015-07-28 19:58:02');
 
 -- --------------------------------------------------------
 
@@ -982,7 +1023,7 @@ ALTER TABLE `adicionales`
 -- AUTO_INCREMENT de la tabla `ajuste_cambio`
 --
 ALTER TABLE `ajuste_cambio`
-  MODIFY `id_ajuste` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id_ajuste` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `ajuste_cambio_compra`
 --
@@ -1007,7 +1048,7 @@ ALTER TABLE `desglose_pesos`
 -- AUTO_INCREMENT de la tabla `movimientos`
 --
 ALTER TABLE `movimientos`
-  MODIFY `id_movimiento` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=166;
+  MODIFY `id_movimiento` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=174;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
