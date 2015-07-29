@@ -2,9 +2,9 @@
 //En base al input de pesos en operaciones
 function pesos ( form ) 
 {   $("#pesosConv").keyup(function () {
-    $("#divisaConv").val($("#pesosConv").val() / $("#tipoCambioConv").val()); 
-    $("#totalConv").val($("#divisaConv").val() * $("#tipoCambioConv").val());
-    $("#totalDllConv").val($("#pesosConv").val() / $("#tipoCambioConv").val()); 
+    $("#divisaConv").val(($("#pesosConv").val() / $("#tipoCambioConv").val()).toFixed(2)); 
+    $("#totalConv").val(($("#divisaConv").val() * $("#tipoCambioConv").val()).toFixed(2));
+    $("#totalDllConv").val(($("#pesosConv").val() / $("#tipoCambioConv").val()).toFixed(2)); 
     $("#dolaresInsertar").val($("#divisaConv").val());
     $("#cambioInsertar").val($("#tipoCambioConv").val());});
 } 
