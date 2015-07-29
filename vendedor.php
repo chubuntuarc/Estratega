@@ -172,7 +172,6 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoValMil" name="pesoValMil" value="0">
             <td><input type="text" readonly="" id="f12"></td>
             <td><input type="text" readonly=""></td>
-            <input type="hidden" id="arqueo1000P" name="arqueo1000P" value="0" >
         </tr>
         <tr>
             <td>500.00</td>
@@ -182,7 +181,6 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal500" name="pesoVal500" value="0">
             <td><input type="text" readonly="" id="f13"></td>
             <td><input type="text" readonly=""></td>
-            <input type="hidden" id="arqueo500P" name="arqueo500P" value="0" >
         </tr>
         <tr>
             <td>200.00</td>
@@ -192,7 +190,6 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal200" name="pesoVal200" value="0">
             <td><input type="text" readonly="" id="f14"></td>
             <td><input type="text" readonly=""></td>
-            <input type="hidden" id="arqueo200P" name="arqueo200P" value="0" >
         </tr>
         <tr>
             <td>100.00</td>
@@ -202,10 +199,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal100" name="pesoVal100" value="0">
             <td><input type="text" placeholder="0" id="f15" onkeypress="fajilla100D(this.form)"></td>
             <input type="hidden" id="fajillaD100" name="fajillaD100" value="0" >
-            <td><input id="100Dll" type="text" placeholder="0" tabindex=15 onkeypress="dolares100(this.form)"></td>
+            <td><input id="100Dll" name="100Dll" type="text" placeholder="0" tabindex=15 onkeypress="dolares100(this.form)"></td>
             <input type="hidden" id="dolarVal100" name="dolarVal100" value="0">
-            <input type="hidden" id="arqueo100P" name="arqueo100P" value="0" >
-            <input type="hidden" id="arqueo100D" name="arqueo100D" value="0" >
         </tr>
         <tr>
             <td>50.00</td>
@@ -215,10 +210,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal50" name="pesoVal50" value="0">
             <td><input type="text" placeholder="0" id="f16" onkeypress="fajilla50D(this.form)"></td>
              <input type="hidden" id="fajillaD50" name="fajillaD50" value="0" >
-            <td><input id="50Dll" type="text" placeholder="0" tabindex=16 onkeypress="dolares50(this.form)"></td>
+            <td><input id="50Dll" name="50Dll" type="text" placeholder="0" tabindex=16 onkeypress="dolares50(this.form)"></td>
             <input type="hidden" id="dolarVal50" name="dolarVal50" value="0">
-            <input type="hidden" id="arqueo50P" name="arqueo50P" value="0" >
-            <input type="hidden" id="arqueo50D" name="arqueo50D" value="0" >
         </tr>  
         <tr>
             <td>20.00</td>
@@ -228,10 +221,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal20" name="pesoVal20" value="0">
             <td><input type="text" placeholder="0" id="f17" onkeypress="fajilla20D(this.form)"></td>
             <input type="hidden" id="fajillaD20" name="fajillaD20" value="0" >
-            <td><input id="20Dll" type="text" placeholder="0" tabindex=17 onkeypress="dolares20(this.form)"></td>
+            <td><input id="20Dll" name="20Dll" type="text" placeholder="0" tabindex=17 onkeypress="dolares20(this.form)"></td>
             <input type="hidden" id="dolarVal20" name="dolarVal20" value="0">
-            <input type="hidden" id="arqueo20P" name="arqueo20P" value="0" >
-            <input type="hidden" id="arqueo20D" name="arqueo20D" value="0" >
         </tr> 
         <tr>
             <td>10.00</td>
@@ -241,10 +232,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal10" name="pesoVal10" value="0">
             <td><input type="text" placeholder="0" id="f18" onkeypress="fajilla10D(this.form)"</td>
             <input type="hidden" id="fajillaD10" name="fajillaD10" value="0" >
-            <td><input id="10Dll" type="text" placeholder="0" tabindex=18 onkeypress="dolares10(this.form)"></td>
+            <td><input id="10Dll" name="10Dll" type="text" placeholder="0" tabindex=18 onkeypress="dolares10(this.form)"></td>
             <input type="hidden" id="dolarVal10" name="dolarVal10" value="0">
-            <input type="hidden" id="arqueo10P" name="arqueo10P" value="0" >
-            <input type="hidden" id="arqueo10D" name="arqueo10D" value="0" >
         </tr> 
         <tr>
             <td>5.00</td>
@@ -254,10 +243,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal5" name="pesoVal5" value="0">
             <td><input type="text" placeholder="0" id="f19" onkeypress="fajilla5D(this.form)"></td>
             <input type="hidden" id="fajillaD5" name="fajillaD5" value="0" >
-            <td><input id="5Dll" type="text" placeholder="0" tabindex=19 onkeypress="dolares5(this.form)"></td>
+            <td><input id="5Dll" name="50Dll" type="text" placeholder="0" tabindex=19 onkeypress="dolares5(this.form)"></td>
             <input type="hidden" id="dolarVal5" name="dolarVal5" value="0">
-            <input type="hidden" id="arqueo5P" name="arqueo5P" value="0" >
-            <input type="hidden" id="arqueo5D" name="arqueo5D" value="0" >
 
         </tr> 
         <tr>
@@ -268,10 +255,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal2" name="pesoVal2" value="0">
             <td><input type="text" placeholder="0" id="f20" onkeypress="fajilla2D(this.form)"></td>
             <input type="hidden" id="fajillaD2" name="fajillaD2" value="0" >
-            <td><input id="2Dll" type="text" placeholder="0" tabindex=20 onkeypress="dolares2(this.form)"></td>
+            <td><input id="2Dll" name="2Dll" type="text" placeholder="0" tabindex=20 onkeypress="dolares2(this.form)"></td>
             <input type="hidden" id="dolarVal2" name="dolarVal2" value="0">
-            <input type="hidden" id="arqueo2P" name="arqueo2P" value="0" >
-            <input type="hidden" id="arqueo2D" name="arqueo2D" value="0" >
         </tr> 
         <tr>
             <td>1.00</td>
@@ -281,10 +266,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal1" name="pesoVal1" value="0">
             <td><input type="text" placeholder="0" id="f21" onkeypress="fajilla1D(this.form)"></td>
             <input type="hidden" id="fajillaD1" name="fajillaD1" value="0" >
-            <td><input id="1Dll" type="text" placeholder="0" tabindex=21 onkeypress="dolares1(this.form)"></td>
+            <td><input id="1Dll" name="1Dll" type="text" placeholder="0" tabindex=21 onkeypress="dolares1(this.form)"></td>
             <input type="hidden" id="dolarVal1" name="dolarVal1" value="0">
-            <input type="hidden" id="arqueo1P" name="arqueo1P" value="0" >
-            <input type="hidden" id="arqueo1D" name="arqueo1D" value="0" >
         </tr> 
          <tr>
             <td>0.50</td>
@@ -296,7 +279,6 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal05" name="pesoVal05" value="0">
             <td><input type="text" readonly="" id="f22"></td>
             <td><input type="text" readonly="" ></td>
-            <input type="hidden" id="arqueo05P" name="arqueo05P" value="0" >
         </tr> 
          <tr>
             <td></td>
@@ -421,22 +403,35 @@ while ($fila = mysql_fetch_array($resultado)) {
             $difPeso = $_POST['totalDif'];
             $difDolar = $_POST['totalDllDif'];
 
-            $_SESSION['1000PArqueo'] = $_POST['arqueo1000P'] + $Pesos1000;
-            $_SESSION['500PArqueo'] = $_POST['arqueo500P'] + $Pesos500;
-            $_SESSION['200PArqueo'] = $_POST['arqueo200P'] + $Pesos200;
-            $_SESSION['100PArqueo'] = $_POST['arqueo100P'] + $Pesos100;
-            $_SESSION['50PArqueo'] = $_POST['arqueo50P'] + $Pesos50;
-            $_SESSION['20PArqueo'] = $_POST['arqueo20P'] + $Pesos20;
-            $_SESSION['10PArqueo'] = $_POST['arqueo10P'] + $Pesos10;
-            $_SESSION['5PArqueo'] = $_POST['arqueo5P'] + $Pesos5;
-            $_SESSION['2PArqueo'] = $_POST['arqueo2P'] + $Pesos2;
-            $_SESSION['1PArqueo'] = $_POST['arqueo1P'] + $Peso1;
-            $_SESSION['05PArqueo'] = $_POST['arqueo05P'] + $Centavos50;
+            $arq1000 = $Pesos1000 + $_POST['MIL'] + ($_POST['f1'] * 100);
+            $arq500 = $Pesos500 + $_POST['500'] + ($_POST['f2'] * 100);
+            $arq200 = $Pesos200 + $_POST['200'] + ($_POST['f3'] * 100);
+            $arq100 = $Pesos100 + $_POST['100'] + ($_POST['f4'] * 100);
+            $arq50 = $Pesos50 + $_POST['50'] + ($_POST['f5'] * 100);
+            $arq20 = $Pesos20 + $_POST['20'] + ($_POST['f6'] * 100);
+            $arq10 = $Pesos10 + $_POST['10'] + ($_POST['f7'] * 100);
+            $arq5 = $Pesos5 + $_POST['5'] + ($_POST['f8'] * 100);
+            $arq2 = $Pesos2 + $_POST['2'] + ($_POST['f9'] * 100);
+            $arq1 = $Peso1 + $_POST['1'] + ($_POST['f10'] * 100);
+            $arq05 = $Centavos50 + $_POST['05'] + ($_POST['f11'] * 100);
+
+            //Variables usadas en la pantalla de revisión del arqueo
+            $_SESSION['1000PArqueo'] = $arq1000;
+            $_SESSION['500PArqueo'] = $arq500;
+            $_SESSION['200PArqueo'] = $arq200;
+            $_SESSION['100PArqueo'] = $arq100;
+            $_SESSION['50PArqueo'] = $arq50;
+            $_SESSION['20PArqueo'] = $arq20;
+            $_SESSION['10PArqueo'] = $arq10;
+            $_SESSION['5PArqueo'] = $arq5;
+            $_SESSION['2PArqueo'] = $arq2;
+            $_SESSION['1PArqueo'] = $arq1;
+            $_SESSION['05PArqueo'] = $arq05;
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             if ($dolarAnt >= $dolar && $difPeso == 0.00 && $difDolar == 0.00) {
-                $query = "UPDATE calculo_arqueo SET d1000 = $1000PArqueo, d500 = $500PArqueo, d200 = $200PArqueo, d100 = $100PArqueo, d50 = $50PArqueo, d20 = $20PArqueo, d10 = $10PArqueo, d5 = $5PArqueo, d2 = $2PArqueo, d1 = $1PArqueo, c5 = $05PArqueo WHERE divisa = 'pesos' and usuario = '$nom'";
+                $query = "UPDATE calculo_arqueo SET d1000 = $arq1000, d500 = $arq500, d200 = $arq200, d100 = $arq100, d50 = $arq50, d20 = $arq20, d10 = $arq10, d5 = $arq5, d2 = $arq2, d1 = $arq1, c5 = $arq05 WHERE divisa = 'pesos' and usuario = '$nom'";
                $resultado = mysql_query($query);
             }            
 
@@ -462,17 +457,31 @@ while ($fila = mysql_fetch_array($resultado)) {
             $difPeso = $_POST['totalDif'];
             $difDolar = $_POST['totalDllDif'];
 
-            $_SESSION['100DArqueo'] = $_POST['arqueo100D'] - $Dolares100;
-            $_SESSION['50DArqueo'] = $_POST['arqueo50D'] - $Dolares50;
-            $_SESSION['20DArqueo'] = $_POST['arqueo20D'] - $Dolares20;
-            $_SESSION['10DArqueo'] = $_POST['arqueo10D'] - $Dolares10;
-            $_SESSION['5DArqueo'] = $_POST['arqueo5D'] - $Dolares5;
-            $_SESSION['1DArqueo'] = $_POST['arqueo1D'] - $Dolar1;
+            $f15 = $_POST['f15'] * 100;
+            $f16 = $_POST['f16'] * 100;
+            $f17 = $_POST['f17'] * 100;
+            $f18 = $_POST['f18'] * 100;
+            $f19 = $_POST['f19'] * 100;
+            $f20 = $_POST['f20'] * 100;
+            $arq100D = $Dolares100 + $_POST['100Dll'] + $f15;
+            $arq50D = $Dolares50 + $_POST['50Dll'] + $f16;
+            $arq20D = $Dolares20 + $_POST['20Dll'] + $f17;
+            $arq10D = $Dolares10 + $_POST['10Dll'] + $f18;
+            $arq5D = $Dolares5 + $_POST['5Dll'] + $f19;
+            $arq1D = $Dolar1 + $_POST['1Dll'] + $f20;
+
+            //Variables usadas en la pantalla de revisión del arqueo
+            $_SESSION['100DArqueo'] = $arq100D;
+            $_SESSION['50DArqueo'] = $arq50D;
+            $_SESSION['20DArqueo'] = $arq20D;
+            $_SESSION['10DArqueo'] = $arq10D;
+            $_SESSION['5DArqueo'] = $arq5D;
+            $_SESSION['1DArqueo'] = $arq1D;
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             if ($dolarAnt >= $dolar && $difPeso == 0.00 && $difDolar == 0.00) {
-                $query = "UPDATE calculo_arqueo SET d100 = $100DArqueo, d50 = $50DArqueo, d20 = $20DArqueo, d10 = $10DArqueo, d5 = $5DArqueo, d1 = $1DArqueo WHERE divisa = 'dolares' and usuario = '$nom'";
+                $query = "UPDATE calculo_arqueo SET d100 = $arq100D, d50 = $arq50D, d20 = $arq20D, d10 = $arq10D, d5 = $arq5D, d1 = $arq1D WHERE divisa = 'dolares' and usuario = '$nom'";
                $resultado = mysql_query($query);
             }            
      ?>
