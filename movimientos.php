@@ -665,8 +665,8 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <table>
                                     <thead>
                                         <tr>
-                                            <th id="divsi">Divisa</th>
-                                            <th id="cant">1000</th>
+                                            <th>Divisa</th>
+                                            <th>1000</th>
                                             <th>500</th>
                                             <th>200</th>
                                             <th>100</th>
@@ -682,61 +682,62 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <tbody id="arqueo">
                                        <tr>
                                            <td>Pesos</td>
-                                           <td><input type="text"></td>
-                                           <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
+                                           <td id="a1000Pe"><input type="text"></td>
+                                           <td id="a500Pe"><input type="text"></td>
+                                          <td id="a200Pe"><input type="text"></td>
+                                          <td id="a100Pe"><input type="text"></td>
+                                          <td id="a50Pe"><input type="text"></td>
+                                          <td id="a20Pe"><input type="text"></td>
+                                          <td id="a10Pe"><input type="text"></td>
+                                          <td id="a5Pe"><input type="text"></td>
+                                          <td id="a2Pe"><input type="text"></td>
+                                          <td id="a1Pe"><input type="text"></td>
+                                          <td id="a05Pe"><input type="text"></td>
 
                                        </tr>
                                        <tr>
                                            <td>Dólares</td>
-                                           <td><input type="text"></td>
-                                           <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
+                                           <td id="a1000Dl"><input type="text"></td>
+                                           <td id="a500Dl"><input type="text"></td>
+                                          <td id="a200Dl"><input type="text"></td>
+                                          <td id="a100Dl"><input type="text"></td>
+                                          <td id="a50Dl"><input type="text"></td>
+                                          <td id="a20Dl"><input type="text"></td>
+                                          <td id="a10Dl"><input type="text"></td>
+                                          <td id="a5Dl"><input type="text"></td>
+                                          <td id="a2Dl"><input type="text"></td>
+                                          <td id="a1Dl"><input type="text"></td>
+                                          <td id="a05Dl"><input type="text"></td>
                                        </tr>
                                        <tr>
                                            <td>Canadienses</td>
-                                           <td><input type="text"></td>
-                                           <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
+                                           <td id="a1000Ca"><input type="text"></td>
+                                           <td id="a500Ca"><input type="text"></td>
+                                          <td id="a200Ca"><input type="text"></td>
+                                          <td id="a100Ca"><input type="text"></td>
+                                          <td id="a50Ca"><input type="text"></td>
+                                          <td id="a20Ca"><input type="text"></td>
+                                          <td id="a10Ca"><input type="text"></td>
+                                          <td id="a5Ca"><input type="text"></td>
+                                          <td id="a2Ca"><input type="text"></td>
+                                          <td id="a1Ca"><input type="text"></td>
+                                          <td id="a05Ca"><input type="text"></td>
                                        </tr>
                                        <tr>
                                            <td>Euros</td>
-                                           <td><input type="text"></td>
-                                           <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
-                                          <td><input type="text"></td>
+                                           <td id="a1000Eu"><input type="text"></td>
+                                           <td id="a500Eu"><input type="text"></td>
+                                          <td id="a200Eu"><input type="text"></td>
+                                          <td id="a100Eu"><input type="text"></td>
+                                          <td id="a50Eu"><input type="text"></td>
+                                          <td id="a20Eu"><input type="text"></td>
+                                          <td id="a10Eu"><input type="text"></td>
+                                          <td id="a5Eu"><input type="text"></td>
+                                          <td id="a2Eu"><input type="text"></td>
+                                          <td id="a1Eu"><input type="text"></td>
+                                          <td id="a05Eu"><input type="text"></td>
                                        </tr>
+                                       <!--Este renglon esta en blanco solo para colocolar el botón de aceptar-->
                                        <tr>
                                            <td></td>
                                            <td></td>
