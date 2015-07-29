@@ -243,7 +243,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             <input type="hidden" id="pesoVal5" name="pesoVal5" value="0">
             <td><input type="text" placeholder="0" id="f19" onkeypress="fajilla5D(this.form)"></td>
             <input type="hidden" id="fajillaD5" name="fajillaD5" value="0" >
-            <td><input id="5Dll" name="50Dll" type="text" placeholder="0" tabindex=19 onkeypress="dolares5(this.form)"></td>
+            <td><input id="5Dll" name="5Dll" type="text" placeholder="0" tabindex=19 onkeypress="dolares5(this.form)"></td>
             <input type="hidden" id="dolarVal5" name="dolarVal5" value="0">
 
         </tr> 
@@ -377,8 +377,9 @@ while ($fila = mysql_fetch_array($resultado)) {
             }            
 
      ?>
-     <!--Sección en la que se manejan los inputs ocultos con la cantidad de billetes del arqueo-->
+     <!--Sección en la que se maneja la cantidad de billetes del arqueo-->
      <?php 
+            //Se obtienen los valores actuales del arqueo en pesos
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             $query = "SELECT * FROM calculo_arqueo WHERE divisa = 'pesos' and usuario = '$nom'";
@@ -437,6 +438,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
      ?>
      <?php 
+            //Se obtienen los valores actuales del arqueo en dólares
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             $query = "SELECT * FROM calculo_arqueo WHERE divisa = 'dolares' and usuario = '$nom'";
@@ -447,6 +449,7 @@ while ($fila = mysql_fetch_array($resultado)) {
                 $GLOBALS['Dolares20'] = $fila[d20];
                 $GLOBALS['Dolares10'] = $fila[d10];
                 $GLOBALS['Dolares5'] = $fila[d5];
+                $GLOBALS['Dolares2'] = $fila[d2];
                 $GLOBALS['Dolar1'] = $fila[d1];
             }
      ?>
@@ -463,12 +466,14 @@ while ($fila = mysql_fetch_array($resultado)) {
             $f18 = $_POST['f18'] * 100;
             $f19 = $_POST['f19'] * 100;
             $f20 = $_POST['f20'] * 100;
-            $arq100D = $Dolares100 + $_POST['100Dll'] + $f15;
-            $arq50D = $Dolares50 + $_POST['50Dll'] + $f16;
-            $arq20D = $Dolares20 + $_POST['20Dll'] + $f17;
-            $arq10D = $Dolares10 + $_POST['10Dll'] + $f18;
-            $arq5D = $Dolares5 + $_POST['5Dll'] + $f19;
-            $arq1D = $Dolar1 + $_POST['1Dll'] + $f20;
+            $f21 = $_POST['f21'] * 100;
+            $arq100D = $Dolares100 - $_POST['100Dll'] - $f15;
+            $arq50D = $Dolares50 - $_POST['50Dll'] - $f16;
+            $arq20D = $Dolares20 - $_POST['20Dll'] - $f17;
+            $arq10D = $Dolares10 - $_POST['10Dll'] - $f18;
+            $arq5D = $Dolares5 - $_POST['5Dll'] - $f19;
+            $arq2D = $Dolares2 - $_POST['2Dll'] - $f20;
+            $arq1D = $Dolar1 - $_POST['1Dll'] - $f21;
 
             //Variables usadas en la pantalla de revisión del arqueo
             $_SESSION['100DArqueo'] = $arq100D;
@@ -476,12 +481,13 @@ while ($fila = mysql_fetch_array($resultado)) {
             $_SESSION['20DArqueo'] = $arq20D;
             $_SESSION['10DArqueo'] = $arq10D;
             $_SESSION['5DArqueo'] = $arq5D;
+            $_SESSION['2DArqueo'] = $arq2D;
             $_SESSION['1DArqueo'] = $arq1D;
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             if ($dolarAnt >= $dolar && $difPeso == 0.00 && $difDolar == 0.00) {
-                $query = "UPDATE calculo_arqueo SET d100 = $arq100D, d50 = $arq50D, d20 = $arq20D, d10 = $arq10D, d5 = $arq5D, d1 = $arq1D WHERE divisa = 'dolares' and usuario = '$nom'";
+                $query = "UPDATE calculo_arqueo SET d100 = $arq100D, d50 = $arq50D, d20 = $arq20D, d10 = $arq10D, d5 = $arq5D,d2 = $arq2D, d1 = $arq1D WHERE divisa = 'dolares' and usuario = '$nom'";
                $resultado = mysql_query($query);
             }            
      ?>
