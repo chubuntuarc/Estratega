@@ -22,6 +22,7 @@
 			session_start();
 			$_SESSION['user'] = $_POST['usuario'];
 			$_SESSION['pass'] = $_POST['clave'];
+			$passw = $_POST['clave'];
 			error_reporting(0);
 			$host = "localhost";
 			$user = "root";
@@ -29,9 +30,12 @@
 			$db = "estra";
 			$con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
 			mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-			$query = "SELECT * from usuarios where usuario = '{$_POST['usuario']}' and pass = '{$_POST['clave']}'";
+			$query = "SELECT * from usuarios where usuario = '{$_POST['usuario']}'";
 			$resultado = mysql_query($query);
-			if ($resultado > 0) {
+			while ($fila = mysql_fetch_array($resultado)) {
+                                        $valor = $fila[pass];
+                                    }
+			if ($passw == $valor) {
 				header('Location: movimientos.php');
 			}
 			else
