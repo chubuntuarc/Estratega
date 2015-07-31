@@ -388,6 +388,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             }
      ?>
     <?php 
+            $totalCambio = $_POST['totalConvS'];
             $cambio = $_POST['cambioInsertar'];
             $peso = $dll * $cambio;
             $difPeso = $_POST['totalDif'];
@@ -411,7 +412,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($pesosAnt >= $peso && $diferencia == 0.00 && $difPeso == 0.00) {
+            if ($pesosAnt >= $peso && $diferencia == 0.00 && $difPeso == 0.00 && $totalCambio == 0.00) {
                 $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Compra','$nom')";
                 $resultado = mysql_query($query);
 
@@ -422,8 +423,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             }
             else
             {
-                ?> <script>alert("Existe una diferencia en el desglose");
-                document.location=("redondeo2.php");</script><?php   
+                ?> <script>
+                document.location=("redondeo.php");</script><?php 
                                         
             }
      ?>

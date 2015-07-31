@@ -401,6 +401,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             }
      ?>
     <?php 
+            $totalCambio = $_POST['totalConv'];
             $dolar = $_POST['dolaresInsertar'];
             $difPeso = $_POST['totalDif'];
             $diferencia = $_POST['totalDifS'];
@@ -418,7 +419,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             $_SESSION['updateDivisa'] = "dolares";
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($dolarAnt >= $dolar && $diferencia == 0.00 && $difDolar == 0.00) {
+
+            if ($dolarAnt >= $dolar && $diferencia == 0.00 && $difDolar == 0.00 && $totalCambio == 0.00 ) {
                 $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Venta','$nom')";
                 $resultado = mysql_query($query);
             }
@@ -427,13 +429,14 @@ while ($fila = mysql_fetch_array($resultado)) {
             }
             else
             {
-                ?> <script>alert("Existe una diferencia en el desglose");
+                ?> <script>
                 document.location=("redondeo.php");</script><?php   
                                         
             }
             
      ?>
       <?php 
+            $totalCambio = $_POST['totalConv'];
             $cambio = $_POST['cambioInsertar'];
             $peso = $_POST['totalConv'];
             $difPeso = $_POST['totalDif'];
@@ -443,6 +446,8 @@ while ($fila = mysql_fetch_array($resultado)) {
             $nuevoPeso = $pesosAnt + $peso;
                 $nuevoDolar = $dolarAnt - $dolar;
                 $nuevoRedondeo = $redondoAnt - $diferencia;
+                $redondeo2 = $redondoAnt - $totalCambio;
+                
 
             $_SESSION['dolar'] = $_POST['dolaresInsertar'];
             $_SESSION['dolarA'] = $dolarAnt;
@@ -457,6 +462,10 @@ while ($fila = mysql_fetch_array($resultado)) {
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             if ($dolarAnt >= $dolar && $diferencia == 0.00 && $difDolar == 0.00) {
+                if ($totalCambio > $diferencia) {
+                     $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $redondeo2 WHERE usuario = '$nom'";
+               $resultado = mysql_query($query);
+                }
                 $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
                $resultado = mysql_query($query);
             }            
