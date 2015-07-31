@@ -220,12 +220,12 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f15" onkeypress="fajilla100DC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaD100" name="fajillaD100" value="0" >
-            <td><input id="d100Dll" name="d100Dll" type="text" placeholder="0" tabindex=26 onkeypress="dolares100C(this.form)" autocomplete="off"></td>
+            <td><input id="d100Dll" name="d100Dll" type="text" placeholder="0" tabindex=18 onkeypress="dolares100C(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal100" name="dolarVal100" value="0">
 
-            <td><input type="text" placeholder="0" id="f25" onkeypress="fajilla100PS(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f25" onkeypress="fajilla100PSC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP100S" name="fajillaP100S" value="0" >
-            <td><input id="m100S" name="m100S" type="text" placeholder="0" tabindex=18 onkeypress="pesos100S(this.form)" autocomplete="off"></td>
+            <td><input id="m100S" name="m100S" type="text" placeholder="0" tabindex=26 onkeypress="pesos100SC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal100S" name="pesoVal100S" value="0">
         </tr>
         <tr>
@@ -237,12 +237,12 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f16" onkeypress="fajilla50DC(this.form)" autocomplete="off"></td>
              <input type="hidden" id="fajillaD50" name="fajillaD50" value="0" >
-            <td><input id="d50Dll" name="d50Dll" type="text" placeholder="0" tabindex=27 onkeypress="dolares50C(this.form)" autocomplete="off"></td>
+            <td><input id="d50Dll" name="d50Dll" type="text" placeholder="0" tabindex=19 onkeypress="dolares50C(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal50" name="dolarVal50" value="0">
 
-            <td><input type="text" placeholder="0" id="f26" onkeypress="fajilla50PS(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f26" onkeypress="fajilla50PSC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP50S" name="fajillaP50S" value="0" >
-            <td><input id="m50S" name="m50S" type="text" placeholder="0" tabindex=19 onkeypress="pesos50S(this.form)" autocomplete="off"></td>
+            <td><input id="m50S" name="m50S" type="text" placeholder="0" tabindex=27 onkeypress="pesos50SC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal50S" name="pesoVal50S" value="0">
         </tr>  
         <tr>
@@ -254,12 +254,12 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f17" onkeypress="fajilla20DC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaD20" name="fajillaD20" value="0" >
-            <td><input id="d20Dll" name="d20Dll" type="text" placeholder="0" tabindex=28 onkeypress="dolares20C(this.form)" autocomplete="off"></td>
+            <td><input id="d20Dll" name="d20Dll" type="text" placeholder="0" tabindex=20 onkeypress="dolares20C(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal20" name="dolarVal20" value="0">
 
-            <td><input type="text" placeholder="0" id="f27" onkeypress="fajilla20PS(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f27" onkeypress="fajilla20PSC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP20S" name="fajillaP20S" value="0" >
-            <td><input id="m20S" name="m20S" type="text" placeholder="0" tabindex=20 onkeypress="pesos20S(this.form)" autocomplete="off"></td>
+            <td><input id="m20S" name="m20S" type="text" placeholder="0" tabindex=28 onkeypress="pesos20SC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal20S" name="pesoVal20S" value="0">
         </tr> 
         <tr>
@@ -271,12 +271,12 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f18" onkeypress="fajilla10DC(this.form)" autocomplete="off"</td>
             <input type="hidden" id="fajillaD10" name="fajillaD10" value="0" >
-            <td><input id="d10Dll" name="d10Dll" type="text" placeholder="0" tabindex=29 onkeypress="dolares10C(this.form)" autocomplete="off"></td>
+            <td><input id="d10Dll" name="d10Dll" type="text" placeholder="0" tabindex=21 onkeypress="dolares10C(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal10" name="dolarVal10" value="0">
 
-            <td><input type="text" placeholder="0" id="f28" onkeypress="fajilla10PS(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f28" onkeypress="fajilla10PSC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP10S" name="fajillaP10S" value="0" >
-            <td><input id="m10S" name="m10S" type="text" placeholder="0" tabindex=21 onkeypress="pesos10S(this.form)" autocomplete="off"></td>
+            <td><input id="m10S" name="m10S" type="text" placeholder="0" tabindex=29 onkeypress="pesos10SC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal10S" name="pesoVal10S" value="0">
         </tr> 
         <tr>
@@ -288,12 +288,12 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f19" onkeypress="fajilla5DC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaD5" name="fajillaD5" value="0" >
-            <td><input id="d5Dll" name="d5Dll" type="text" placeholder="0" tabindex=30 onkeypress="dolares5C(this.form)" autocomplete="off"></td>
+            <td><input id="d5Dll" name="d5Dll" type="text" placeholder="0" tabindex=22 onkeypress="dolares5C(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal5" name="dolarVal5" value="0">
 
-            <td><input type="text" placeholder="0" id="f29" onkeypress="fajilla5PS(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f29" onkeypress="fajilla5PSC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP5S" name="fajillaP5S" value="0" >
-            <td><input id="m5S" name="m5S" type="text" placeholder="0" tabindex=22 onkeypress="pesos5S(this.form)" autocomplete="off"></td>
+            <td><input id="m5S" name="m5S" type="text" placeholder="0" tabindex=30 onkeypress="pesos5SC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal5S" name="pesoVal5S" value="0">
         </tr> 
         <tr>
@@ -305,12 +305,12 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f20" onkeypress="fajilla2DC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaD2" name="fajillaD2" value="0" >
-            <td><input id="d2Dll" name="d2Dll" type="text" placeholder="0" tabindex=31 onkeypress="dolares2C(this.form)" autocomplete="off"></td>
+            <td><input id="d2Dll" name="d2Dll" type="text" placeholder="0" tabindex=23 onkeypress="dolares2C(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal2" name="dolarVal2" value="0">
 
-            <td><input type="text" placeholder="0" id="f30" onkeypress="fajilla2PS(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f30" onkeypress="fajilla2PSC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP2S" name="fajillaP2S" value="0" >
-            <td><input id="m2S" name="m2S" type="text" placeholder="0" tabindex=23 onkeypress="pesos2S(this.form)" autocomplete="off"></td>
+            <td><input id="m2S" name="m2S" type="text" placeholder="0" tabindex=31 onkeypress="pesos2SC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal2S" name="pesoVal2S" value="0">
         </tr> 
         <tr>
@@ -322,12 +322,12 @@ while ($fila = mysql_fetch_array($resultado)) {
             
             <td><input type="text" placeholder="0" id="f21" onkeypress="fajilla1DC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaD1" name="fajillaD1" value="0" >
-            <td><input id="d1Dll" name="d1Dll" type="text" placeholder="0" tabindex=32 onkeypress="dolares1C(this.form)" autocomplete="off"></td>
+            <td><input id="d1Dll" name="d1Dll" type="text" placeholder="0" tabindex=24 onkeypress="dolares1C(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal1" name="dolarVal1" value="0">
 
-            <td><input type="text" placeholder="0" id="f31" onkeypress="fajilla1PS(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f31" onkeypress="fajilla1PSC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP1S" name="fajillaP1S" value="0" >
-            <td><input id="m1S" name="m1S" type="text" placeholder="0" tabindex=24 onkeypress="pesos1S(this.form)" autocomplete="off"></td>
+            <td><input id="m1S" name="m1S" type="text" placeholder="0" tabindex=32 onkeypress="pesos1SC(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal1S" name="pesoVal1S" value="0">
         </tr> 
          <tr>
@@ -411,7 +411,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($pesosAnt >= $peso && $diferencia == 0.00 && $difDolar == 0.00) {
+            if ($pesosAnt >= $peso && $diferencia == 0.00 && $difPeso == 0.00) {
                 $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Compra','$nom')";
                 $resultado = mysql_query($query);
 
@@ -436,7 +436,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             $diferencia = $_POST['totalDifS'];
             $nuevoPeso = $pesosAnt - $peso;
                 $nuevoDolar = $dolarAnt + $dolar;
-                $nuevoRedondeo = $redondoAnt + $diferencia;
+                $nuevoRedondeo = $redondoAnt + $difPeso;
 
             $_SESSION['dolar'] = $_POST['dolaresInsertar'];
             $_SESSION['dolarA'] = $dolarAnt;
@@ -450,7 +450,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($pesosAnt >= $peso && $diferencia == 0.00 && $difDolar == 0.00) {
+            if ($pesosAnt >= $peso && $diferencia == 0.00 && $difPeso == 0.00) {
                 $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
                $resultado = mysql_query($query);
             }            
@@ -513,7 +513,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($pesosAnt >= $peso && $diferencia == 0.00 && $difDolar == 0.00) {
+            if ($pesosAnt >= $peso && $diferencia == 0.00 && $difPeso == 0.00) {
                 $query = "UPDATE calculo_arqueo SET d1000 = $arq1000, d500 = $arq500, d200 = $arq200, d100 = $arq100, d50 = $arq50, d20 = $arq20, d10 = $arq10, d5 = $arq5, d2 = $arq2, d1 = $arq1, c5 = $arq05 WHERE divisa = 'pesos' and usuario = '$nom'";
                $resultado = mysql_query($query);
             }            
@@ -569,7 +569,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($pesosAnt >= $peso && $diferencia == 0.00 && $difDolar == 0.00) {
+            if ($pesosAnt >= $peso && $diferencia == 0.00 && $difPeso == 0.00) {
                 $query = "UPDATE calculo_arqueo SET d100 = $arq100D, d50 = $arq50D, d20 = $arq20D, d10 = $arq10D, d5 = $arq5D,d2 = $arq2D, d1 = $arq1D WHERE divisa = 'dolares' and usuario = '$nom'";
                $resultado = mysql_query($query);
             }            
