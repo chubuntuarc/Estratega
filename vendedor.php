@@ -234,7 +234,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f15" onkeypress="fajilla100D(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaD100" name="fajillaD100" value="0" >
-            <td><input id="100Dll" name="100Dll" type="text" placeholder="0" tabindex=26 onkeypress="dolares100(this.form)" autocomplete="off"></td>
+            <td><input id="d100Dll" name="d100Dll" type="text" placeholder="0" tabindex=26 onkeypress="dolares100(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal100" name="dolarVal100" value="0">
         </tr>
         <tr>
@@ -251,7 +251,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f16" onkeypress="fajilla50D(this.form)" autocomplete="off"></td>
              <input type="hidden" id="fajillaD50" name="fajillaD50" value="0" >
-            <td><input id="50Dll" name="50Dll" type="text" placeholder="0" tabindex=27 onkeypress="dolares50(this.form)" autocomplete="off"></td>
+            <td><input id="d50Dll" name="d50Dll" type="text" placeholder="0" tabindex=27 onkeypress="dolares50(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal50" name="dolarVal50" value="0">
         </tr>  
         <tr>
@@ -268,7 +268,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f17" onkeypress="fajilla20D(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaD20" name="fajillaD20" value="0" >
-            <td><input id="20Dll" name="20Dll" type="text" placeholder="0" tabindex=28 onkeypress="dolares20(this.form)" autocomplete="off"></td>
+            <td><input id="d20Dll" name="d20Dll" type="text" placeholder="0" tabindex=28 onkeypress="dolares20(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal20" name="dolarVal20" value="0">
         </tr> 
         <tr>
@@ -285,7 +285,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f18" onkeypress="fajilla10D(this.form)" autocomplete="off"</td>
             <input type="hidden" id="fajillaD10" name="fajillaD10" value="0" >
-            <td><input id="10Dll" name="10Dll" type="text" placeholder="0" tabindex=29 onkeypress="dolares10(this.form)" autocomplete="off"></td>
+            <td><input id="d10Dll" name="d10Dll" type="text" placeholder="0" tabindex=29 onkeypress="dolares10(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal10" name="dolarVal10" value="0">
         </tr> 
         <tr>
@@ -302,7 +302,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f19" onkeypress="fajilla5D(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaD5" name="fajillaD5" value="0" >
-            <td><input id="5Dll" name="5Dll" type="text" placeholder="0" tabindex=30 onkeypress="dolares5(this.form)" autocomplete="off"></td>
+            <td><input id="d5Dll" name="d5Dll" type="text" placeholder="0" tabindex=30 onkeypress="dolares5(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal5" name="dolarVal5" value="0">
 
         </tr> 
@@ -320,7 +320,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f20" onkeypress="fajilla2D(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaD2" name="fajillaD2" value="0" >
-            <td><input id="2Dll" name="2Dll" type="text" placeholder="0" tabindex=31 onkeypress="dolares2(this.form)" autocomplete="off"></td>
+            <td><input id="d2Dll" name="d2Dll" type="text" placeholder="0" tabindex=31 onkeypress="dolares2(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal2" name="dolarVal2" value="0">
         </tr> 
         <tr>
@@ -337,7 +337,7 @@ while ($fila = mysql_fetch_array($resultado)) {
 
             <td><input type="text" placeholder="0" id="f21" onkeypress="fajilla1D(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaD1" name="fajillaD1" value="0" >
-            <td><input id="1Dll" name="1Dll" type="text" placeholder="0" tabindex=32 onkeypress="dolares1(this.form)" autocomplete="off"></td>
+            <td><input id="d1Dll" name="d1Dll" type="text" placeholder="0" tabindex=32 onkeypress="dolares1(this.form)" autocomplete="off"></td>
             <input type="hidden" id="dolarVal1" name="dolarVal1" value="0">
         </tr> 
          <tr>
@@ -367,7 +367,7 @@ while ($fila = mysql_fetch_array($resultado)) {
          <tr>
             <td>Cambio</td>
             <td></td>
-            <td><input id="totalDif" name="totalDif" type="text" placeholder="Diferencia" readonly></td>
+            <td><input id="totalDif" name="totalDif" type="hidden" placeholder="Diferencia" readonly></td>
             <td></td>
             <td><input id="totalDifS" name="totalDifS" type="text" placeholder="Diferencia" readonly></td>
             <td></td>
@@ -437,7 +437,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             $difPeso = $_POST['totalDif'];
             $difDolar = $_POST['totalDllDif'];
             $dolar = $_POST['dolaresInsertar'];
-            $diferencia = $_POST['totalDif'];
+            $diferencia = $_POST['totalDifS'];
             $nuevoPeso = $pesosAnt + $peso;
                 $nuevoDolar = $dolarAnt - $dolar;
                 $nuevoRedondeo = $redondoAnt - $diferencia;

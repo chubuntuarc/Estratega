@@ -51,7 +51,12 @@
 #f22,#f23,#f24,#f25,#f26,#f27,#f28,#f29,#f30,#f31,#f32,#MILS,#m500S,#m200S,#m100S,#m50S,#m20S,#m10S,#m5S,#m2S,#m1S,#m05S
 {
 	background-color: #FFF5F5;
-	/*background-color: #E0FFE0;*/
+	
+}
+
+#d100Dll,#f15,#d50Dll,#f16,#d20Dll,#f17,#d10Dll,#f18,#d5Dll,#f19,#d2Dll,#f20,#d1Dll,#f21
+{
+	background-color: #E0FFE0;
 }
 
 .tabla #vta
