@@ -120,7 +120,7 @@ while ($fila = mysql_fetch_array($resultado)) {
             $updateDivisa = $_SESSION['updateDivisa'];
                 $nuevoPeso = $pesosAnt + $peso;
                 $nuevoDolar = $dolarAnt - $dolar;
-                $nuevoRedondeo = $redondo - $diferencia;
+                $nuevoRedondeo = $redondo + $diferencia;
  
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
