@@ -15,6 +15,7 @@
             $difPeso = $_POST['totalDif'];
             $diferencia = $_POST['totalDifS'];
             $difDolar = $_POST['totalDllDif'];
+            $ttcs = $_POST['totalConvS'];
             $GLOBALS['variable'];
             $_SESSION['dolar'] = $_POST['dolaresInsertar'];
             $_SESSION['dolarA'] = $dolarAnt;
@@ -22,14 +23,13 @@
             $_SESSION['cambio'] = $_POST['cambioInsertar'];
             $_SESSION['pesosA'] = $pesosAnt;
             $_SESSION['redondo'] = $redondoAnt;
-            $_SESSION['diferencia'] =$_POST['totalDifS'];
             $_SESSION['tipoDivisa'] = "Dollar";
             $_SESSION['tipoMov'] = "Venta";
             $_SESSION['updateDivisa'] = "dolares";
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
 
-            if ($dolarAnt >= $dolar && $diferencia == 0.00 && $difDolar == 0.00 && $totalCambio == 0.00 ) {
+            if ($dolarAnt >= $dolar && $diferencia == 0.00 && $difDolar == 0.00 && $ttcs == 0.00 ) {
                 $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Venta','$nom')";
                 $resultado = mysql_query($query);
             }
@@ -38,9 +38,16 @@
             }
             else
             {
-                ?> <script>
-                document.location=("redondeo.php");</script><?php   
-                                        
+                if ($diferencia == 0.00) {
+                    $_SESSION['diferencia'] =$_POST['totalConvS'];
+                    ?> <script>document.location=("redondeo.php");</script><?php
+                }
+                else
+                {
+                    $_SESSION['diferencia'] =$_POST['totalDifS'];
+                    ?> <script>document.location=("redondeo.php");</script><?php
+                }
+                          
             }
             
      ?>
@@ -64,7 +71,6 @@
             $_SESSION['cambio'] = $_POST['cambioInsertar'];
             $_SESSION['pesosA'] = $pesosAnt;
             $_SESSION['redondo'] = $redondoAnt;
-            $_SESSION['diferencia'] =$_POST['totalDif'];
             $_SESSION['tipoDivisa'] = "Dollar";
             $_SESSION['tipoMov'] = "Venta";
 
