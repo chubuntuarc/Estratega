@@ -498,29 +498,12 @@ while ($fila = mysql_fetch_array($resultado)) {
                         </div>    
                                   
     <!-- Footer -->
-    <footer class="footer">
-        <strong>Control de Gastos</strong> v1.0.0 &copy; Copyright 2015
-    </footer>
-    <!-- // Footer -->
+    <footer class="footer"><strong>Control de Gastos</strong> v1.0.0 &copy; Copyright 2015 </footer>
 
-    <!-- Extras -->
+    <!-- Diseño de bloques -->
     <script src="js/vendor-core.min.js"></script>
-    <script src="js/vendor-countdown.min.js"></script>
-    <script src="js/vendor-tables.min.js"></script>
-    <script src="js/vendor-forms.min.js"></script>
-    <script src="js/vendor-carousel-slick.min.js"></script>
-    <script src="js/vendor-player.min.js"></script>
-    <script src="js/vendor-charts-flot.min.js"></script>
-    <script src="js/vendor-nestable.min.js"></script>
-    <script src="js/module-essentials.min.js"></script>
-    <script src="js/module-material.min.js"></script>
     <script src="js/module-layout.min.js"></script>
-    <script src="js/module-sidebar.min.js"></script>
-    <script src="js/module-carousel-slick.min.js"></script>
-    <script src="js/module-player.min.js"></script>
-    <script src="js/module-messages.min.js"></script>
-    <script src="js/module-maps-google.min.js"></script>
-    <script src="js/module-charts-flot.min.js"></script>
+    <!-- Control de la animación de la barra superior -->
     <script src="js/theme-core.min.js"></script>
 </body>
 </html>

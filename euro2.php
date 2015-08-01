@@ -505,48 +505,12 @@ while ($fila = mysql_fetch_array($resultado)) {
                         </div>    
                                   
     <!-- Footer -->
-    <footer class="footer">
-        <strong>Control de Gastos</strong> v1.0.0 &copy; Copyright 2015
-    </footer>
-    <!-- // Footer -->
-    <!-- Separate Vendor Script Bundles -->
+    <footer class="footer"><strong>Control de Gastos</strong> v1.0.0 &copy; Copyright 2015 </footer>
+    
+    <!-- Diseño de bloques -->
     <script src="js/vendor-core.min.js"></script>
-    <script src="js/vendor-countdown.min.js"></script>
-    <script src="js/vendor-tables.min.js"></script>
-    <script src="js/vendor-forms.min.js"></script>
-    <script src="js/vendor-carousel-slick.min.js"></script>
-    <script src="js/vendor-player.min.js"></script>
-    <script src="js/vendor-charts-flot.min.js"></script>
-    <script src="js/vendor-nestable.min.js"></script>
-    <!-- <script src="js/vendor-angular.min.js"></script> -->
-    <!-- Compressed Vendor Scripts Bundle
-    Includes all of the 3rd party JavaScript libraries above.
-    The bundle was generated using modern frontend development tools that are provided with the package
-    To learn more about the development process, please refer to the documentation.
-    Do not use it simultaneously with the separate bundles above. -->
-    <!-- <script src="js/vendor-bundle-all.min.js"></script> -->
-    <!-- Compressed App Scripts Bundle
-    Includes Custom Application JavaScript used for the current theme/module;
-    Do not use it simultaneously with the standalone modules below. -->
-    <!-- <script src="js/module-bundle-main.min.js"></script> -->
-    <!-- Standalone Modules
-    As a convenience, we provide the entire UI framework broke down in separate modules
-    Some of the standalone modules may have not been used with the current theme/module
-    but ALL the modules are 100% compatible -->
-    <script src="js/module-essentials.min.js"></script>
-    <script src="js/module-material.min.js"></script>
     <script src="js/module-layout.min.js"></script>
-    <script src="js/module-sidebar.min.js"></script>
-    <script src="js/module-carousel-slick.min.js"></script>
-    <script src="js/module-player.min.js"></script>
-    <script src="js/module-messages.min.js"></script>
-    <script src="js/module-maps-google.min.js"></script>
-    <script src="js/module-charts-flot.min.js"></script>
-    <!-- [html] Core Theme Script:
-        Includes the custom JavaScript for this theme/module;
-        The file has to be loaded in addition to the UI modules above;
-        module-bundle-main.js already includes theme-core.js so this should be loaded
-        ONLY when using the standalone modules; -->
+    <!-- Control de la animación de la barra superior -->
     <script src="js/theme-core.min.js"></script>
 </body>
 </html>
