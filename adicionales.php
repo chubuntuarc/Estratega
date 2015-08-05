@@ -15,6 +15,7 @@
     <!--Elementos adicionales-->
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/vendedor.css">
+    <link rel="stylesheet" type="text/css" href="css/adicionales.css">
     <!-- Elementos por defecto-->
     <link href="css/vendor.min.css" rel="stylesheet">
     <link href="css/theme-core.min.css" rel="stylesheet">
@@ -92,7 +93,6 @@
                     <div class="tabla ">
                     <form>
                       <form method="post" >
-                                <input name="documento" type="file">
                                  <select id="servicio" name="concepto">
                                         <option>Agua</option>
                                         <option>Luz</option>
@@ -101,17 +101,17 @@
                                         <option>Transferencia</option>
                                         <option>Pago</option>
                                         <option>Otro</option>
-                                    </select>
+                                    </select><br><br>
+                                    <input id="documento" name="documento" type="file"><br>
                                 </form> 
                     <div id="parte4">
                     <p>Transacciones en la cual se realiza una salida de efectivo.</p>
                    </div>  
-                    <div id="parte2">
-                        <?php include_once("php/tipo_cambio_dv.php"); ?><!--Obtener el tipo de cambio a la venta-->
-                        <input id="tipoCambioConv" type="text" placeholder="Comentario" onkeypress="cambio(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>" tabindex=2 autocomplete="off">
+                    <div id="">
+                        <input id="cantidadAdicional" type="text" placeholder="Cantidad" onkeypress="cambio(this.form)" name="tipoCambioConv" tabindex=2 autocomplete="off">
                     </div>
-                    <div id="parte3">
-                        <input id="pesosConv" type="text" placeholder="Cantidad" onkeypress="pesos(this.form)" name="pesosConv" tabindex=3 autocomplete="off">
+                    <div id="">
+                        <input id="comentarioAdicional" rows="5" type="text" placeholder="Comentarios" onkeypress="pesos(this.form)" name="pesosConv" tabindex=3 autocomplete="off">
                     </div>
                    </form>
                  </div><div class="panel-footer text-right"> </div></div> </div>

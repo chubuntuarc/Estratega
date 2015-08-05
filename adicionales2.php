@@ -14,6 +14,7 @@
     <!--Adicionales-->
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/vendedor.css">
+    <link rel="stylesheet" type="text/css" href="css/adicionales.css">
     <!--Elementos por defecto-->
     <link href="css/vendor.min.css" rel="stylesheet">
     <link href="css/theme-core.min.css" rel="stylesheet">
@@ -89,27 +90,23 @@
                                 </div>
                                 <div class="tabla ">
                                 <form>
-                                <div id="partea">
-                                    <input id="divisaConv" type="text" placeholder="Dólares" onkeypress="divisa(this.form)" name="divisaConv" tabindex=1 autofocus autocomplete="off">
-                                </div>
-                                <div id="parteb">
-                                 <?php 
-                                    $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-                                    mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                                    $query = "SELECT * FROM ajuste_cambio_compra order by id_ajuste asc";
-                                    $resultado = mysql_query($query);
-                                   
-                                    while ($fila = mysql_fetch_array($resultado)) {
-                                         $GLOBALS['xyz'] = $fila[dollar];
-
-                                        }
-                                       
-                                     ?>
-                                    <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeypress="cambio(this.form)"  name="tipoCambioConv" value="<?php echo "$xyz"; ?>" tabindex=2 autocomplete="off">
-                                </div>
-                                <div id="partec">
-                                    <input id="pesosConv" type="text" placeholder="Pesos" onkeypress="pesos(this.form)" name="pesosConv" tabindex=3 autocomplete="off">
-                                </div>
+                      <form method="post" >
+                                 <select id="servicio" name="concepto">
+                                        <option>Agua</option>
+                                        <option>Luz</option>
+                                        <option>Salario</option>
+                                        <option>Deposito</option>
+                                        <option>Transferencia</option>
+                                        <option>Pago</option>
+                                        <option>Otro</option>
+                                    </select><br><br>
+                                    <input id="documento" name="documento" type="file"><br>
+                                </form> <div id="">
+                        <input id="cantidadAdicional" type="text" placeholder="Cantidad" onkeypress="cambio(this.form)" name="tipoCambioConv" tabindex=2 autocomplete="off">
+                    </div>
+                    <div id="">
+                        <input id="comentarioAdicional" rows="5" type="text" placeholder="Comentarios" onkeypress="pesos(this.form)" name="pesosConv" tabindex=3 autocomplete="off">
+                    </div>
                                 <div id="parted">
                                 <p>Transacciones en la cual se realiza una entrada de efectivo.</p></div>
                              </div></form>
