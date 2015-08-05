@@ -94,7 +94,7 @@
                     <div class="tabla ">
                     <form method="post">
                       <form name="adiciona">
-                                 <select id="concepto" name="concepto">
+                                 <select id="concepto" name="concepto" >
                                         <option>Agua</option>
                                         <option>Luz</option>
                                         <option>Salario</option>
@@ -109,10 +109,10 @@
                     <p>Transacciones en la cual se realiza una salida de efectivo.</p>
                    </div>  
                     <div id="">
-                        <input id="cantidad" name="cantidad" type="text" placeholder="Cantidad" onkeypress="adicional2()" tabindex=2 autocomplete="off">
+                        <input id="cantidad" name="cantidad" type="text" placeholder="Cantidad" onblur="adicional2()" onfocus="adicional1()" tabindex=2 autocomplete="off">
                     </div>
                     <div id="">
-                        <input id="comentario" name="comentario" rows="5" type="text" placeholder="Comentarios" tabindex=3 autocomplete="off">
+                        <input id="comentario" name="comentario" rows="5" type="text" placeholder="Comentarios" onblur="adicional3()" tabindex=3 autocomplete="off">
                     </div>
                    </form>
                  </div><div class="panel-footer text-right"> </div></div> </div>

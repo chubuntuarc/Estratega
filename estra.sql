@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-07-2015 a las 00:58:16
+-- Tiempo de generación: 05-08-2015 a las 21:31:34
 -- Versión del servidor: 5.6.24
--- Versión de PHP: 5.5.24
+-- Versión de PHP: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -35,7 +35,15 @@ CREATE TABLE IF NOT EXISTS `adicionales` (
   `documento` varchar(50) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `usuario` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `adicionales`
+--
+
+INSERT INTO `adicionales` (`folio_adicional`, `concepto`, `comentario`, `tipo`, `cantidad`, `documento`, `fecha`, `usuario`) VALUES
+(102, 'Agua', '', 'Salida', 300.00, 'Pago', '2015-08-05 19:27:12', 'admin'),
+(103, 'Deposito', '', 'Salida', 600.00, 'Otro', '2015-08-05 19:27:55', 'admin');
 
 -- --------------------------------------------------------
 
@@ -113,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `cajas` (
 --
 
 INSERT INTO `cajas` (`id_caja`, `usuario`, `dolares`, `pesos`, `dlls_can`, `euros`, `redondeo`) VALUES
-(1, 'admin', 435.00, 12994.77, 999.00, 1001.00, 0.00),
+(1, 'admin', 1000.00, 100.00, 1000.00, 1000.00, 0.00),
 (3, 'chubuntu', 100.00, 0.00, 0.00, 0.00, 0.00),
 (4, 'vubaeza', 100.00, 0.00, 0.00, 0.00, 0.00);
 
@@ -167,6 +175,18 @@ CREATE TABLE IF NOT EXISTS `campos` (
 
 INSERT INTO `campos` (`divisa`, `cambio`, `pesos`) VALUES
 (10.00, 16.00, 162.60);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cuentas_contables`
+--
+
+CREATE TABLE IF NOT EXISTS `cuentas_contables` (
+  `idCuenta` int(11) NOT NULL,
+  `cuenta_contable` varchar(30) NOT NULL,
+  `concepto` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -680,7 +700,32 @@ CREATE TABLE IF NOT EXISTS `historico_adicional` (
 
 INSERT INTO `historico_adicional` (`folio_adicional`, `concepto`, `comentario`, `tipo`, `cantidad`, `documento`, `fecha`, `usuario`) VALUES
 (1, 'Transferencia', 'Efectivo deposito victor', 'Entrada', 1612.00, '', '2015-07-23 17:59:57', 'admin'),
-(2, 'Transferencia', 'LP Pago victor', 'Salida', 1612.00, '', '2015-07-23 18:01:08', 'admin');
+(2, 'Transferencia', 'LP Pago victor', 'Salida', 1612.00, '', '2015-07-23 18:01:08', 'admin'),
+(75, '', '', 'Salida', 200.00, 'NO', '2015-08-05 11:44:59', 'admin'),
+(76, '', '', 'Salida', 200.00, 'NO', '2015-08-05 11:45:01', 'admin'),
+(77, '', '', 'Salida', 200.00, 'NO', '2015-08-05 11:47:33', 'admin'),
+(78, '', '', 'Salida', 200.00, 'NO', '2015-08-05 11:47:36', 'admin'),
+(79, '', '', 'Salida', 100.00, 'NO', '2015-08-05 11:49:22', 'admin'),
+(80, '', '', 'Salida', 100.00, 'NO', '2015-08-05 11:49:26', 'admin'),
+(81, '', '', 'Salida', 100.00, 'NO', '2015-08-05 11:50:29', 'admin'),
+(82, '', '', 'Salida', 100.00, 'NO', '2015-08-05 11:50:33', 'admin'),
+(83, 'Agua', '', 'Salida', 30.00, 'NO', '2015-08-05 11:54:55', 'admin'),
+(84, 'Agua', '', 'Salida', 5.00, 'NO', '2015-08-05 11:55:36', 'admin'),
+(85, 'Agua', '', 'Salida', 1.00, 'NO', '2015-08-05 11:55:54', 'admin'),
+(86, 'Agua', '', 'Salida', 2.00, 'NO', '2015-08-05 12:01:35', 'admin'),
+(87, 'Agua', '', 'Salida', 3.00, 'NO', '2015-08-05 12:07:59', 'admin'),
+(88, 'Agua', '', 'Salida', 7.00, 'NO', '2015-08-05 12:14:25', 'admin'),
+(89, 'Agua', '', 'Salida', 66.00, 'NO', '2015-08-05 12:19:07', 'admin'),
+(90, 'Agua', '', 'Salida', 5.00, 'NO', '2015-08-05 12:19:22', 'admin'),
+(91, 'Agua', '', 'Salida', 4.00, 'NO', '2015-08-05 12:20:09', 'admin'),
+(92, 'Agua', '', 'Salida', 3.00, 'NO', '2015-08-05 12:23:49', 'admin'),
+(93, 'Agua', '', 'Salida', 2.00, 'NO', '2015-08-05 12:24:32', 'admin'),
+(94, 'Agua', '', 'Salida', 3.00, 'NO', '2015-08-05 12:25:41', 'admin'),
+(95, 'Agua', '', 'Salida', 5.00, 'NO', '2015-08-05 13:06:59', 'admin'),
+(96, 'Agua', '', 'Salida', 6.00, 'NO', '2015-08-05 13:07:25', 'admin'),
+(97, 'Agua', '', 'Salida', 3.00, 'NO', '2015-08-05 13:09:28', 'admin'),
+(98, 'Agua', '', 'Salida', 350.00, 'NO', '2015-08-05 13:15:55', 'admin'),
+(99, 'Salario', '', 'Salida', 1000.00, 'NO', '2015-08-05 13:18:39', 'admin');
 
 -- --------------------------------------------------------
 
@@ -854,7 +899,64 @@ INSERT INTO `historico_movimiento` (`id_movimiento`, `cantidad`, `divisa`, `tipo
 (113, 7.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:01:38'),
 (114, 7.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:01:40'),
 (115, 3.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:02:17'),
-(116, 3.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:04:12');
+(116, 3.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:04:12'),
+(117, 10.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:14:46'),
+(118, 10.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:17:49'),
+(119, 10.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:19:21'),
+(120, 10.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:21:19'),
+(121, 12.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:22:19'),
+(122, 10.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:23:59'),
+(123, 10.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:24:53'),
+(124, 10.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:25:29'),
+(125, 18.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:26:40'),
+(126, 10.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:30:26'),
+(127, 15.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:33:13'),
+(128, 17.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:36:34'),
+(129, 20.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:36:55'),
+(130, 20.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:37:10'),
+(131, 100.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:39:07'),
+(132, 20.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:40:28'),
+(133, 15.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:41:17'),
+(134, 15.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:41:53'),
+(135, 16.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:42:19'),
+(136, 37.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:43:20'),
+(137, 10.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 12:44:51'),
+(138, 100.00, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 13:28:04'),
+(139, 100.00, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 13:32:14'),
+(140, 15.00, 'Dollar', 15.90, 'Compra', 'admin', '2015-07-27 13:32:45'),
+(141, 15.00, 'Dollar', 15.90, 'Compra', 'admin', '2015-07-27 13:34:35'),
+(142, 10.00, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 13:35:04'),
+(143, 100.00, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 13:36:51'),
+(144, 15.00, 'Dollar', 15.90, 'Compra', 'admin', '2015-07-27 13:37:17'),
+(145, 100.00, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 13:37:36'),
+(146, 11.00, 'Dollar', 15.30, 'Compra', 'admin', '2015-07-27 13:38:29'),
+(147, 100.00, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 13:38:41'),
+(148, 11.00, 'Dollar', 16.26, 'Compra', 'admin', '2015-07-27 13:44:31'),
+(149, 50.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 13:45:45'),
+(150, 47.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 13:50:03'),
+(151, 10.00, 'Dollar', 16.26, 'Compra', 'admin', '2015-07-27 13:50:51'),
+(152, 10.00, 'Dll Can', 12.46, 'Venta', 'admin', '2015-07-27 14:06:17'),
+(153, 10.00, 'Dll Can', 12.46, 'Venta', 'admin', '2015-07-27 14:11:25'),
+(154, 10.00, 'Dll Can', 13.00, 'Venta', 'admin', '2015-07-27 14:11:51'),
+(155, 15.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 14:12:44'),
+(156, 11.00, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 14:13:43'),
+(157, 10.00, 'Dll Can', 12.00, 'Compra', 'admin', '2015-07-27 14:23:15'),
+(158, 19.00, 'Dll Can', 11.90, 'Compra', 'admin', '2015-07-27 14:24:29'),
+(159, 9.00, 'Dll Can', 11.90, 'Compra', 'admin', '2015-07-27 14:25:44'),
+(160, 10.00, 'Euro', 17.85, 'Venta', 'admin', '2015-07-27 14:34:07'),
+(161, 10.00, 'Euro', 17.85, 'Venta', 'admin', '2015-07-27 14:34:39'),
+(162, 10.00, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 14:39:04'),
+(163, 10.00, 'Euro', 17.30, 'Compra', 'admin', '2015-07-27 14:39:54'),
+(164, 11.00, 'Euro', 17.30, 'Compra', 'admin', '2015-07-27 14:40:28'),
+(165, 100.00, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-27 18:25:14'),
+(166, 10.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-07-28 11:30:13'),
+(167, 15.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-07-28 11:30:47'),
+(168, 16.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-07-28 11:31:05'),
+(169, 100.00, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 11:54:44'),
+(170, 100.00, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 11:55:10'),
+(171, 100.00, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 11:55:43'),
+(172, 100.00, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 11:55:58'),
+(173, 125.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-07-28 13:58:02');
 
 -- --------------------------------------------------------
 
@@ -871,69 +973,6 @@ CREATE TABLE IF NOT EXISTS `movimientos` (
   `usuario` varchar(30) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `movimientos`
---
-
-INSERT INTO `movimientos` (`id_movimiento`, `cantidad`, `divisa`, `tipo_cambio`, `tipo_movimiento`, `usuario`, `fecha`) VALUES
-(117, 10, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:14:46'),
-(118, 10, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:17:49'),
-(119, 10, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:19:21'),
-(120, 10, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:21:19'),
-(121, 12, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:22:19'),
-(122, 10, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:23:59'),
-(123, 10, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:24:53'),
-(124, 10, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:25:29'),
-(125, 18, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:26:40'),
-(126, 10, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:30:26'),
-(127, 15, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:33:13'),
-(128, 17, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:36:34'),
-(129, 20, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:36:55'),
-(130, 20, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:37:10'),
-(131, 100, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:39:07'),
-(132, 20, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:40:28'),
-(133, 15, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:41:17'),
-(134, 15, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:41:53'),
-(135, 16, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:42:19'),
-(136, 37, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:43:20'),
-(137, 10, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 18:44:51'),
-(138, 100, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 19:28:04'),
-(139, 100, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 19:32:14'),
-(140, 15, 'Dollar', 15.90, 'Compra', 'admin', '2015-07-27 19:32:45'),
-(141, 15, 'Dollar', 15.90, 'Compra', 'admin', '2015-07-27 19:34:35'),
-(142, 10, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 19:35:04'),
-(143, 100, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 19:36:51'),
-(144, 15, 'Dollar', 15.90, 'Compra', 'admin', '2015-07-27 19:37:17'),
-(145, 100, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 19:37:36'),
-(146, 11, 'Dollar', 15.30, 'Compra', 'admin', '2015-07-27 19:38:29'),
-(147, 100, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 19:38:41'),
-(148, 11, 'Dollar', 16.26, 'Compra', 'admin', '2015-07-27 19:44:31'),
-(149, 50, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 19:45:45'),
-(150, 47, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 19:50:03'),
-(151, 10, 'Dollar', 16.26, 'Compra', 'admin', '2015-07-27 19:50:51'),
-(152, 10, 'Dll Can', 12.46, 'Venta', 'admin', '2015-07-27 20:06:17'),
-(153, 10, 'Dll Can', 12.46, 'Venta', 'admin', '2015-07-27 20:11:25'),
-(154, 10, 'Dll Can', 13.00, 'Venta', 'admin', '2015-07-27 20:11:51'),
-(155, 15, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 20:12:44'),
-(156, 11, 'Dollar', 16.26, 'Venta', 'admin', '2015-07-27 20:13:43'),
-(157, 10, 'Dll Can', 12.00, 'Compra', 'admin', '2015-07-27 20:23:15'),
-(158, 19, 'Dll Can', 11.90, 'Compra', 'admin', '2015-07-27 20:24:29'),
-(159, 9, 'Dll Can', 11.90, 'Compra', 'admin', '2015-07-27 20:25:44'),
-(160, 10, 'Euro', 17.85, 'Venta', 'admin', '2015-07-27 20:34:07'),
-(161, 10, 'Euro', 17.85, 'Venta', 'admin', '2015-07-27 20:34:39'),
-(162, 10, 'Dollar', 16.00, 'Compra', 'admin', '2015-07-27 20:39:04'),
-(163, 10, 'Euro', 17.30, 'Compra', 'admin', '2015-07-27 20:39:54'),
-(164, 11, 'Euro', 17.30, 'Compra', 'admin', '2015-07-27 20:40:28'),
-(165, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 00:25:14'),
-(166, 10, 'Dollar', 16.15, 'Compra', 'admin', '2015-07-28 17:30:13'),
-(167, 15, 'Dollar', 16.15, 'Compra', 'admin', '2015-07-28 17:30:47'),
-(168, 16, 'Dollar', 16.15, 'Compra', 'admin', '2015-07-28 17:31:05'),
-(169, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 17:54:44'),
-(170, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 17:55:10'),
-(171, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 17:55:43'),
-(172, 100, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 17:55:58'),
-(173, 125, 'Dollar', 16.28, 'Venta', 'admin', '2015-07-28 19:58:02');
 
 -- --------------------------------------------------------
 
@@ -987,6 +1026,12 @@ ALTER TABLE `cajas`
   ADD PRIMARY KEY (`id_caja`);
 
 --
+-- Indices de la tabla `cuentas_contables`
+--
+ALTER TABLE `cuentas_contables`
+  ADD PRIMARY KEY (`idCuenta`);
+
+--
 -- Indices de la tabla `desglose_dolares`
 --
 ALTER TABLE `desglose_dolares`
@@ -1018,7 +1063,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `adicionales`
 --
 ALTER TABLE `adicionales`
-  MODIFY `folio_adicional` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `folio_adicional` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=104;
 --
 -- AUTO_INCREMENT de la tabla `ajuste_cambio`
 --
@@ -1034,6 +1079,11 @@ ALTER TABLE `ajuste_cambio_compra`
 --
 ALTER TABLE `cajas`
   MODIFY `id_caja` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `cuentas_contables`
+--
+ALTER TABLE `cuentas_contables`
+  MODIFY `idCuenta` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `desglose_dolares`
 --
