@@ -43,6 +43,7 @@
                 </div>
                 <div class="menux col-xs-3 col-lg-9">
                     <a href="movimientos.php" >Información</a>
+                    <a href="adicionales.php" >Adicionales</a>
                     <a href="vendedor.php">Venta</a>
                 </div>
                     

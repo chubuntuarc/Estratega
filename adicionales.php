@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Jesus Arciniega">
-    <title>Estratega Venta Dólares</title>
+    <title>Estratega Adicionales</title>
     <script src="js/script.js"></script>
     <!--Funciones de desglose y conversión de divisas-->
     <script src="js/desglose.js"></script>
@@ -44,8 +44,8 @@
             </div>
             <div class="menux col-xs-3 col-lg-9">
                 <a href="movimientos.php" >Información</a>
-                <a href="adicionales.php" >Adicionales</a>
-                <a href="vendedor2.php">Compra</a>
+                <a href="vendedor.php">Operaciones</a>
+                <a href="adicionales2.php">Entrada</a>
             </div>
                 
         </div>
@@ -87,24 +87,31 @@
             <div class="item col-xs-12 col-lg-7">
                 <div class="panel panel-default paper-shadow" data-z="0.5">
                     <div class="panel-heading">
-                        <h4 class="text-headline margin-none">Venta</h4>
+                        <h4 class="text-headline margin-none">Salida Adicional</h4>
                     </div>
                     <div class="tabla ">
                     <form>
-                      <div id="parte1">
-                        <input id="divisaConv" type="text" placeholder="Dólares" onkeypress="divisa(this.form)"  name="divisaConv" tabindex=1  autofocus autocomplete="off">
-                    </div>
+                      <form method="post" >
+                                <input name="documento" type="file">
+                                 <select id="servicio" name="concepto">
+                                        <option>Agua</option>
+                                        <option>Luz</option>
+                                        <option>Salario</option>
+                                        <option>Deposito</option>
+                                        <option>Transferencia</option>
+                                        <option>Pago</option>
+                                        <option>Otro</option>
+                                    </select>
+                                </form> 
                     <div id="parte4">
-                    <a id="seleccionado" href="vendedor.php">Dólares</a>
-                    <a href="canada.php">Canadienses</a>
-                    <a href="euro.php">Euros</a>
+                    <p>Transacciones en la cual se realiza una salida de efectivo.</p>
                    </div>  
                     <div id="parte2">
                         <?php include_once("php/tipo_cambio_dv.php"); ?><!--Obtener el tipo de cambio a la venta-->
-                        <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeypress="cambio(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>" tabindex=2 autocomplete="off">
+                        <input id="tipoCambioConv" type="text" placeholder="Comentario" onkeypress="cambio(this.form)" name="tipoCambioConv" value="<?php echo "$xyz"; ?>" tabindex=2 autocomplete="off">
                     </div>
                     <div id="parte3">
-                        <input id="pesosConv" type="text" placeholder="Pesos" onkeypress="pesos(this.form)" name="pesosConv" tabindex=3 autocomplete="off">
+                        <input id="pesosConv" type="text" placeholder="Cantidad" onkeypress="pesos(this.form)" name="pesosConv" tabindex=3 autocomplete="off">
                     </div>
                    </form>
                  </div><div class="panel-footer text-right"> </div></div> </div>

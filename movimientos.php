@@ -38,6 +38,7 @@
             </div>
             <div class="menux col-xs-3 col-lg-9">
                 <a href="vendedor.php" >Operaciones</a>
+                <a href="adicionales.php" >Adicionales</a>
             </div>
         </div>
 </div>
