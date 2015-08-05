@@ -95,13 +95,7 @@
                     <form method="post">
                       <form name="adiciona">
                                  <select id="concepto" name="concepto" >
-                                        <option>Agua</option>
-                                        <option>Luz</option>
-                                        <option>Salario</option>
-                                        <option>Deposito</option>
-                                        <option>Transferencia</option>
-                                        <option>Pago</option>
-                                        <option>Otro</option>
+                                        <?php include_once("php/contable.php"); ?>
                                     </select><br><br>
                                     <input id="documento" name="documento" type="file"><br>
                                 </form> 
