@@ -14,8 +14,10 @@
                                     $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
                                     mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
                                     $query = "INSERT INTO adicionales (concepto, comentario, tipo, cantidad,documento,usuario)
-                                    VALUES ('{$_POST['concepto']}','{$_POST['comentario']}','{$_POST['movimiento']}',{$_POST['cantidad']},'{$_POST['documento']}','$nom')";
+                                    VALUES ('Luz','Hola','Salida',300,'','$nom')";
                                     $resultado = mysql_query($query);
+                                    /*VALUES ('{$_POST['concepto']}','{$_POST['comentario']}','Salida',{$_POST['cantidad']},'{$_POST['documento']}','$nom')";*/
+
                                     mysql_close();
                                     }
                                     ?>

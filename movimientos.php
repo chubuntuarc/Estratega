@@ -63,46 +63,6 @@
 <div class="container">
     <div class="page-section">
 
-<!--Movimientos adicionales-->         
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="media v-middle">
-                            <div class="media-left">
-                                <div class="bg-green-400 text-white">
-                                    <div class="panel-body">
-                                        <i class="fa fa-credit-card fa-fw fa-2x"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="media-body">
-                                <div class="inputacion">
-                                <form method="post" >
-                                <input name="documento" type="file">
-                                 <select name="concepto">
-                                        <option>Agua</option>
-                                        <option>Luz</option>
-                                        <option>Salario</option>
-                                        <option>Deposito</option>
-                                        <option>Transferencia</option>
-                                        <option>Pago</option>
-                                        <option>Otro</option>
-                                    </select>
-                                    <input name="comentario" type="text" placeholder="Comentario" >
-                                    <input name="cantidad" type="text" placeholder="Cantidad"  required>
-                                    <select name="movimiento">
-                                        <option>Entrada</option>
-                                        <option>Salida</option>
-                                    </select>
-                                    
-                                    <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="registra" value="Registrar">
-                                    <?php include_once("php/adicionales_insert.php"); ?><!--Se insertan movimientos adicionales a la BD-->
-                                </form>   
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-
 <!--Sección con el registro de las ultimas compras--> 
 <div class="row" data-toggle="isotope">
     <div class="item col-xs-12 col-lg-4">
@@ -209,7 +169,7 @@
             </tr>
         </thead>
         <tbody>
-        <?php include_once("php/adicionales.php"); ?><!--Se insertan los movimientos adicionales-->
+        <?php include_once("php/adicionales.php"); ?><!--Se muestran los movimientos adicionales-->
         </tbody>
     </table>
 </div>

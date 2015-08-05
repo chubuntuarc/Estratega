@@ -12,6 +12,7 @@
     <script src="js/script.js"></script>
     <!--Funciones de desglose y conversión de divisas-->
     <script src="js/desglose.js"></script>
+    <script src="js/adicionales.js"></script>
     <!--Elementos adicionales-->
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/vendedor.css">
@@ -91,9 +92,9 @@
                         <h4 class="text-headline margin-none">Salida Adicional</h4>
                     </div>
                     <div class="tabla ">
-                    <form>
-                      <form method="post" >
-                                 <select id="servicio" name="concepto">
+                    <form method="post">
+                      <form name="adiciona">
+                                 <select id="concepto" name="concepto">
                                         <option>Agua</option>
                                         <option>Luz</option>
                                         <option>Salario</option>
@@ -108,10 +109,10 @@
                     <p>Transacciones en la cual se realiza una salida de efectivo.</p>
                    </div>  
                     <div id="">
-                        <input id="cantidadAdicional" type="text" placeholder="Cantidad" onkeypress="cambio(this.form)" name="tipoCambioConv" tabindex=2 autocomplete="off">
+                        <input id="cantidad" name="cantidad" type="text" placeholder="Cantidad" onkeypress="adicional2()" tabindex=2 autocomplete="off">
                     </div>
                     <div id="">
-                        <input id="comentarioAdicional" rows="5" type="text" placeholder="Comentarios" onkeypress="pesos(this.form)" name="pesosConv" tabindex=3 autocomplete="off">
+                        <input id="comentario" name="comentario" rows="5" type="text" placeholder="Comentarios" tabindex=3 autocomplete="off">
                     </div>
                    </form>
                  </div><div class="panel-footer text-right"> </div></div> </div>
@@ -128,7 +129,7 @@
                 <h4 class="text-headline margin-none">Desglose</h4>
                 <p class="text-subhead text-light">Desglose de moneda</p>
             </div>
-         <form method="post" class="desglose">
+         <form method="post" class="desglose" name="desglose">
             <div class="tabla ">
     <table>
         <thead>
@@ -350,6 +351,9 @@
             <td></td>
             <input type="hidden" id="dolaresInsertar" name="dolaresInsertar">
             <input type="hidden" id="cambioInsertar" name="cambioInsertar">
+            <input type="hidden" id="conceptoAS" name="conceptoAS">
+            <input type="hidden" id="comentarioAS" name="comentarioAS">
+            <input type="hidden" id="cantidadAS" name="cantidadAS" value="">
             <td></td>
             <td></td>
             <td></td>
@@ -360,7 +364,8 @@
     </table>
    
     </form>
-    <?php include_once("php/venta_dolares.php"); ?><!--Operaciones de la venta de dólares-->
+    
+    <?php include_once("php/adicionalSalida.php"); ?><!--Se insertan movimientos adicionales a la BD-->
 </div>
         <div class="panel-footer text-right">
         </div>
