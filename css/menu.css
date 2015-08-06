@@ -1,0 +1,16 @@
+#horizontalmenu ul {
+padding:1; margin:1; list-style:none;
+}
+#horizontalmenu li {
+float:left; position:relative; padding-right:100; display:block;
+}
+#horizontalmenu li ul {
+    display:none;
+position:absolute;
+}
+
+#horizontalmenu li ul li{
+    clear:both;
+border-style:none;}
+
+
