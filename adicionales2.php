@@ -43,7 +43,7 @@
           <div class="navbar-brand navbar-brand-logo">
                     <img id="logoxx" src="images/estratega.png">
                 </div>
-                <div class="menux col-xs-3 col-lg-9">
+                <div class="menux col-xs-9 col-lg-9">
                     <a href="movimientos.php" >Información</a>
                 <a href="vendedor.php">Operaciones</a>
                 <a href="adicionales.php">Salida</a>
@@ -117,7 +117,7 @@
                                  </div>
                                  </div>
                     <div class="row" >
-                        <div class="item col-xs-4 col-lg-5">
+                        <div class="item col-xs-6 col-lg-5">
                             <div class="panel panel-default paper-shadow" data-z="0.5">
                                 <div class="panel-heading">
                                     <h4 class="text-headline margin-none">Desglose</h4>
