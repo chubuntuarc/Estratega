@@ -99,7 +99,6 @@
                                         <?php include_once("php/contable.php"); ?>
                                     </select><br><br><br>
                                     <div class="col-lg-3"></div>
-                                    <input id="documento" name="archivo" type="file"><br>
                                 </form> 
                     <div id="parte4">
                     <p>Transacciones en la cual se realiza una salida de efectivo.</p>
@@ -127,7 +126,7 @@
                 <h4 class="text-headline margin-none">Desglose</h4>
                 <p class="text-subhead text-light">Desglose de moneda</p>
             </div>
-         <form method="post" class="desglose" name="desglose">
+         <form method="post" class="desglose" name="desglose" enctype="multipart/form-data">
             <div class="tabla ">
     <table>
         <thead>
@@ -352,6 +351,11 @@
             <input type="hidden" id="conceptoAS" name="conceptoAS">
             <input type="hidden" id="comentarioAS" name="comentarioAS">
             <input type="hidden" id="cantidadAS" name="cantidadAS" value="">
+            <!--<form enctype="multipart/form-data" action="subearchivo.php" method="POST">
+            <input name="uploadedfile" type="file" />
+            <input type="submit" value="Subir archivo" />
+            </form> -->
+            <input type="file" id="documento" name="uploadedfile" value="">
             <td></td>
             <td></td>
             <td></td>
