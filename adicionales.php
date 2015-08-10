@@ -94,19 +94,23 @@
                     <div class="tabla ">
                     <form method="post">
                       <form name="adiciona">
+                        <div class="col-lg-1"></div>
                                  <select id="concepto" name="concepto" >
                                         <?php include_once("php/contable.php"); ?>
-                                    </select><br><br>
-                                    <input id="documento" name="documento" type="file"><br>
+                                    </select><br><br><br>
+                                    <div class="col-lg-3"></div>
+                                    <input id="documento" name="archivo" type="file"><br>
                                 </form> 
                     <div id="parte4">
                     <p>Transacciones en la cual se realiza una salida de efectivo.</p>
-                   </div>  
-                    <div id="">
+                   </div><br><br><br>
+                   <div class="col-lg-1"></div>
+                    <div id="" class="col-lg-10">
                         <input id="cantidad" name="cantidad" type="text" placeholder="Cantidad" onblur="adicional2()" onfocus="adicional1()" tabindex=2 autocomplete="off">
                     </div>
+                    <div class="col-lg-1"></div>
                     <div id="">
-                        <input id="comentario" name="comentario" rows="5" type="text" placeholder="Comentarios" onblur="adicional3()" tabindex=3 autocomplete="off">
+                        <input id="comentario" name="comentario" rows="5" type="text" placeholder="Comentario / Concepto" onblur="adicional3()" tabindex=3 autocomplete="off">
                     </div>
                    </form>
                  </div><div class="panel-footer text-right"> </div></div> </div>
