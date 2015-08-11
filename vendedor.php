@@ -42,7 +42,7 @@
       <div class="navbar-brand navbar-brand-logo">
                 <img id="logoxx" src="images/estratega.png">
             </div>
-            <div class="menux col-xs-9 col-lg-9">
+            <div class="menux col-xs-8 col-lg-9">
                 <a href="movimientos.php" >Información</a>
                 <a href="adicionales.php" >Adicionales</a>
                 <a href="vendedor2.php">Compra</a>
@@ -75,7 +75,7 @@
 
 <!--Sección de operaciones-->
 <div class="row">
-    <div class="col-md-12 ">
+    <div class="col-xs-12 col-md-12 ">
         <div class="panel panel-default">
             <div class="media v-middle">
                 <div class="media-left">
@@ -115,7 +115,7 @@
 
 <!--Sección de Desglose de moneda-->                     
 <div class="row" >
-    <div class="item col-xs-6 col-lg-5">
+    <div class="item col-xs-12 col-lg-5">
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-heading">
                 <h4 class="text-headline margin-none">Desglose</h4>

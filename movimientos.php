@@ -36,7 +36,7 @@
       <div class="navbar-brand navbar-brand-logo">
                 <img id="logoxx" src="images/estratega.png">
             </div>
-            <div class="menux col-xs-3 col-lg-9">
+            <div class="menux col-xs-8 col-lg-9">
                 <a href="vendedor.php" >Operaciones</a>
                 <a href="adicionales.php" >Adicionales</a>
             </div>
@@ -152,7 +152,7 @@
 
 <!--Sección en la que se agregan movimientos adicionales a la compra / venta-->
  <div class="row" >
-    <div class="item col-xs-4 col-lg-4">
+    <div class="item col-xs-6 col-lg-4">
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-heading">
                 <h4 class="text-headline margin-none">Adicionales</h4>
@@ -179,7 +179,7 @@
 
 <!--Sección de la situación actual de la caja-->
 <div class="row" >
-    <div class="item col-xs-8 col-lg-4">
+    <div class="item col-xs-6 col-lg-4">
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-heading">
                 <h4 class="text-headline margin-none">Situación</h4>
@@ -205,7 +205,7 @@
 
 <!--Sección con el ajuste de tipo de cambio a la venta-->
   <div class="row" >
-    <div class="item col-xs-8 col-lg-4">
+    <div class="item col-xs-6 col-lg-4">
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-heading">
                 <h4 class="text-headline margin-none">Tipo de cambio / Venta</h4>
@@ -250,7 +250,7 @@
 
 <!--Sección con el ajuste de tipo de cambio a la compra-->
      <div class="row" >
-    <div class="item col-xs-8 col-lg-4">
+    <div class="item col-xs-6 col-lg-4">
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-heading">
                 <h4 class="text-headline margin-none">Tipo de cambio / Compra</h4>
@@ -295,7 +295,7 @@
 
 <!--Sección que contiene la tabla para realizar el arqueo en caja-->
     <div class="row" >
-    <div class="item col-xs-8 col-lg-8">
+    <div class="item col-xs-12 col-lg-8">
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-heading">
                 <h4 class="text-headline margin-none">Arqueo</h4>
