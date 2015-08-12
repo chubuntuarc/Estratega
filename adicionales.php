@@ -108,7 +108,7 @@
                                     <div class="col-lg-3"></div>
                                 </form> 
                     <div id="parte4">
-                    <p>Transacciones en la cual se realiza una salida de efectivo.</p>
+                    <p>Transacciones para realizar una salida de efectivo.</p>
                    </div>
                    <div class="col-lg-1"></div>
                     <div id="" class="col-lg-10">

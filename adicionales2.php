@@ -105,7 +105,7 @@
                         <input id="comentario" name="comentario" rows="5" type="text" placeholder="Comentarios" onblur="adicional3()" tabindex=3 autocomplete="off">
                     </div>
                                 <div id="parted">
-                                <p>Transacciones en la cual se realiza una entrada de efectivo.</p></div>
+                                <p>Transacciones para realizar una entrada de efectivo.</p></div>
                              </div></form>
                              <div class="panel-footer text-right"> </div></div> </div>
                               
