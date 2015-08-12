@@ -13,6 +13,8 @@
     <!--Funciones de desglose y conversión de divisas-->
     <script src="js/desglose.js"></script>
     <script src="js/adicionales.js"></script>
+    <!--Say cheese-->
+    <script src="js/say-cheese.js"></script>
     <!--Elementos adicionales-->
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/vendedor.css">
@@ -97,12 +99,17 @@
                         <div class="col-lg-1"></div>
                                  <select id="concepto" name="concepto" >
                                         <?php include_once("php/contable.php"); ?>
-                                    </select><br><br><br>
+                                    </select><br>
+                                    <div class="col-lg-2"></div>
+                                    <div id="webcam" class="col-lg-4"></div><span><div id="foto"></div></span>
+                                    
+                                    <input type="button" id="tomar" value="Foto">
+                                    
                                     <div class="col-lg-3"></div>
                                 </form> 
                     <div id="parte4">
                     <p>Transacciones en la cual se realiza una salida de efectivo.</p>
-                   </div><br><br><br>
+                   </div>
                    <div class="col-lg-1"></div>
                     <div id="" class="col-lg-10">
                         <input id="cantidad" name="cantidad" type="text" placeholder="Cantidad" onblur="adicional2()" onfocus="adicional1()" tabindex=2 autocomplete="off">
@@ -238,7 +245,7 @@
             <input name="uploadedfile" type="file" />
             <input type="submit" value="Subir archivo" />
             </form> -->
-            <input type="file" id="documento" name="uploadedfile" value="">
+            <input type="hidden" id="documento" name="uploadedfile" value=""><!--Boton para subir archivo-->
             <td><input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="registraMov" value="Listo" tabindex=33></td>
             <td></td>
             <td></td>
@@ -265,5 +272,40 @@
     <script src="js/module-layout.min.js"></script>
     <!-- Control de la animación de la barra superior -->
     <script src="js/theme-core.min.js"></script>   
+    <!-- JQuery 2.1.4 -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <!--Inicializacion de webcam mediante cheese -->
+    <script type="text/javascript">
+        var sayCheese = new SayCheese('#webcam', { snapshots: true });
+        var img = null;
+        sayCheese.on('start', function() {
+         // do something when started
+         this.takeSnapshot();
+        });
+
+        sayCheese.on('error', function(error) {
+         // handle errors, such as when a user denies the request to use the webcam,
+         // or when the getUserMedia API isn't supported
+        });
+
+        sayCheese.on('snapshot', function(snapshot) {
+          // do something with a snapshot canvas element, when taken
+        });
+
+        sayCheese.start();
+
+        $('#tomar').bind('click',function(e){
+            sayCheese.takeSnapshot(170,130);
+            return false;
+        })
+
+        sayCheese.on('snapshot', function(snapshot) {
+          img = document.createElement('img');
+          $(img).on('load', function(){
+            $('#foto').html(img);
+          })
+          img.src=snapshot.toDataURL('image/png');
+        });
+    </script>
 </body>
 </html>
