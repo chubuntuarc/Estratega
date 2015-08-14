@@ -11,7 +11,6 @@
     <title>Estratega Adicionales</title>
     <script src="js/script.js"></script>
     <!--Funciones de desglose y conversión de divisas-->
-    <script src="js/desglose.js"></script>
     <script src="js/adicionales.js"></script>
     <!--Say cheese-->
     <script src="js/say-cheese.js"></script>
@@ -112,7 +111,7 @@
                    </div>
                    <div class="col-lg-1"></div>
                     <div id="" class="col-lg-10">
-                        <input id="cantidad" name="cantidad" type="text" placeholder="Cantidad" onblur="adicional2()" onfocus="adicional1()" tabindex=2 autocomplete="off">
+                        <input id="cantidad" name="cantidad" type="text" placeholder="Cantidad" onkeyup="adicional22();adicional2()" onfocus="adicional1()" tabindex=2 autocomplete="off">
                     </div>
                     <div class="col-lg-1"></div>
                     <div id="">
@@ -236,8 +235,8 @@
         <tr>
             <td></td>
             <td></td>
-            <input type="hidden" id="dolaresInsertar" name="dolaresInsertar">
-            <input type="hidden" id="cambioInsertar" name="cambioInsertar">
+            <!--<input type="hidden" id="dolaresInsertar" name="dolaresInsertar">
+            <input type="hidden" id="cambioInsertar" name="cambioInsertar">-->
             <input type="hidden" id="conceptoAS" name="conceptoAS">
             <input type="hidden" id="comentarioAS" name="comentarioAS">
             <input type="hidden" id="cantidadAS" name="cantidadAS" value="">
@@ -280,7 +279,6 @@
         var img = null;
         sayCheese.on('start', function() {
          // do something when started
-         this.takeSnapshot();
         });
 
         sayCheese.on('error', function(error) {
@@ -294,7 +292,7 @@
 
         sayCheese.start();
 
-        $('#tomar').bind('click',function(e){
+        $('#tomar').on('click',function(e){
             sayCheese.takeSnapshot(170,130);
             return false;
         })

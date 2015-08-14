@@ -36,20 +36,14 @@
             elseif ($dolarAnt < $dolar) {
                     ?> <script>alert("No cuenta con suficientes dólares en caja");</script><?php   
             }
-            else
-            {
-                if ($diferencia == 0.00) {
-                    $_SESSION['diferencia'] =$_POST['totalConvS'];
-                    ?> <script>document.location=("redondeo.php");</script><?php
-                }
-                else
-                {
-                    $_SESSION['diferencia'] =$_POST['totalDifS'];
-                    ?> <script>document.location=("redondeo.php");</script><?php
-                }
-                          
+            else if ($diferencia == 0.00 && $ttcs != 0.00) {
+                 $_SESSION['diferencia'] =$_POST['totalConvS'];
+                 ?> <script>document.location=("redondeo.php");</script><?php
             }
-            
+            else if ($diferencia <= $ttcs) {
+                $_SESSION['diferencia'] =$_POST['totalDifS'];
+                ?> <script>document.location=("redondeo.php");</script><?php
+            }
      ?>
       <?php 
             $totalCambio = $_POST['totalConv'];
