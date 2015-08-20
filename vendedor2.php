@@ -93,7 +93,7 @@
                                     <input id="divisaConv" type="text" placeholder="Dólares" onkeypress="divisa(this.form)" name="divisaConv" tabindex=1 autofocus autocomplete="off">
                                 </div>
                                 <div id="parteb">
-                                 <?php include_once("php/tipo_cambio_dv_dllcompra.php"); ?><!--Obtener el tipo de cambio a la venta-->
+                                 <?php include_once("php/tipo_cambio_dv_dllcompra.php"); ?><!--Obtener el tipo de cambio a la compra-->
                                     <input id="tipoCambioConv" type="text" placeholder="Cambio" onkeypress="cambio(this.form)"  name="tipoCambioConv" value="<?php echo "$xyz"; ?>" tabindex=2 autocomplete="off">
                                 </div>
                                 <div id="partec">
@@ -355,7 +355,7 @@
     </table>
    
     </form>
-    <?php include_once("php/compra_dolares.php"); ?><!--Operaciones de la venta de dólares-->
+    <?php include_once("php/compra_dolares.php"); ?><!--Operaciones de la compra de dólares-->
 </div>
                                 <div class="panel-footer text-right">
                                 </div>

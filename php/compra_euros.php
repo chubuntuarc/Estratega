@@ -4,7 +4,7 @@
             $query = "SELECT * FROM cajas WHERE usuario = '$nom'";
             $resultado = mysql_query($query);
             while ($fila = mysql_fetch_array($resultado)) {
-                $GLOBALS['dolarAnt'] = $fila[dolares];
+                $GLOBALS['dolarAnt'] = $fila[euros];
                 $GLOBALS['pesosAnt'] = $fila[pesos];
                 $GLOBALS['redondoAnt'] = $fila[redondeo];
             }
@@ -24,14 +24,14 @@
             $_SESSION['cambio'] = $_POST['cambioInsertar'];
             $_SESSION['pesosA'] = $pesosAnt;
             $_SESSION['redondo'] = $redondoAnt;
-            $_SESSION['tipoDivisa'] = "Dollar";
+            $_SESSION['tipoDivisa'] = "Euro";
             $_SESSION['tipoMov'] = "Compra";
-            $_SESSION['updateDivisa'] = "dolares";
+            $_SESSION['updateDivisa'] = "euros";
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
 
             if ($pesosAnt >= $peso && $totalCambio == 0.00 && $ttcs == 0.00 ) {
-                $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Compra','$nom')";
+                $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Euro',{$_POST['cambioInsertar']},'Compra','$nom')";
                 $resultado = mysql_query($query);
             }
             elseif ($pesosAnt < $peso ) {
@@ -61,13 +61,13 @@
             $_SESSION['cambio'] = $_POST['cambioInsertar'];
             $_SESSION['pesosA'] = $pesosAnt;
             $_SESSION['redondo'] = $redondoAnt;
-            $_SESSION['tipoDivisa'] = "Dollar";
+            $_SESSION['tipoDivisa'] = "Euro";
             $_SESSION['tipoMov'] = "Compra";
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
             if ($pesosAnt >= $peso && $totalCambio == 0.00) {
-             $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
+             $query = "UPDATE cajas SET euros = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
                $resultado = mysql_query($query);
             }            
 

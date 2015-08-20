@@ -110,6 +110,7 @@ while ($fila = mysql_fetch_array($resultado)) {
                 $x = $_SESSION['dolar'];
             $y = $_SESSION['cambio'];
             $tipo = $_SESSION['tipoDivisa'];
+            $tipoM = $_SESSION['tipoMov'];
             $dolar = $_SESSION['dolar'];
             $peso = $_SESSION['ttlC'];
             $pesosAnt = $_SESSION['pesosA'];
@@ -117,13 +118,14 @@ while ($fila = mysql_fetch_array($resultado)) {
             $redondo = $_SESSION['redondo'];
             $diferencia = $_SESSION['diferencia'];
             $updateDivisa = $_SESSION['updateDivisa'];
-               $nuevoPeso = $pesosAnt - $peso;
+                $nuevoPeso = $pesosAnt - $peso;
                 $nuevoDolar = $dolarAnt + $dolar;
                 $nuevoRedondeo = $redondo + $diferencia;
+ 
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-                $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ($x,'$tipo',$y,'Compra','$nom')";
+                $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ($x,'$tipo',$y,'$tipoM','$nom')";
                 $resultado = mysql_query($query);
                 echo "Registro actualizado con éxito";
             }
