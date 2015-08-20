@@ -29,39 +29,34 @@
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
 
-            if ($dolarAnt >= $dolar && $diferencia == 0.00 && $difDolar == 0.00 && $ttcs == 0.00 ) {
+            if ($dolarAnt >= $dolar && $ttcs == 0.00 ) {
                 $query = "INSERT INTO movimientos (cantidad, divisa, tipo_cambio,tipo_movimiento, usuario) VALUES ({$_POST['dolaresInsertar']} ,'Dollar',{$_POST['cambioInsertar']},'Venta','$nom')";
                 $resultado = mysql_query($query);
             }
             elseif ($dolarAnt < $dolar) {
                     ?> <script>alert("No cuenta con suficientes dólares en caja");</script><?php   
             }
-            else if ($diferencia == 0.00 && $ttcs != 0.00) {
-                 $_SESSION['diferencia'] =$_POST['totalConvS'];
-                 ?> <script>document.location=("redondeo.php");</script><?php
-            }
-            else if ($diferencia <= $ttcs) {
-                $_SESSION['diferencia'] =$_POST['totalDifS'];
+            else if ($dolarAnt >= $dolar && $ttcs != 0.00 ) {
+                $_SESSION['diferencia'] =$_POST['totalConvS'];
                 ?> <script>document.location=("redondeo.php");</script><?php
             }
      ?>
       <?php 
-            $totalCambio = $_POST['totalConv'];
+            $totalCambio = $_POST['totalConvS'];
             $cambio = $_POST['cambioInsertar'];
-            $peso = $_POST['totalConv'];
+            $peso = $_POST['pesosInsertar'];
             $difPeso = $_POST['totalDif'];
             $difDolar = $_POST['totalDllDif'];
             $dolar = $_POST['dolaresInsertar'];
-            $diferencia = $_POST['totalDifS'];
+            $diferencia = $_POST['totalConvS'];
             $nuevoPeso = $pesosAnt + $peso;
                 $nuevoDolar = $dolarAnt - $dolar;
                 $nuevoRedondeo = $redondoAnt - $diferencia;
-                $redondeo2 = $redondoAnt - $totalCambio;
                 
 
             $_SESSION['dolar'] = $_POST['dolaresInsertar'];
             $_SESSION['dolarA'] = $dolarAnt;
-            $_SESSION['ttlC'] = $_POST['totalConv'];
+            $_SESSION['ttlC'] = $_POST['pesosInsertar'];
             $_SESSION['cambio'] = $_POST['cambioInsertar'];
             $_SESSION['pesosA'] = $pesosAnt;
             $_SESSION['redondo'] = $redondoAnt;
@@ -70,12 +65,8 @@
 
             $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
             mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-            if ($dolarAnt >= $dolar && $diferencia == 0.00 && $difDolar == 0.00) {
-                if ($totalCambio > $diferencia && $diferencia != 0.00) {
-                     $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $redondeo2 WHERE usuario = '$nom'";
-               $resultado = mysql_query($query);
-                }
-                $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
+            if ($dolarAnt >= $dolar && $ttcs == 0.00) {
+             $query = "UPDATE cajas SET dolares = $nuevoDolar, pesos = $nuevoPeso, redondeo = $nuevoRedondeo WHERE usuario = '$nom'";
                $resultado = mysql_query($query);
             }            
 

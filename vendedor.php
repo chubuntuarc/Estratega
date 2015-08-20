@@ -343,6 +343,7 @@
             <td></td>
             <input type="hidden" id="dolaresInsertar" name="dolaresInsertar">
             <input type="hidden" id="cambioInsertar" name="cambioInsertar">
+            <input type="hidden" id="pesosInsertar" name="pesosInsertar">
             <input type="hidden" id="subtotal" name="subtotal">
             <input type="hidden" id="subtotalDll" name="subtotalDll">
             <td></td>
