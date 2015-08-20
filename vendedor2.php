@@ -342,11 +342,11 @@
          <tr>
             <td>Cambio</td>
             <td></td>
-            <td><input id="totalDif" name="totalDif" type="text" placeholder="Diferencia" readonly></td>
+            <td><input id="totalDif" name="totalDif" type="hidden" placeholder="Diferencia" readonly></td>
              <td></td>
             <td><input id="totalDllDif" name="totalDllDif" type="hidden" placeholder="Diferencia" readonly></td>
             <td></td>
-            <td><input id="totalDifS" name="totalDifS" type="text" placeholder="Diferencia" readonly></td>
+            <td><input id="totalDifS" name="totalDifS" type="hidden" placeholder="Diferencia" readonly></td>
         </tr> 
         <tr>
             <td></td>
