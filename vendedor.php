@@ -239,9 +239,9 @@
         </tr> 
         <tr>
             <td>10.00</td>
-            <td><input type="text" placeholder="0" id="f7" onkeypress="fajilla10P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f7" onkeyup="fajilla10P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP10" name="fajillaP10" value="0" >
-            <td><input id="10" name="10" type="text" placeholder="0" tabindex=10 onkeypress="pesos10(this.form)" autocomplete="off"></td>
+            <td><input id="10" name="10" type="text" placeholder="0" tabindex=10 onkeyup="pesos10(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal10" name="pesoVal10" value="0">
 
             <td><input type="text" placeholder="0" id="f18" onkeypress="fajilla10D(this.form)" autocomplete="off"</td>
@@ -334,15 +334,17 @@
             <td></td>
             <td><input id="totalDif" name="totalDif" type="hidden" placeholder="Diferencia" readonly></td>
              <td></td>
-            <td><input id="totalDllDif" type="text" placeholder="Diferencia" readonly></td>
+            <td><input id="totalDllDif" type="hidden" placeholder="Diferencia" readonly></td>
             <td></td>
-            <td><input id="totalDifS" name="totalDifS" type="text" placeholder="Diferencia" readonly></td>
+            <td><input id="totalDifS" name="totalDifS" type="hidden" placeholder="Diferencia" readonly></td>
         </tr> 
         <tr>
             <td></td>
             <td></td>
             <input type="hidden" id="dolaresInsertar" name="dolaresInsertar">
             <input type="hidden" id="cambioInsertar" name="cambioInsertar">
+            <input type="hidden" id="subtotal" name="subtotal">
+            <input type="hidden" id="subtotalDll" name="subtotalDll">
             <td></td>
             <td></td>
             <td></td>
