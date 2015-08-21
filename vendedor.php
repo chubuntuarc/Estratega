@@ -46,6 +46,10 @@
                 <a href="movimientos.php" >Información</a>
                 <a href="adicionales.php" >Adicionales</a>
                 <a href="vendedor2.php">Compra</a>
+                <?php 
+                if ($roluser == 'admin') {
+                  echo '<a href="admin.php">Panel</a>'; 
+                }?>
             </div>
                 
         </div>

@@ -34,9 +34,17 @@
 			$resultado = mysql_query($query);
 			while ($fila = mysql_fetch_array($resultado)) {
                                         $valor = $fila[pass];
+                                        $rol = $fila[rol];
                                     }
 			if ($passw == $valor) {
-				header('Location: movimientos.php');
+				if ($rol == 'admin') {
+					header('Location: admin.php');
+				}
+				else
+				{
+					header('Location: movimientos.php');
+				}
+				
 			}
 			else
 			{

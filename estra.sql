@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.3
+-- version 4.4.12
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Aug 13, 2015 at 12:52 
--- Server version: 5.6.24
--- PHP Version: 5.6.8
+-- Servidor: localhost
+-- Tiempo de generación: 21-08-2015 a las 21:04:35
+-- Versión del servidor: 5.6.25
+-- Versión de PHP: 5.6.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,16 +14,16 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `estra`
+-- Base de datos: `estra`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adicionales`
+-- Estructura de tabla para la tabla `adicionales`
 --
 
 CREATE TABLE IF NOT EXISTS `adicionales` (
@@ -35,30 +35,12 @@ CREATE TABLE IF NOT EXISTS `adicionales` (
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `usuario` varchar(30) NOT NULL,
   `archivo` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `adicionales`
---
-
-INSERT INTO `adicionales` (`folio_adicional`, `concepto`, `comentario`, `tipo`, `cantidad`, `fecha`, `usuario`, `archivo`) VALUES
-(102, 'Agua', '', 'Salida', 300.00, '2015-08-05 19:27:12', 'admin', ''),
-(103, 'Deposito', '', 'Salida', 600.00, '2015-08-05 19:27:55', 'admin', ''),
-(104, 'Aguinaldos', '', 'Salida', 50.00, '2015-08-11 16:42:58', 'admin', ''),
-(105, 'Agua', '', 'Salida', 50.00, '2015-08-11 16:44:38', 'admin', ''),
-(106, 'Fletes y envios', '', 'Salida', 100.00, '2015-08-11 16:46:10', 'admin', ''),
-(107, 'Alarma', '', 'Salida', 100.00, '2015-08-11 16:46:52', 'admin', ''),
-(108, 'Agua', '', 'Salida', 10.00, '2015-08-11 16:48:12', 'admin', ''),
-(109, 'Agua', '', 'Salida', 10.00, '2015-08-11 16:56:09', 'admin', ''),
-(110, 'Fletes y envios', '', 'Salida', 15.00, '2015-08-11 16:56:53', 'admin', ''),
-(111, 'Donativos', '', 'Salida', 10.00, '2015-08-11 18:52:35', 'admin', ''),
-(112, 'Alarma', '', 'Salida', 15.00, '2015-08-11 18:56:20', 'admin', 'uploads/Jesus Arciniega TIS61D - Proyecto MusicPlayer.pdf'),
-(113, 'Combustibles y lubricantes', 'Gasolina', 'Salida', 120.00, '2015-08-11 18:58:49', 'admin', 'uploads/index.jpeg');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ajuste_cambio`
+-- Estructura de tabla para la tabla `ajuste_cambio`
 --
 
 CREATE TABLE IF NOT EXISTS `ajuste_cambio` (
@@ -71,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `ajuste_cambio` (
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ajuste_cambio`
+-- Volcado de datos para la tabla `ajuste_cambio`
 --
 
 INSERT INTO `ajuste_cambio` (`id_ajuste`, `dollar`, `dll_can`, `euro`, `fecha_ajuste`, `usuario`) VALUES
@@ -88,7 +70,7 @@ INSERT INTO `ajuste_cambio` (`id_ajuste`, `dollar`, `dll_can`, `euro`, `fecha_aj
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ajuste_cambio_compra`
+-- Estructura de tabla para la tabla `ajuste_cambio_compra`
 --
 
 CREATE TABLE IF NOT EXISTS `ajuste_cambio_compra` (
@@ -101,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `ajuste_cambio_compra` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ajuste_cambio_compra`
+-- Volcado de datos para la tabla `ajuste_cambio_compra`
 --
 
 INSERT INTO `ajuste_cambio_compra` (`id_ajuste`, `dollar`, `dll_can`, `euro`, `fecha_ajuste`, `usuario`) VALUES
@@ -113,7 +95,7 @@ INSERT INTO `ajuste_cambio_compra` (`id_ajuste`, `dollar`, `dll_can`, `euro`, `f
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cajas`
+-- Estructura de tabla para la tabla `cajas`
 --
 
 CREATE TABLE IF NOT EXISTS `cajas` (
@@ -127,18 +109,18 @@ CREATE TABLE IF NOT EXISTS `cajas` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `cajas`
+-- Volcado de datos para la tabla `cajas`
 --
 
 INSERT INTO `cajas` (`id_caja`, `usuario`, `dolares`, `pesos`, `dlls_can`, `euros`, `redondeo`) VALUES
-(1, 'admin', 900.00, 1248.00, 1000.00, 1000.00, 372.00),
+(1, 'admin', 1000.00, 296.00, 1000.00, 1040.00, 0.00),
 (3, 'chubuntu', 100.00, 0.00, 0.00, 0.00, 0.00),
 (4, 'vubaeza', 100.00, 0.00, 0.00, 0.00, 0.00);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `calculo_arqueo`
+-- Estructura de tabla para la tabla `calculo_arqueo`
 --
 
 CREATE TABLE IF NOT EXISTS `calculo_arqueo` (
@@ -158,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `calculo_arqueo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `calculo_arqueo`
+-- Volcado de datos para la tabla `calculo_arqueo`
 --
 
 INSERT INTO `calculo_arqueo` (`1000`, `500`, `200`, `100`, `50`, `20`, `10`, `5`, `2`, `1`, `5c`, `divisa`, `usuario`) VALUES
@@ -170,7 +152,7 @@ INSERT INTO `calculo_arqueo` (`1000`, `500`, `200`, `100`, `50`, `20`, `10`, `5`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `campos`
+-- Estructura de tabla para la tabla `campos`
 --
 
 CREATE TABLE IF NOT EXISTS `campos` (
@@ -180,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `campos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `campos`
+-- Volcado de datos para la tabla `campos`
 --
 
 INSERT INTO `campos` (`divisa`, `cambio`, `pesos`) VALUES
@@ -189,7 +171,7 @@ INSERT INTO `campos` (`divisa`, `cambio`, `pesos`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cuentas_contables`
+-- Estructura de tabla para la tabla `cuentas_contables`
 --
 
 CREATE TABLE IF NOT EXISTS `cuentas_contables` (
@@ -199,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `cuentas_contables` (
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `cuentas_contables`
+-- Volcado de datos para la tabla `cuentas_contables`
 --
 
 INSERT INTO `cuentas_contables` (`idCuenta`, `cuenta_contable`, `concepto`) VALUES
@@ -248,7 +230,7 @@ INSERT INTO `cuentas_contables` (`idCuenta`, `cuenta_contable`, `concepto`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `desglose_dolares`
+-- Estructura de tabla para la tabla `desglose_dolares`
 --
 
 CREATE TABLE IF NOT EXISTS `desglose_dolares` (
@@ -268,7 +250,7 @@ CREATE TABLE IF NOT EXISTS `desglose_dolares` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `desglose_pesos`
+-- Estructura de tabla para la tabla `desglose_pesos`
 --
 
 CREATE TABLE IF NOT EXISTS `desglose_pesos` (
@@ -289,7 +271,7 @@ CREATE TABLE IF NOT EXISTS `desglose_pesos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=441 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `desglose_pesos`
+-- Volcado de datos para la tabla `desglose_pesos`
 --
 
 INSERT INTO `desglose_pesos` (`id_movimiento`, `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `tipo`, `usuario`, `fecha`) VALUES
@@ -737,7 +719,7 @@ INSERT INTO `desglose_pesos` (`id_movimiento`, `a`, `b`, `c`, `d`, `e`, `f`, `g`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `historico_adicional`
+-- Estructura de tabla para la tabla `historico_adicional`
 --
 
 CREATE TABLE IF NOT EXISTS `historico_adicional` (
@@ -752,7 +734,7 @@ CREATE TABLE IF NOT EXISTS `historico_adicional` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `historico_adicional`
+-- Volcado de datos para la tabla `historico_adicional`
 --
 
 INSERT INTO `historico_adicional` (`folio_adicional`, `concepto`, `comentario`, `tipo`, `cantidad`, `documento`, `fecha`, `usuario`) VALUES
@@ -782,12 +764,25 @@ INSERT INTO `historico_adicional` (`folio_adicional`, `concepto`, `comentario`, 
 (96, 'Agua', '', 'Salida', 6.00, 'NO', '2015-08-05 13:07:25', 'admin'),
 (97, 'Agua', '', 'Salida', 3.00, 'NO', '2015-08-05 13:09:28', 'admin'),
 (98, 'Agua', '', 'Salida', 350.00, 'NO', '2015-08-05 13:15:55', 'admin'),
-(99, 'Salario', '', 'Salida', 1000.00, 'NO', '2015-08-05 13:18:39', 'admin');
+(99, 'Salario', '', 'Salida', 1000.00, 'NO', '2015-08-05 13:18:39', 'admin'),
+(102, 'Agua', '', 'Salida', 300.00, '2015-08-05 13:27:12', 'admin', ''),
+(103, 'Deposito', '', 'Salida', 600.00, '2015-08-05 13:27:55', 'admin', ''),
+(104, 'Aguinaldos', '', 'Salida', 50.00, '2015-08-11 10:42:58', 'admin', ''),
+(105, 'Agua', '', 'Salida', 50.00, '2015-08-11 10:44:38', 'admin', ''),
+(106, 'Fletes y envios', '', 'Salida', 100.00, '2015-08-11 10:46:10', 'admin', ''),
+(107, 'Alarma', '', 'Salida', 100.00, '2015-08-11 10:46:52', 'admin', ''),
+(108, 'Agua', '', 'Salida', 10.00, '2015-08-11 10:48:12', 'admin', ''),
+(109, 'Agua', '', 'Salida', 10.00, '2015-08-11 10:56:09', 'admin', ''),
+(110, 'Fletes y envios', '', 'Salida', 15.00, '2015-08-11 10:56:53', 'admin', ''),
+(111, 'Donativos', '', 'Salida', 10.00, '2015-08-11 12:52:35', 'admin', ''),
+(112, 'Alarma', '', 'Salida', 15.00, '2015-08-11 12:56:20', 'admin', 'uploads/Jesus Arciniega TIS61D'),
+(113, 'Combustibles y lubricantes', 'Gasolina', 'Salida', 120.00, '2015-08-11 12:58:49', 'admin', 'uploads/index.jpeg'),
+(114, 'Camaras de seguridad', 'Pago camaras', 'Salida', 200.00, '2015-08-18 10:16:16', 'admin', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `historico_movimiento`
+-- Estructura de tabla para la tabla `historico_movimiento`
 --
 
 CREATE TABLE IF NOT EXISTS `historico_movimiento` (
@@ -801,7 +796,7 @@ CREATE TABLE IF NOT EXISTS `historico_movimiento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `historico_movimiento`
+-- Volcado de datos para la tabla `historico_movimiento`
 --
 
 INSERT INTO `historico_movimiento` (`id_movimiento`, `cantidad`, `divisa`, `tipo_cambio`, `tipo_movimiento`, `usuario`, `fecha`) VALUES
@@ -1013,12 +1008,42 @@ INSERT INTO `historico_movimiento` (`id_movimiento`, `cantidad`, `divisa`, `tipo
 (170, 100.00, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 11:55:10'),
 (171, 100.00, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 11:55:43'),
 (172, 100.00, 'Dollar', 16.29, 'Venta', 'admin', '2015-07-28 11:55:58'),
-(173, 125.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-07-28 13:58:02');
+(173, 125.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-07-28 13:58:02'),
+(174, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-11 10:45:54'),
+(175, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-20 13:24:11'),
+(176, 1000.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-08-20 13:24:28'),
+(177, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-20 13:53:05'),
+(178, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-20 13:55:38'),
+(179, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-20 13:57:49'),
+(180, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-20 14:00:52'),
+(181, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-20 14:01:43'),
+(182, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-20 14:02:20'),
+(183, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-20 14:07:50'),
+(184, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-20 14:08:33'),
+(185, 100.00, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-20 14:09:01'),
+(186, 100.00, 'Dollar', 12.60, 'Venta', 'admin', '2015-08-20 14:23:23'),
+(187, 100.00, 'Dollar', 12.60, 'Venta', 'admin', '2015-08-20 14:25:19'),
+(188, 100.00, 'Dll Can', 12.60, 'Venta', 'admin', '2015-08-20 14:27:32'),
+(189, 100.00, 'Dollar', 12.60, 'Venta', 'admin', '2015-08-20 14:34:17'),
+(190, 100.00, 'Euro', 18.00, 'Venta', 'admin', '2015-08-20 14:35:15'),
+(191, 100.00, 'Dollar', 18.00, 'Venta', 'admin', '2015-08-20 14:36:06'),
+(192, 100.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-08-20 15:54:50'),
+(193, 10.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-08-20 15:59:42'),
+(194, 100.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-08-20 16:14:05'),
+(195, 100.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-08-20 16:24:48'),
+(196, 10.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-08-20 16:26:35'),
+(197, 20.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-08-20 16:28:13'),
+(198, 10.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-08-20 16:28:56'),
+(199, 10.00, 'Dll Can', 12.30, 'Compra', 'admin', '2015-08-20 16:38:05'),
+(200, 10.00, 'Dollar', 16.15, 'Compra', 'admin', '2015-08-20 16:38:32'),
+(201, 10.00, 'Dollar', 12.30, 'Compra', 'admin', '2015-08-20 16:40:07'),
+(202, 10.00, 'Dll Can', 12.30, 'Compra', 'admin', '2015-08-20 16:41:18'),
+(203, 10.00, 'Euro', 17.60, 'Compra', 'admin', '2015-08-20 16:46:16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `movimientos`
+-- Estructura de tabla para la tabla `movimientos`
 --
 
 CREATE TABLE IF NOT EXISTS `movimientos` (
@@ -1029,19 +1054,21 @@ CREATE TABLE IF NOT EXISTS `movimientos` (
   `tipo_movimiento` varchar(30) NOT NULL,
   `usuario` varchar(30) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=207 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `movimientos`
+-- Volcado de datos para la tabla `movimientos`
 --
 
 INSERT INTO `movimientos` (`id_movimiento`, `cantidad`, `divisa`, `tipo_cambio`, `tipo_movimiento`, `usuario`, `fecha`) VALUES
-(174, 100, 'Dollar', 16.28, 'Venta', 'admin', '2015-08-11 16:45:54');
+(204, 10, 'Euro', 17.60, 'Compra', 'admin', '2015-08-20 22:47:22'),
+(205, 10, 'Euro', 17.60, 'Compra', 'admin', '2015-08-20 22:47:49'),
+(206, 20, 'Euro', 17.60, 'Compra', 'admin', '2015-08-20 22:48:18');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -1050,124 +1077,125 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `rol` varchar(30) NOT NULL,
   `usuario` varchar(30) NOT NULL,
   `pass` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `rol`, `usuario`, `pass`) VALUES
 (1, 'Administrador', 'admin', 'admin', 'admin'),
 (2, 'Jesus Arciniega', 'admin', 'chubuntu', 'Ubuntuarc1'),
-(3, 'Victor Baeza', 'admin', 'vubaeza', '07121991');
+(3, 'Victor Baeza', 'admin', 'vubaeza', '07121991'),
+(4, 'Victor Baeza', 'vendedor', 'victor', '07121991');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `adicionales`
+-- Indices de la tabla `adicionales`
 --
 ALTER TABLE `adicionales`
   ADD PRIMARY KEY (`folio_adicional`);
 
 --
--- Indexes for table `ajuste_cambio`
+-- Indices de la tabla `ajuste_cambio`
 --
 ALTER TABLE `ajuste_cambio`
   ADD PRIMARY KEY (`id_ajuste`);
 
 --
--- Indexes for table `ajuste_cambio_compra`
+-- Indices de la tabla `ajuste_cambio_compra`
 --
 ALTER TABLE `ajuste_cambio_compra`
   ADD PRIMARY KEY (`id_ajuste`);
 
 --
--- Indexes for table `cajas`
+-- Indices de la tabla `cajas`
 --
 ALTER TABLE `cajas`
   ADD PRIMARY KEY (`id_caja`);
 
 --
--- Indexes for table `cuentas_contables`
+-- Indices de la tabla `cuentas_contables`
 --
 ALTER TABLE `cuentas_contables`
   ADD PRIMARY KEY (`idCuenta`);
 
 --
--- Indexes for table `desglose_dolares`
+-- Indices de la tabla `desglose_dolares`
 --
 ALTER TABLE `desglose_dolares`
   ADD PRIMARY KEY (`id_movimiento`);
 
 --
--- Indexes for table `desglose_pesos`
+-- Indices de la tabla `desglose_pesos`
 --
 ALTER TABLE `desglose_pesos`
   ADD PRIMARY KEY (`id_movimiento`);
 
 --
--- Indexes for table `movimientos`
+-- Indices de la tabla `movimientos`
 --
 ALTER TABLE `movimientos`
   ADD PRIMARY KEY (`id_movimiento`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `adicionales`
+-- AUTO_INCREMENT de la tabla `adicionales`
 --
 ALTER TABLE `adicionales`
-  MODIFY `folio_adicional` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=114;
+  MODIFY `folio_adicional` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `ajuste_cambio`
+-- AUTO_INCREMENT de la tabla `ajuste_cambio`
 --
 ALTER TABLE `ajuste_cambio`
   MODIFY `id_ajuste` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT for table `ajuste_cambio_compra`
+-- AUTO_INCREMENT de la tabla `ajuste_cambio_compra`
 --
 ALTER TABLE `ajuste_cambio_compra`
   MODIFY `id_ajuste` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `cajas`
+-- AUTO_INCREMENT de la tabla `cajas`
 --
 ALTER TABLE `cajas`
   MODIFY `id_caja` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `cuentas_contables`
+-- AUTO_INCREMENT de la tabla `cuentas_contables`
 --
 ALTER TABLE `cuentas_contables`
   MODIFY `idCuenta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
 --
--- AUTO_INCREMENT for table `desglose_dolares`
+-- AUTO_INCREMENT de la tabla `desglose_dolares`
 --
 ALTER TABLE `desglose_dolares`
   MODIFY `id_movimiento` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `desglose_pesos`
+-- AUTO_INCREMENT de la tabla `desglose_pesos`
 --
 ALTER TABLE `desglose_pesos`
   MODIFY `id_movimiento` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=441;
 --
--- AUTO_INCREMENT for table `movimientos`
+-- AUTO_INCREMENT de la tabla `movimientos`
 --
 ALTER TABLE `movimientos`
-  MODIFY `id_movimiento` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=175;
+  MODIFY `id_movimiento` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=207;
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

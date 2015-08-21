@@ -44,6 +44,10 @@
                 <div class="menux col-xs-9 col-lg-9">
                     <a href="movimientos.php" >Información</a>
                     <a href="canada.php">Venta</a>
+                    <?php 
+                if ($roluser == 'admin') {
+                  echo '<a href="admin.php">Panel</a>'; 
+                }?>
                 </div>
                     
             </div>

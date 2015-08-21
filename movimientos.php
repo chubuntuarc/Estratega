@@ -39,6 +39,10 @@
             <div class="menux col-xs-8 col-lg-9">
                 <a href="vendedor.php" >Operaciones</a>
                 <a href="adicionales.php" >Adicionales</a>
+                <?php 
+                if ($roluser == 'admin') {
+                  echo '<a href="admin.php">Panel</a>'; 
+                }?>
             </div>
         </div>
 </div>
