@@ -312,7 +312,7 @@
                     <div class="tabla ">
                     <form>
                     <select id="selVendedor">
-                                        <?php include_once("php/contable.php"); ?>
+                                        <?php include_once("php/vendedores.php"); ?>
                     </select><br>
                     <div id="parte1">
                         <input id="dotaPesos" type="text" placeholder="Pesos" onkeypress="divisa(this.form)"  name="divisaConv" tabindex=1  autofocus autocomplete="off">
