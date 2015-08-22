@@ -43,7 +43,15 @@
 {
 	width: 20%;
 }
-.tabla #ctd, .tabla #cpra, .tabla #vta
+.tabla #can,.tabla #tca, .tabla #ussr, .tabla #foli
+{
+	width: 12%;
+}
+.tabla #pez
+{
+	width: 15%;
+}
+.tabla #ctd, .tabla #cpra, .tabla #vta, .tabla #hrr
 {
 	width: 20%;
 } 

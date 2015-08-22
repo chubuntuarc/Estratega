@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <title>Estratega | Admin</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <link rel="stylesheet" type="text/css" href="css/tabla.css">
         <!-- bootstrap 3.0.2 -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
@@ -196,7 +197,7 @@
                             <div class="small-box bg-aqua">
                                 <div class="inner">
                                     <h3>
-                                        $15,500
+                                        <?php include_once("php/pesos_admin.php");?>
                                     </h3>
                                     <p>
                                         Pesos
@@ -215,7 +216,7 @@
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        $12,000
+                                        <?php include_once("php/dolares_admin.php");?>
                                     </h3>
                                     <p>
                                         Dólares
@@ -234,7 +235,7 @@
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                        $5,000
+                                        <?php include_once("php/euros_admin.php");?>
                                     </h3>
                                     <p>
                                         Euros
@@ -253,7 +254,7 @@
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3>
-                                        $3,567
+                                        <?php include_once("php/canadienses_admin.php");?>
                                     </h3>
                                     <p>
                                         Canadienses
@@ -270,39 +271,17 @@
                     </div><!-- /.row -->
 
                     <!-- top row -->
-                    <div class="row">
-                        <div class="col-xs-12 connectedSortable">
-                            
-                        </div><!-- /.col -->
-                    </div>
-                    <!-- /.row -->
 
                     <!-- Main row -->
                     <div class="row">
                         <!-- Left col -->
+
                         <section class="col-lg-6 connectedSortable"> 
-                           
-                            
-                            <!-- Custom tabs (Charts with tabs)-->
-                            <div class="nav-tabs-custom">
-                                <!-- Tabs within a box -->
-                                <ul class="nav nav-tabs pull-right">
-                                    <li class="active"><a href="#revenue-chart" data-toggle="tab">Dólar</a></li>
-                                    <li><a href="#sales-chart" data-toggle="tab">Euro</a></li>
-                                    <li class="pull-left header"><i class="fa fa-inbox"></i> Ventas</li>
-                                </ul>
-                                <div class="tab-content no-padding">
-                                    <!-- Morris chart - Sales -->
-                                    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
-                                </div>
-                            </div><!-- /.nav-tabs-custom -->
-                                                
-                            <!-- Calendar -->
+                            <!-- Compras -->
                             <div class="box box-warning">
                                 <div class="box-header">
-                                    <i class="fa fa-calendar"></i>
-                                    <div class="box-title">Calendario</div>
+                                    <i class="fa fa-inbox"></i>
+                                    <div class="box-title">Compras</div>
                                     
                                     <!-- tools box -->
                                     <div class="pull-right box-tools">
@@ -310,26 +289,88 @@
                                         <div class="btn-group">
                                             <button class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
                                             <ul class="dropdown-menu pull-right" role="menu">
-                                                <li><a href="#">Add new event</a></li>
-                                                <li><a href="#">Clear events</a></li>
+                                                <li><a href="vendedor2.php">Comprar Dólares</a></li>
+                                                <li><a href="euro2.php">Comprar Euros</a></li>
+                                                <li><a href="canada2.php">Comprar Canadienses</a></li>
                                                 <li class="divider"></li>
-                                                <li><a href="#">View calendar</a></li>
+                                                <li><a href="#">Reporte de Compras</a></li>
                                             </ul>
                                         </div>
                                     </div><!-- /. tools -->                                    
                                 </div><!-- /.box-header -->
                                 <div class="box-body no-padding">
-                                    <!--The calendar -->
+                                    <!--Tabla -->
                                     <div id="calendar"></div>
+                                    <div class="tabla ">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th id="foli">Folio</th>
+                                                <th id="divi">Divisa</th>
+                                                <th id="can">Cantidad</th>
+                                                <th id="pez">Pesos</th>
+                                                <th id="tca">Tipo de Cambio</th>
+                                                <th id="ussr">Usuario</th>
+                                                <th id="hrr">Hora</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php include_once("php/compras_admin.php"); ?> <!--Vista de registro de ventas-->
+                                        </tbody>
+                                    </table>
+                                </div>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
 
-                            
                         </section><!-- /.Left col -->
                         <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
                         <section class="col-lg-6 connectedSortable">
                             
-
+                            <!-- Ventas -->
+                            <div class="box box-warning">
+                                <div class="box-header">
+                                    <i class="fa fa-inbox"></i>
+                                    <div class="box-title">Ventas</div>
+                                    
+                                    <!-- tools box -->
+                                    <div class="pull-right box-tools">
+                                        <!-- button with a dropdown -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
+                                            <ul class="dropdown-menu pull-right" role="menu">
+                                                <li><a href="vendedor.php">Vender Dólares</a></li>
+                                                <li><a href="euro.php">Vender Euros</a></li>
+                                                <li><a href="canada.php">Vender Canadienses</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Reporte Compras</a></li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- /. tools -->                                    
+                                </div><!-- /.box-header -->
+                                <div class="box-body no-padding">
+                                    <!--Tabla -->
+                                    <div id="calendar"></div>
+                                    <div class="tabla ">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th id="foli">Folio</th>
+                                                <th id="divi">Divisa</th>
+                                                <th id="can">Cantidad</th>
+                                                <th id="pez">Pesos</th>
+                                                <th id="tca">Tipo de Cambio</th>
+                                                <th id="ussr">Usuario</th>
+                                                <th id="hrr">Hora</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php include_once("php/ventas_admin.php"); ?> <!--Vista de registro de ventas-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
                            
 
                             
