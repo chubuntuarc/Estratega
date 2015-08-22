@@ -124,7 +124,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="dotacion.php"><i class="fa fa-angle-double-right"></i> Dotación</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Dotación</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> Arqueo</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> Asignación</a></li>
                             </ul>
@@ -178,12 +178,12 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Admin
-                        <small>Panel de administración</small>
+                        Cajas
+                        <small>Dotación de dinero</small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-                        <li class="active">Panel de administración</li>
+                        <li><a href="#"><i class="fa fa-inbox"></i> Cajas</a></li>
+                        <li class="active">Dotación de dinero</li>
                     </ol>
                 </section>
 
@@ -276,12 +276,12 @@
                     <div class="row">
                         <!-- Left col -->
 
-                        <section class="col-lg-6 connectedSortable"> 
+                        <section class="col-lg-12 connectedSortable"> 
                             <!-- Compras -->
                             <div class="box box-warning">
                                 <div class="box-header">
                                     <i class="fa fa-inbox"></i>
-                                    <div class="box-title">Compras</div>
+                                    <div class="box-title">Dotación de dinero a caja</div>
                                     
                                     <!-- tools box -->
                                     <div class="pull-right box-tools">
@@ -325,57 +325,7 @@
                         </section><!-- /.Left col -->
                         <!-- right col (We are only adding the ID to make the widgets sortable)-->
 
-                        <section class="col-lg-6 connectedSortable">
-                            
-                            <!-- Ventas -->
-                            <div class="box box-warning">
-                                <div class="box-header">
-                                    <i class="fa fa-inbox"></i>
-                                    <div class="box-title">Ventas</div>
-                                    
-                                    <!-- tools box -->
-                                    <div class="pull-right box-tools">
-                                        <!-- button with a dropdown -->
-                                        <div class="btn-group">
-                                            <button class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
-                                            <ul class="dropdown-menu pull-right" role="menu">
-                                                <li><a href="vendedor.php">Vender Dólares</a></li>
-                                                <li><a href="euro.php">Vender Euros</a></li>
-                                                <li><a href="canada.php">Vender Canadienses</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Reporte Compras</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- /. tools -->                                    
-                                </div><!-- /.box-header -->
-                                <div class="box-body no-padding">
-                                    <!--Tabla -->
-                                    <div id="calendar"></div>
-                                    <div class="tabla ">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th id="foli">Folio</th>
-                                                <th id="divi">Divisa</th>
-                                                <th id="can">Cantidad</th>
-                                                <th id="pez">Pesos</th>
-                                                <th id="tca">Tipo de Cambio</th>
-                                                <th id="ussr">Usuario</th>
-                                                <th id="hrr">Hora</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php include_once("php/ventas_admin.php"); ?> <!--Vista de registro de ventas-->
-                                        </tbody>
-                                    </table>
-                                </div>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                           
-
-                            
-
-                        </section><!-- right col -->
+                        
                     </div><!-- /.row (main row) -->
 
                 </section><!-- /.content -->
