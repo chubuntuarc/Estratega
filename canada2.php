@@ -14,6 +14,7 @@
     <!--Adicionales-->
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/vendedor.css">
+    <link rel="icon" type="image/png" href="favicon.ico" />
     <!--Elementos por defecto-->
     <link href="css/vendor.min.css" rel="stylesheet">
     <link href="css/theme-core.min.css" rel="stylesheet">

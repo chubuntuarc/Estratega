@@ -6,6 +6,7 @@
         <title>Estratega | Admin</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <link rel="stylesheet" type="text/css" href="css/tabla.css">
+        <link rel="icon" type="image/png" href="favicon.ico" />
         <!-- bootstrap 3.0.2 -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->

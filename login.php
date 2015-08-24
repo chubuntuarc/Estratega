@@ -4,6 +4,7 @@
 	<title>Login Estratega</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="icon" type="image/png" href="favicon.ico" />
 </head>
 <body>
 

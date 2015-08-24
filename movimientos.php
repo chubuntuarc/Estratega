@@ -10,6 +10,7 @@
     <title>Estratega Movimientos</title>
     <script src="js/script.js"></script>
     <link href="css/vendor.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/cierre.css">
     <link href="css/theme-core.min.css" rel="stylesheet">
