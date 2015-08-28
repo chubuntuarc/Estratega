@@ -364,7 +364,7 @@
         <tr>
             <td>1000.00</td>
             <td><input type="text" placeholder="0" id="f1000p" autocomplete="off"></td>
-            <td><input type="text" placeholder="0" id="p1000"  tabindex=5 autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="p1000"  name="p1000" tabindex=5 autocomplete="off"></td>
             <!--
             <td><input type="text" placeholder="0" id="f1000p" onkeypress="fajilla1000P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajilla1000" name="fajilla1000" value="0" >
