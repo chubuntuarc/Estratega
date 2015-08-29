@@ -2,3 +2,8 @@
 {
 	width: 100%;
 }
+
+#f1000p, #p1000, #f500p, #p500, #f200p, #p200, #f100p, #p100, #f50p, #p50, #f20p, #p20, #f10p, #p10
+{
+	background-color: #E0F0FF;
+}

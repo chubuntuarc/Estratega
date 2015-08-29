@@ -316,16 +316,16 @@
                                         <?php include_once("php/vendedores.php"); ?>
                     </select><br>
                     <div id="parte1">
-                        <input id="dotaPesos" type="text" placeholder="Pesos" onkeypress="pesos(this.form)"  name="divisaConv" tabindex=1  autofocus autocomplete="off">
+                        <input id="dotaPesos" type="text" placeholder="Pesos" onkeypress="pesos(this.form)" tabindex=1  autofocus autocomplete="off">
                     </div>
                     <div id="parte1">
-                        <input id="dotaDolar" type="text" placeholder="Dólares"  name="divisaConv" tabindex=2  autocomplete="off">
+                        <input id="dotaDolar" type="text" placeholder="Dólares" tabindex=2  autocomplete="off">
                     </div>
                     <div id="parte1">
-                        <input id="dotaEuro" type="text" placeholder="Euros"name="divisaConv" tabindex=3 autocomplete="off">
+                        <input id="dotaEuro" type="text" placeholder="Euros" tabindex=3 autocomplete="off">
                     </div>
                     <div id="parte1">
-                        <input id="dotaCana" type="text" placeholder="Canadienses" name="divisaConv" tabindex=4 autocomplete="off">
+                        <input id="dotaCana" type="text" placeholder="Canadienses" tabindex=4 autocomplete="off">
                     </div>
                    </form>
                  </div><div class="panel-footer text-right"> </div></div> </div>
@@ -378,7 +378,7 @@
         <tr>
             <td>500.00</td>
             <td><input type="text" placeholder="0" id="f500p" onkeypress="fajilla500(this.form)" autocomplete="off"></td>
-            <td><input type="text" placeholder="0" id="p500"  onkeypress="pesos500(this.form)" tabindex=5 autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="p500"  onkeypress="pesos500(this.form)" tabindex=6 autocomplete="off"></td>
 
             <td><input type="text" readonly="" id="f13"></td>
             <td><input type="text" readonly=""></td>
@@ -391,8 +391,8 @@
         </tr>
         <tr>
             <td>200.00</td>
-            <td><input type="text" readonly="" id="f12"></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" placeholder="0" id="f200p" onkeypress="fajilla200(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="p200"  onkeypress="pesos200(this.form)" tabindex=7 autocomplete="off"></td>
 
             <td><input type="text" readonly="" id="f13"></td>
             <td><input type="text" readonly=""></td>
@@ -405,8 +405,8 @@
         </tr>
         <tr>
             <td>100.00</td>
-            <td><input type="text" readonly="" id="f12"></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" placeholder="0" id="f100p" onkeypress="fajilla100(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="p100"  onkeypress="pesos100(this.form)" tabindex=8 autocomplete="off"></td>
 
             <td><input type="text" readonly="" id="f13"></td>
             <td><input type="text" readonly=""></td>
@@ -419,8 +419,8 @@
         </tr>
         <tr>
             <td>50.00</td>
-            <td><input type="text" readonly="" id="f12"></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" placeholder="0" id="f50p" onkeypress="fajilla50(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="p50"  onkeypress="pesos50(this.form)" tabindex=9 autocomplete="off"></td>
 
             <td><input type="text" readonly="" id="f13"></td>
             <td><input type="text" readonly=""></td>
@@ -433,8 +433,8 @@
         </tr>  
         <tr>
             <td>20.00</td>
-            <td><input type="text" readonly="" id="f12"></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" placeholder="0" id="f20p" onkeypress="fajilla20(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="p20"  onkeypress="pesos20(this.form)" tabindex=10 autocomplete="off"></td>
 
             <td><input type="text" readonly="" id="f13"></td>
             <td><input type="text" readonly=""></td>
@@ -447,8 +447,8 @@
         </tr> 
         <tr>
             <td>10.00</td>
-            <td><input type="text" readonly="" id="f12"></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" placeholder="0" id="f10p" onkeypress="fajilla10(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="p10"  onkeypress="pesos10(this.form)" tabindex=11 autocomplete="off"></td>
 
             <td><input type="text" readonly="" id="f13"></td>
             <td><input type="text" readonly=""></td>
