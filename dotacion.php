@@ -363,13 +363,8 @@
         <tbody class="manejoT">
         <tr>
             <td>1000.00</td>
-            <td><input type="text" placeholder="0" id="f1000p" autocomplete="off"></td>
-            <td><input type="text" placeholder="0" id="p1000"  name="p1000" tabindex=5 autocomplete="off"></td>
-            <!--
-            <td><input type="text" placeholder="0" id="f1000p" onkeypress="fajilla1000P(this.form)" autocomplete="off"></td>
-            <input type="hidden" id="fajilla1000" name="fajilla1000" value="0" >
-            <td><input id="p1000" name="p1000" type="text" placeholder="0" tabindex=4 onkeypress="pesos1000P(this.form)" autocomplete="off"></td>
-            <input type="hidden" id="pesos1000" name="pesos1000" value="0">--> 
+            <td><input type="text" placeholder="0" id="f1000p" onkeypress="fajilla1000(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="p1000"  onkeypress="pesos1000(this.form)" tabindex=5 autocomplete="off"></td>
             
             <td><input type="text" readonly="" id="f12"></td>
             <td><input type="text" readonly=""></td>
@@ -382,8 +377,8 @@
         </tr>
         <tr>
             <td>500.00</td>
-            <td><input type="text" readonly="" id="f12"></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" placeholder="0" id="f500p" onkeypress="fajilla500(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="p500"  onkeypress="pesos500(this.form)" tabindex=5 autocomplete="off"></td>
 
             <td><input type="text" readonly="" id="f13"></td>
             <td><input type="text" readonly=""></td>
