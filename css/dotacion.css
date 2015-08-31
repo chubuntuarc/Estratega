@@ -3,7 +3,22 @@
 	width: 100%;
 }
 
-#f1000p, #p1000, #f500p, #p500, #f200p, #p200, #f100p, #p100, #f50p, #p50, #f20p, #p20, #f10p, #p10
+#f1000p, #p1000, #f500p, #p500, #f200p, #p200, #f100p, #p100, #f50p, #p50, #f20p, #p20, #f10p, #p10, #f5p, #p5, #f2p, #p2, #f1p, #p1
 {
 	background-color: #E0F0FF;
+}
+
+#f100d, #d100, #f50d, #d50, #f20d, #d20, #f10d, #d10, #f5d, #d5, #f2d, #d2, #f1d, #d1
+{
+	background-color: #99D6AD;
+}
+
+#f100e, #e100, #f50e, #e50, #f20e, #e20, #f10e, #e10, #f5e, #e5, #f2e, #e2, #f1e, #e1
+{
+	background-color: #FFF0B2;
+}
+
+#f100c, #c100, #f50c, #c50, #f20c, #c20, #f10c, #c10, #f5c, #c5, #f2c, #c2, #f1c, #c1
+{
+	background-color: #FF9999;
 }
