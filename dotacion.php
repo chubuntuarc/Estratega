@@ -7,6 +7,7 @@
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <link rel="stylesheet" type="text/css" href="css/tabla.css">
         <link rel="stylesheet" type="text/css" href="css/dotacion.css">
+        <link rel="icon" type="image/png" href="favicon.ico" />
         <script src="js/dotacion.js"></script>
         <!-- bootstrap 3.0.2 -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -308,7 +309,7 @@
             <div class="item col-xs-12 col-lg-3">
                 <div class="panel panel-default paper-shadow" data-z="0.5">
                     <div class="panel-heading">
-                        <h4 class="text-headline margin-none">Vendedor / Moneda</h4>
+                        <h4 class="text-headline margin-none">Moneda</h4>
                     </div>
                     <div class="tabla ">
                     <form>
@@ -332,7 +333,7 @@
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-heading">
                 <h4 class="text-headline margin-none">Desglose</h4>
-                <p class="text-subhead text-light">Desglose de moneda</p>
+                <p class="text-subhead text-light">Desglose de moneda y selección de usuario</p>
             </div>
          <form method="post" class="desglose">
          <select id="selVendedor" name="selVendedor">

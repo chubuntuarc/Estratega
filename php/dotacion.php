@@ -95,6 +95,15 @@ $resultado = mysql_query($query);
 <?php 
 $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
 mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+$query = "SELECT * FROM arqueo where usuario = '$nombre'";
+$resultado = mysql_query($query);
+while ($fila = mysql_fetch_array($resultado)) {
+    $GLOBALS['nombre'] = $fila[usuario];
+}
+?>
+<?php 
+$con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
 $ven = $_POST['selVendedor'];
 $query = "SELECT * FROM arqueo where usuario = '$nombre'";
 $resultado = mysql_query($query);
