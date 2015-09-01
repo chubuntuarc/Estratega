@@ -138,9 +138,10 @@ while ($fila = mysql_fetch_array($resultado)) {
 $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
 mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
 
+//Pesos
 $pf1000 = $_POST['f1000p'];
 $pm1000 = $_POST['p1000'];
-$p1000 = $pm1000 + ($pf1000 * 100);
+$p1000 = $_POST['p1000'];
 $pf500 = $_POST['f500p'];
 $pm500 = $_POST['p500'];
 $p500 = $pm500 + ($pf500 * 100);
@@ -150,15 +151,34 @@ $p200 = $pm200 + ($pf200 * 100);
 $pf100 = $_POST['f100p'];
 $pm100 = $_POST['p100'];
 $p100 = $pm100 + ($pf100 * 100);
+$pf50 = $_POST['f50p'];
+$pm50 = $_POST['p50'];
+$p50 = $pm50 + ($pf50 * 100);
+$pf20 = $_POST['f20p'];
+$pm20 = $_POST['p20'];
+$p20 = $pm20 + ($pf20 * 100);
+$pf10 = $_POST['f10p'];
+$pm10 = $_POST['p10'];
+$p10 = $pm10 + ($pf10 * 100);
+$pf5 = $_POST['f5p'];
+$pm5 = $_POST['p5'];
+$p5 = $pm5 + ($pf5 * 100);
+$pf2 = $_POST['f2p'];
+$pm2 = $_POST['p2'];
+$p2 = $pm2 + ($pf2 * 100);
+$pf1 = $_POST['f1p'];
+$pm1 = $_POST['p1'];
+$p1 = $pm1 + ($pf1 * 100);
 
 
 if ($tPeso != 0 || $tDollar != 0 || $tCana != 0 || $tEuro != 0) {
-    ?> <script>alert("No se realizo correctamente el desglose");</script><?php   
+    ?> <script>alert("Realize nuevamente el desglose");</script><?php   
 }
 else
 {
-    $query = "UPDATE cajas SET pesos = $nuevoPeso , dolares = $nuevoDolar , dlls_can = $nuevoCana , euros = $nuevoEuro where usuario = '$nombre'";
+    $query = "UPDATE arqueo SET p1000 = $p1000 , p500 = $p500 , p200 = $p200 , p100 = $p100 , p50 = $p50 , p20 = $p20 , p10 = $p10 , p5 = $p5 , p2 = $p2 , p1 = $p1 where usuario = '$nombre'";
    $resultado = mysql_query($query);
+   echo $p1000;
     
 }
 
