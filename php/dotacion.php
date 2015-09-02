@@ -141,44 +141,85 @@ mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
 //Pesos
 $pf1000 = $_POST['f1000p'];
 $pm1000 = $_POST['p1000'];
-$p1000 = $_POST['p1000'];
+$p1000 = $pm1000 + ($pf1000 * 100) + $pesos1000;
 $pf500 = $_POST['f500p'];
 $pm500 = $_POST['p500'];
-$p500 = $pm500 + ($pf500 * 100);
+$p500 = $pm500 + ($pf500 * 100) + $pesos500;
 $pf200 = $_POST['f200p'];
 $pm200 = $_POST['p200'];
-$p200 = $pm200 + ($pf200 * 100);
+$p200 = $pm200 + ($pf200 * 100) + $pesos200;
 $pf100 = $_POST['f100p'];
 $pm100 = $_POST['p100'];
-$p100 = $pm100 + ($pf100 * 100);
+$p100 = $pm100 + ($pf100 * 100) + $pesos100;
 $pf50 = $_POST['f50p'];
 $pm50 = $_POST['p50'];
-$p50 = $pm50 + ($pf50 * 100);
+$p50 = $pm50 + ($pf50 * 100) + $pesos50;
 $pf20 = $_POST['f20p'];
 $pm20 = $_POST['p20'];
-$p20 = $pm20 + ($pf20 * 100);
+$p20 = $pm20 + ($pf20 * 100) + $pesos20;
 $pf10 = $_POST['f10p'];
 $pm10 = $_POST['p10'];
-$p10 = $pm10 + ($pf10 * 100);
+$p10 = $pm10 + ($pf10 * 100) + $pesos10;
 $pf5 = $_POST['f5p'];
 $pm5 = $_POST['p5'];
-$p5 = $pm5 + ($pf5 * 100);
+$p5 = $pm5 + ($pf5 * 100) + $pesos5;
 $pf2 = $_POST['f2p'];
 $pm2 = $_POST['p2'];
-$p2 = $pm2 + ($pf2 * 100);
+$p2 = $pm2 + ($pf2 * 100) + $pesos2;
 $pf1 = $_POST['f1p'];
 $pm1 = $_POST['p1'];
-$p1 = $pm1 + ($pf1 * 100);
+$p1 = $pm1 + ($pf1 * 100) + $pesos1;
 
 
 if ($tPeso != 0 || $tDollar != 0 || $tCana != 0 || $tEuro != 0) {
-    ?> <script>alert("Realize nuevamente el desglose");</script><?php   
+      
 }
 else
 {
     $query = "UPDATE arqueo SET p1000 = $p1000 , p500 = $p500 , p200 = $p200 , p100 = $p100 , p50 = $p50 , p20 = $p20 , p10 = $p10 , p5 = $p5 , p2 = $p2 , p1 = $p1 where usuario = '$nombre'";
    $resultado = mysql_query($query);
-   echo $p1000;
+   
+    
+}
+
+ ?>
+
+ <?php 
+$con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
+mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
+
+//Dólares
+$df100 = $_POST['f100d'];
+$dm100 = $_POST['d100'];
+$d100 = $dm100 + ($df100 * 100);
+$df50 = $_POST['f50d'];
+$dm50 = $_POST['d50'];
+$d50 = $dm50 + ($df50 * 100);
+$df20 = $_POST['f20d'];
+$dm20 = $_POST['d20'];
+$d20 = $dm20 + ($df20 * 100);
+$df10 = $_POST['f10d'];
+$dm10 = $_POST['d10'];
+$d10 = $dm10 + ($df10 * 100);
+$df5 = $_POST['f5d'];
+$dm5 = $_POST['d5'];
+$d5 = $dm5 + ($df5 * 100);
+$df2 = $_POST['f2d'];
+$dm2 = $_POST['d2'];
+$d2 = $dm2 + ($df2 * 100);
+$df1 = $_POST['f1d'];
+$dm1 = $_POST['d1'];
+$d1 = $dm1 + ($df1 * 100);
+
+
+if ($tPeso != 0 || $tDollar != 0 || $tCana != 0 || $tEuro != 0) {
+      
+}
+else
+{
+    $query = "UPDATE arqueo SET d100 = $d100 , d50 = $d50 , d20 = $d20 , d10 = $d10 , d5 = $d5 , d2 = $d2 , d1 = $d1 where usuario = '$nombre'";
+   $resultado = mysql_query($query);
+   
     
 }
 
