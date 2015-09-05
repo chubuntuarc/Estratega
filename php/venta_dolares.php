@@ -106,47 +106,48 @@ $con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexió
 mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
 
 //Entrada Pesos
-$pf1000 = $_POST['f1'];
+$pf1000 = $_POST['fajillaPMill'];
 $pm1000 = $_POST['MIL'];
-$p1000 = $pm1000 + ($pf1000 * 100) + $pesos1000;
-$pf500 = $_POST['f2'];
+$p1000 = $pm1000 + ($pf1000 / 1000) + $pesos1000 - ($_POST['fajillaPMillS'] / 1000) - $_POST['MILS'];
+$pf500 = $_POST['fajillaP500'];
 $pm500 = $_POST['500'];
-$p500 = $pm500 + ($pf500 * 100) + $pesos500;
-$pf200 = $_POST['f3'];
+$p500 = $pm500 + ($pf500 / 500) + $pesos500 - ($_POST['fajillaP500S'] / 500) - $_POST['m500S'];
+$pf200 = $_POST['fajillaP200'];
 $pm200 = $_POST['200'];
-$p200 = $pm200 + ($pf200 * 100) + $pesos200;
-$pf100 = $_POST['f4'];
+$p200 = $pm200 + ($pf200 / 200) + $pesos200 - ($_POST['fajillaP200S'] / 200) - $_POST['m200S'];
+$pf100 = $_POST['fajillaP100'];
 $pm100 = $_POST['100'];
-$p100 = $pm100 + ($pf100 * 100) + $pesos100;
-$pf50 = $_POST['f5'];
+$p100 = $pm100 + ($pf100 / 100) + $pesos100 - ($_POST['fajillaP100S'] / 100) - $_POST['m100S'];
+$pf50 = $_POST['fajillaP50'];
 $pm50 = $_POST['50'];
-$p50 = $pm50 + ($pf50 * 100) + $pesos50;
-$pf20 = $_POST['f6'];
+$p50 = $pm50 + ($pf50 / 50) + $pesos50 - ($_POST['fajillaP50S'] / 50) - $_POST['m50S'];
+$pf20 = $_POST['fajillaP20'];
 $pm20 = $_POST['20'];
-$p20 = $pm20 + ($pf20 * 100) + $pesos20;
+$p20 = $pm20 + ($pf20 / 20) + $pesos20 - ($_POST['fajillaP20S'] / 20) - $_POST['m20S'];
 $pf10 = $_POST['f7'];
-$pm10 = $_POST['10'];
-$p10 = $pm10 + ($pf10 * 100) + $pesos10;
-$pf5 = $_POST['f8'];
+$pm10 = $_POST['fajillaP10'];
+$p10 = $pm10 + ($pf10 / 10) + $pesos10 - ($_POST['fajillaP10S'] / 10) - $_POST['m10S'];
+$pf5 = $_POST['fajillaP5'];
 $pm5 = $_POST['5'];
-$p5 = $pm5 + ($pf5 * 100) + $pesos5;
-$pf2 = $_POST['f9'];
+$p5 = $pm5 + ($pf5 / 5) + $pesos5 - ($_POST['fajillaP5S'] / 5) - $_POST['m5S'];
+$pf2 = $_POST['fajillaP2'];
 $pm2 = $_POST['2'];
-$p2 = $pm2 + ($pf2 * 100) + $pesos2;
-$pf1 = $_POST['f10'];
+$p2 = $pm2 + ($pf2 / 2) + $pesos2 - ($_POST['fajillaP2S'] / 2) - $_POST['m2S'];
+$pf1 = $_POST['fajillaP1'];
 $pm1 = $_POST['1'];
-$p1 = $pm1 + ($pf1 * 100) + $pesos1;
+$p1 = $pm1 + ($pf1 / 1) + $pesos1 - ($_POST['fajillaP1S'] / 1) - $_POST['m1S'];
+$pf05 = $_POST['fajillaC50'];
+$pm05 = $_POST['05'];
+$p05 = $pm05 + ($pf05 / 0.5) + $pesos05 - ($_POST['fajillaC50S'] / 0.5) - $_POST['m05S'];
 
 
-if ($tPeso != 0 || $tDollar != 0 || $tCana != 0 || $tEuro != 0) {
-      
+if ($dolarAnt >= $dolar && $ttcs == 0.00) {
+    $query = "UPDATE arqueo SET p1000 = $p1000 , p500 = $p500 , p200 = $p200 , p100 = $p100 , p50 = $p50 , p20 = $p20 , p10 = $p10 , p5 = $p5 , p2 = $p2 , p1 = $p1 , p05 = $p05 where usuario = '$nom'";
+   $resultado = mysql_query($query);
 }
 else
 {
-    $query = "UPDATE arqueo SET p1000 = $p1000 , p500 = $p500 , p200 = $p200 , p100 = $p100 , p50 = $p50 , p20 = $p20 , p10 = $p10 , p5 = $p5 , p2 = $p2 , p1 = $p1 where usuario = '$nom'";
-   $resultado = mysql_query($query);
-   
-    
+      
 }
 
  ?>
@@ -179,66 +180,13 @@ $dm1 = $_POST['d1Dll'];
 $d1 = $dolares1 - $dm1 - ($df1 * 100);
 
 
-if ($tPeso != 0 || $tDollar != 0 || $tCana != 0 || $tEuro != 0) {
-      
-}
-else
-{
+if ($dolarAnt >= $dolar && $ttcs == 0.00) {
     $query = "UPDATE arqueo SET d100 = $d100 , d50 = $d50 , d20 = $d20 , d10 = $d10 , d5 = $d5 , d2 = $d2 , d1 = $d1 where usuario = '$nom'";
-   $resultado = mysql_query($query);
-   
-    
-}
-
- ?>
-     
-<!--
-     <?php 
-$con = mysql_connect($host,$user,$pw) or die ("No se pudo establecer la conexión");
-mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
-
-//Salida Pesos
-$pf1000 = $_POST['f22'];
-$pm1000 = $_POST['MILS'];
-$p1000 = $pm1000 + ($pf1000 * 100) - $pesos1000;
-$pf500 = $_POST['f23'];
-$pm500 = $_POST['m500S'];
-$p500 = $pm500 + ($pf500 * 100) - $pesos500;
-$pf200 = $_POST['f24'];
-$pm200 = $_POST['m200S'];
-$p200 = $pm200 + ($pf200 * 100) - $pesos200;
-$pf100 = $_POST['f25'];
-$pm100 = $_POST['m100S'];
-$p100 = $pm100 + ($pf100 * 100) - $pesos100;
-$pf50 = $_POST['f26'];
-$pm50 = $_POST['m50S'];
-$p50 = $pm50 + ($pf50 * 100) - $pesos50;
-$pf20 = $_POST['f27'];
-$pm20 = $_POST['m20S'];
-$p20 = $pm20 + ($pf20 * 100) - $pesos20;
-$pf10 = $_POST['f28'];
-$pm10 = $_POST['m10S'];
-$p10 = $pm10 + ($pf10 * 100) - $pesos10;
-$pf5 = $_POST['f29'];
-$pm5 = $_POST['m5S'];
-$p5 = $pm5 + ($pf5 * 100) - $pesos5;
-$pf2 = $_POST['f30'];
-$pm2 = $_POST['m2S'];
-$p2 = $pm2 + ($pf2 * 100) - $pesos2;
-$pf1 = $_POST['f31'];
-$pm1 = $_POST['m1S'];
-$p1 = $pm1 + ($pf1 * 100) - $pesos1;
-
-
-if ($tPeso != 0 || $tDollar != 0 || $tCana != 0 || $tEuro != 0) {
-      
+   $resultado = mysql_query($query);  
 }
 else
 {
-    $query = "UPDATE arqueo SET p1000 = $p1000 , p500 = $p500 , p200 = $p200 , p100 = $p100 , p50 = $p50 , p20 = $p20 , p10 = $p10 , p5 = $p5 , p2 = $p2 , p1 = $p1 where usuario = '$nom'";
-   $resultado = mysql_query($query);
-   
-    
+        
 }
 
- ?>  -->
+ ?>  
