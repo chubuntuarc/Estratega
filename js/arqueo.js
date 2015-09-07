@@ -297,3 +297,87 @@ function convertir1e ( form )
     $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
     });
 } 
+
+function convertir100fc ( form ) 
+{   $("#moneda100Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir100c ( form ) 
+{   $("#moneda100Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir50fc ( form ) 
+{   $("#fajilla50Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir50c ( form ) 
+{   $("#moneda50Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir20fc ( form ) 
+{   $("#fajilla20Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir20c ( form ) 
+{   $("#moneda20Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir10fc ( form ) 
+{   $("#fajilla10Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir10c ( form ) 
+{   $("#moneda10Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir5fc ( form ) 
+{   $("#fajilla5Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir5c ( form ) 
+{   $("#moneda5Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir2fc ( form ) 
+{   $("#fajilla2Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir2c ( form ) 
+{   $("#moneda2Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir1fc ( form ) 
+{   $("#fajilla1Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
+
+function convertir1c ( form ) 
+{   $("#moneda1Canadienses").keyup(function () {
+    $("#canadiensesReales").val($("#totalCanadienses").val() - ($("#fajilla100Canadienses").val() * 100000) - ($("#moneda100Canadienses").val() * 100) - ($("#fajilla50Canadienses").val() * 50000) - ($("#moneda50Canadienses").val() * 50) - ($("#fajilla20Canadienses").val() * 20000) - ($("#moneda20Canadienses").val() * 20) - ($("#fajilla10Canadienses").val() * 10000) - ($("#moneda10Canadienses").val() * 10) - ($("#fajilla5Canadienses").val() * 5000) - ($("#moneda5Canadienses").val() * 5) - ($("#fajilla2Canadienses").val() * 2000) - ($("#moneda2Canadienses").val() * 2) - ($("#fajilla1Canadienses").val() * 1000) - ($("#moneda1Canadienses").val() * 1)); 
+    });
+} 
