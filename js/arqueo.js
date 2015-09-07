@@ -213,3 +213,87 @@ function convertir1d ( form )
     $("#dolaresReales").val($("#totalDolares").val() - ($("#fajilla100Dolares").val() * 100000) - ($("#moneda100Dolares").val() * 100) - ($("#fajilla50Dolares").val() * 50000) - ($("#moneda50Dolares").val() * 50) - ($("#fajilla20Dolares").val() * 20000) - ($("#moneda20Dolares").val() * 20) - ($("#fajilla10Dolares").val() * 10000) - ($("#moneda10Dolares").val() * 10) - ($("#fajilla5Dolares").val() * 5000) - ($("#moneda5Dolares").val() * 5) - ($("#fajilla2Dolares").val() * 2000) - ($("#moneda2Dolares").val() * 2) - ($("#fajilla1Dolares").val() * 1000) - ($("#moneda1Dolares").val() * 1)); 
     });
 }
+
+function convertir100fe ( form ) 
+{   $("#fajilla100Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir100e ( form ) 
+{   $("#moneda100Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir50fe ( form ) 
+{   $("#fajilla50Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir50e ( form ) 
+{   $("#moneda50Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir20fe ( form ) 
+{   $("#fajilla20Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir20e ( form ) 
+{   $("#moneda20Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir10fe ( form ) 
+{   $("#fajilla10Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir10e ( form ) 
+{   $("#moneda10Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir5fe ( form ) 
+{   $("#fajilla5Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir5e ( form ) 
+{   $("#moneda5Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir2fe ( form ) 
+{   $("#fajilla2Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir2e ( form ) 
+{   $("#moneda2Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir1fe ( form ) 
+{   $("#fajilla1Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 
+
+function convertir1e ( form ) 
+{   $("#moneda1Euros").keyup(function () {
+    $("#eurosReales").val($("#totalEuros").val() - ($("#fajilla100Euros").val() * 100000) - ($("#moneda100Euros").val() * 100) - ($("#fajilla50Euros").val() * 50000) - ($("#moneda50Euros").val() * 50) - ($("#fajilla20Euros").val() * 20000) - ($("#moneda20Euros").val() * 20) - ($("#fajilla10Euros").val() * 10000) - ($("#moneda10Euros").val() * 10) - ($("#fajilla5Euros").val() * 5000) - ($("#moneda5Euros").val() * 5) - ($("#fajilla2Euros").val() * 2000) - ($("#moneda2Euros").val() * 2) - ($("#fajilla1Euros").val() * 1000) - ($("#moneda1Euros").val() * 1)); 
+    });
+} 

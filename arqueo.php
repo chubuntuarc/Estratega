@@ -239,8 +239,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $euros100; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla100Euros" name="fajilla100Euros" onkeypress="convertir100fe(this.form)"></td>
+            <td><input type="text" id="moneda100Euros" name="moneda100Euros" onkeypress="convertir100e(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $canada100; ?>"></td>
@@ -265,8 +265,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $euros50; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla50Euros" name="fajilla50Euros" onkeypress="convertir50fe(this.form)"></td>
+            <td><input type="text" id="moneda50Euros" name="moneda50Euros" onkeypress="convertir50e(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $canada50; ?>"></td>
@@ -291,8 +291,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $euros20; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla20Euros" name="fajilla20Euros" onkeypress="convertir20fe(this.form)"></td>
+            <td><input type="text" id="moneda20Euros" name="moneda20Euros" onkeypress="convertir20e(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $canada20; ?>"></td>
@@ -317,8 +317,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $euros10; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla10Euros" name="fajilla10Euros" onkeypress="convertir10fe(this.form)"></td>
+            <td><input type="text" id="moneda10Euros" name="moneda10Euros" onkeypress="convertir10e(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $canada10; ?>"></td>
@@ -343,8 +343,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $euros5; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla5Euros" name="fajilla5Euros" onkeypress="convertir5fe(this.form)"></td>
+            <td><input type="text" id="moneda5Euros" name="moneda5Euros" onkeypress="convertir5e(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $canada5; ?>"></td>
@@ -369,8 +369,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $euros2; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla2Euros" name="fajilla2Euros" onkeypress="convertir2fe(this.form)"></td>
+            <td><input type="text" id="moneda2Euros" name="moneda2Euros" onkeypress="convertir2e(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $canada2; ?>"></td>
@@ -395,8 +395,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $euros1; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla1Euros" name="fajilla1Euros" onkeypress="convertir1fe(this.form)"></td>
+            <td><input type="text" id="moneda1Euros" name="moneda1Euros" onkeypress="convertir1e(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $canada1; ?>"></td>
