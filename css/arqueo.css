@@ -1,0 +1,29 @@
+#division
+{
+	width: 20%;
+	background-color: black;
+}
+
+#divisionPeso
+{
+	width: 20%;
+	background-color: #00C0EF;
+}
+
+#divisionDolar
+{
+	width: 20%;
+	background-color: #00A65A;
+}
+
+#divisionEuro
+{
+	width: 20%;
+	background-color: #F39C12;
+}
+
+#divisionCanada
+{
+	width: 20%;
+	background-color: #F56954;
+}
