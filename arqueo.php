@@ -47,6 +47,7 @@
             <div class="menux col-xs-8 col-lg-9">
                 <a href="vendedor.php" >Operaciones</a>
                 <a href="adicionales.php" >Adicionales</a>
+                <a href="movimientos.php">Información</a>
                 <?php 
                 if ($roluser == 'admin') {
                   echo '<a href="admin.php">Panel</a>'; 
@@ -89,6 +90,7 @@
             </div>
          <form method="post" class="desglose">
             <div class="tabla ">
+                <?php include_once("php/arqueo.php"); ?>
     <table>
         <thead>
                 <tr><th >Denominación</th>
@@ -147,7 +149,7 @@
         <tr>
             <td>1000.00</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos1000; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -173,7 +175,7 @@
         <tr>
             <td>500.00</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos500; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -199,7 +201,7 @@
         <tr>
             <td>200.00</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos200; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -224,25 +226,25 @@
         <tr>
             <td>100.00</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos100; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $dolares100; ?>"></td>
             <td><input type="text" readonly="" id="divisionDolar"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $euros100; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $canada100; ?>"></td>
             <td><input type="text" readonly="" id="divisionCanada"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -250,25 +252,25 @@
         <tr>
             <td>50.00</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos50; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $dolares50; ?>"></td>
             <td><input type="text" readonly="" id="divisionDolar"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $euros50; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $canada50; ?>"></td>
             <td><input type="text" readonly="" id="divisionCanada"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -276,25 +278,25 @@
         <tr>
             <td>20.00</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos20; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $dolares20; ?>"></td>
             <td><input type="text" readonly="" id="divisionDolar"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $euros20; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $canada20; ?>"></td>
             <td><input type="text" readonly="" id="divisionCanada"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -302,25 +304,25 @@
         <tr>
             <td>10.00</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos10; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $dolares10; ?>"></td>
             <td><input type="text" readonly="" id="divisionDolar"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $euros10; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $canada10; ?>"></td>
             <td><input type="text" readonly="" id="divisionCanada"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -328,25 +330,25 @@
         <tr>
             <td>5.00</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos5; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $dolares5; ?>"></td>
             <td><input type="text" readonly="" id="divisionDolar"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $euros5; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $canada5; ?>"></td>
             <td><input type="text" readonly="" id="divisionCanada"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -354,25 +356,25 @@
         <tr>
             <td>2.00</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos2; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $dolares2; ?>"></td>
             <td><input type="text" readonly="" id="divisionDolar"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $euros2; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $canada2; ?>"></td>
             <td><input type="text" readonly="" id="divisionCanada"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -380,25 +382,25 @@
         <tr>
             <td>1.00</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos1; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $dolares1; ?>"></td>
             <td><input type="text" readonly="" id="divisionDolar"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $euros1; ?>"></td>
             <td><input type="text" readonly="" id="divisionEuro"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $canada1; ?>"></td>
             <td><input type="text" readonly="" id="divisionCanada"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -406,7 +408,7 @@
          <tr>
             <td>0.50</td>
             <td><input type="text" readonly=""></td>
-            <td><input type="text" readonly=""></td>
+            <td><input type="text" readonly="" value="<?php echo $pesos05; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
             <td><input type="text" ></td>
             <td><input type="text" ></td>
@@ -432,28 +434,28 @@
          <tr>
             <td></td>
             <td></td>
-            <td><input id="totalConv" name="totalConv" type="text" placeholder="Total" readonly></td>
+            <td><input id="totalPesos" name="totalPesos" type="text" value="<?php echo $sumaPesos; ?>" readonly></td>
             <td></td>
             <td></td>
-            <td><input id="totalDllConv" name="totalDllConv" type="text" placeholder="Total" readonly></td>
+            <td><input id="pesosReales" name="pesosReales" type="text" placeholder="Total" readonly></td>
             <td></td>
             <td></td>
-            <td><input id="totalConvS" name="totalConvS" type="text" placeholder="Total" readonly></td>
+            <td><input id="totalDolares" name="totalDolares" type="text" value="<?php echo $sumaDolares; ?>" readonly></td>
             <td></td>
             <td></td>
-            <td><input id="totalConvS" name="totalConvS" type="text" placeholder="Total" readonly></td>
+            <td><input id="dolaresReales" name="dolaresReales" type="text" placeholder="Total" readonly></td>
             <td></td>
             <td></td>
-            <td><input id="totalConvS" name="totalConvS" type="text" placeholder="Total" readonly></td>
+            <td><input id="totalEuros" name="totalEuros" type="text" value="<?php echo $sumaEuros; ?>" readonly></td>
             <td></td>
             <td></td>
-            <td><input id="totalConvS" name="totalConvS" type="text" placeholder="Total" readonly></td>
+            <td><input id="eurosReales" name="eurosReales" type="text" placeholder="Total" readonly></td>
             <td></td>
             <td></td>
-            <td><input id="totalConvS" name="totalConvS" type="text" placeholder="Total" readonly></td>
+            <td><input id="totalCanadienses" name="totalCanadienses" type="text" value="<?php echo $sumaCanadienses; ?>" readonly></td>
             <td></td>
             <td></td>
-            <td><input id="totalConvS" name="totalConvS" type="text" placeholder="Total" readonly></td>
+            <td><input id="canadiensesReales" name="canadiensesReales" type="text" placeholder="Total" readonly></td>
 
         </tr> 
          <tr>
