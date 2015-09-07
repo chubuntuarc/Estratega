@@ -490,13 +490,13 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="registraMov" value="Listo" tabindex=33></td>
+            <td><input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="listo" name="listo" value="Listo" tabindex=33></td>
         </tr> 
         </tbody>
     </table>
-   
+   <?php include_once("php/actualizaArqueo.php"); ?><!--Actualizar arqueo-->
     </form>
-    <?php include_once("php/venta_dolares.php"); ?><!--Operaciones de la venta de dólares-->
+    
 </div>
         <div class="panel-footer text-right">
         </div>
