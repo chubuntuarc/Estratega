@@ -110,37 +110,37 @@ mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
 //Salida Pesos
 $pf1000 = $_POST['fajillaPMill'];
 $pm1000 = $_POST['MIL'];
-$p1000 = $pm1000 - ($pf1000 / 1000) - $pesos1000;
+$p1000 = $pesos1000 - $pm1000 - ($pf1000 / 1000);
 $pf500 = $_POST['fajillaP500'];
 $pm500 = $_POST['500'];
-$p500 = $pm500 - ($pf500 / 500) - $pesos500;
+$p500 = $pesos500 - $pm500 - ($pf500 / 500);
 $pf200 = $_POST['fajillaP200'];
 $pm200 = $_POST['200'];
-$p200 = $pm200 - ($pf200 / 200) - $pesos200;
+$p200 = $pesos200 - $pm200 - ($pf200 / 200);
 $pf100 = $_POST['fajillaP100'];
 $pm100 = $_POST['100'];
-$p100 = $pm100 - ($pf100 / 100) - $pesos100;
+$p100 = $pesos100 - $pm100 - ($pf100 / 100);
 $pf50 = $_POST['fajillaP50'];
 $pm50 = $_POST['50'];
-$p50 = $pm50 - ($pf50 / 50) - $pesos50;
+$p50 = $pesos50 - $pm50 - ($pf50 / 50);
 $pf20 = $_POST['fajillaP20'];
 $pm20 = $_POST['20'];
-$p20 = $pm20 - ($pf20 / 20) - $pesos20;
+$p20 = $pesos20 - $pm20 - ($pf20 / 20);
 $pf10 = $_POST['fajillaP10'];
 $pm10 = $_POST['10'];
-$p10 = $pm10 - ($pf10 / 10) - $pesos10;
+$p10 = $pesos10 - $pm10 - ($pf10 / 10);
 $pf5 = $_POST['fajillaP5'];
 $pm5 = $_POST['5'];
-$p5 = $pm5 - ($pf5 / 5) - $pesos5;
+$p5 = $pesos5 - $pm5 - ($pf5 / 5);
 $pf2 = $_POST['fajillaP2'];
 $pm2 = $_POST['2'];
-$p2 = $pm2 - ($pf2 / 2) - $pesos2;
+$p2 = $pesos2 - $pm2 - ($pf2 / 2);
 $pf1 = $_POST['fajillaP1'];
 $pm1 = $_POST['1'];
-$p1 = $pm1 - ($pf1 / 1) - $pesos1;
+$p1 = $pesos1 - $pm1 - ($pf1 / 1);
 $pf05 = $_POST['fajillaC50'];
 $pm05 = $_POST['05'];
-$p05 = $pm05 - ($pf05 / 0.5) - $pesos05;
+$p05 = $pesos05 - $pm05 - ($pf05 / 0.5);
 
 
 if ($pesosAnt >= $peso && $totalCambio == 0.00) {
@@ -161,25 +161,25 @@ mysql_select_db($db, $con) or die ("No se pudo conectar a la base de datos");
 //Entrada de Dólares
 $df100 = $_POST['f15'];
 $dm100 = $_POST['d100Dll'];
-$d100 = $dolares100 + $dm100 + ($df100 * 100);
+$d100 = $dolares100 + $dm100 + ($df100 * 100) - $_POST['f25'] - $_POST['m100S'];
 $df50 = $_POST['f16'];
 $dm50 = $_POST['d50Dll'];
-$d50 = $dolares50 + $dm50 + ($df50 * 100);
+$d50 = $dolares50 + $dm50 + ($df50 * 100) - $_POST['f26'] - $_POST['m50S'];
 $df20 = $_POST['f17'];
 $dm20 = $_POST['d20Dll'];
-$d20 = $dolares20 + $dm20 + ($df20 * 100);
+$d20 = $dolares20 + $dm20 + ($df20 * 100) - $_POST['f27'] - $_POST['m20S'];
 $df10 = $_POST['f18'];
 $dm10 = $_POST['d10Dll'];
-$d10 = $dolares10 + $dm10 + ($df10 * 100);
+$d10 = $dolares10 + $dm10 + ($df10 * 100) - $_POST['f28'] - $_POST['m10S'];
 $df5 = $_POST['f19'];
 $dm5 = $_POST['d5Dll'];
-$d5 = $dolares5 + $dm5 + ($df5 * 100);
+$d5 = $dolares5 + $dm5 + ($df5 * 100) - $_POST['f29'] - $_POST['m5S'];
 $df2 = $_POST['f20'];
 $dm2 = $_POST['d2Dll'];
-$d2 = $dolares2 + $dm2 + ($df2 * 100);
+$d2 = $dolares2 + $dm2 + ($df2 * 100) - $_POST['f30'] - $_POST['m2S'];
 $df1 = $_POST['f21'];
 $dm1 = $_POST['d1Dll'];
-$d1 = $dolares1 + $dm1 + ($df1 * 100);
+$d1 = $dolares1 + $dm1 + ($df1 * 100) - $_POST['f31'] - $_POST['m1S'];
 
 
 if ($pesosAnt >= $peso && $totalCambio == 0.00) {
@@ -191,4 +191,4 @@ else
         
 }
 
- ?>       
+ ?>          
