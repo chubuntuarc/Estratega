@@ -40,6 +40,7 @@
             <div class="menux col-xs-8 col-lg-9">
                 <a href="vendedor.php" >Operaciones</a>
                 <a href="adicionales.php" >Adicionales</a>
+                <a href="arqueo.php">Arqueo</a>
                 <?php 
                 if ($roluser == 'admin') {
                   echo '<a href="admin.php">Panel</a>'; 
@@ -298,114 +299,6 @@
         </div>
     </div> 
 
-<!--Sección que contiene la tabla para realizar el arqueo en caja-->
-    <div class="row" >
-    <div class="item col-xs-12 col-lg-8">
-        <div class="panel panel-default paper-shadow" data-z="0.5">
-            <div class="panel-heading">
-                <h4 class="text-headline margin-none">Arqueo</h4>
-                <p class="text-subhead text-light">Arqueo de caja</p>
-            </div>
-            <div class="tabla ">
-            <form method="post">
-                <table>
-                <thead>
-                    <tr>
-                        <th>Divisa</th>
-                        <th>1000</th>
-                        <th>500</th>
-                        <th>200</th>
-                        <th>100</th>
-                        <th>50</th>
-                        <th>20</th>
-                        <th>10</th>
-                        <th>5</th>
-                        <th>2</th>
-                        <th>1</th>
-                        <th>0.50</th>
-                    </tr>
-                </thead>
-                <tbody id="arqueo">
-                   <tr>
-                       <td>Pesos</td>
-                       <td id="a1000Pe"><input type="text"></td>
-                       <td id="a500Pe"><input type="text"></td>
-                      <td id="a200Pe"><input type="text"></td>
-                      <td id="a100Pe"><input type="text"></td>
-                      <td id="a50Pe"><input type="text"></td>
-                      <td id="a20Pe"><input type="text"></td>
-                      <td id="a10Pe"><input type="text"></td>
-                      <td id="a5Pe"><input type="text"></td>
-                      <td id="a2Pe"><input type="text"></td>
-                      <td id="a1Pe"><input type="text"></td>
-                      <td id="a05Pe"><input type="text"></td>
-
-                   </tr>
-                   <tr>
-                       <td>Dólares</td>
-                       <td id="a1000Dl"><input type="text"></td>
-                       <td id="a500Dl"><input type="text"></td>
-                      <td id="a200Dl"><input type="text"></td>
-                      <td id="a100Dl"><input type="text"></td>
-                      <td id="a50Dl"><input type="text"></td>
-                      <td id="a20Dl"><input type="text"></td>
-                      <td id="a10Dl"><input type="text"></td>
-                      <td id="a5Dl"><input type="text"></td>
-                      <td id="a2Dl"><input type="text"></td>
-                      <td id="a1Dl"><input type="text"></td>
-                      <td id="a05Dl"><input type="text"></td>
-                   </tr>
-                   <tr>
-                       <td>Canadienses</td>
-                       <td id="a1000Ca"><input type="text"></td>
-                       <td id="a500Ca"><input type="text"></td>
-                      <td id="a200Ca"><input type="text"></td>
-                      <td id="a100Ca"><input type="text"></td>
-                      <td id="a50Ca"><input type="text"></td>
-                      <td id="a20Ca"><input type="text"></td>
-                      <td id="a10Ca"><input type="text"></td>
-                      <td id="a5Ca"><input type="text"></td>
-                      <td id="a2Ca"><input type="text"></td>
-                      <td id="a1Ca"><input type="text"></td>
-                      <td id="a05Ca"><input type="text"></td>
-                   </tr>
-                   <tr>
-                       <td>Euros</td>
-                       <td id="a1000Eu"><input type="text"></td>
-                       <td id="a500Eu"><input type="text"></td>
-                      <td id="a200Eu"><input type="text"></td>
-                      <td id="a100Eu"><input type="text"></td>
-                      <td id="a50Eu"><input type="text"></td>
-                      <td id="a20Eu"><input type="text"></td>
-                      <td id="a10Eu"><input type="text"></td>
-                      <td id="a5Eu"><input type="text"></td>
-                      <td id="a2Eu"><input type="text"></td>
-                      <td id="a1Eu"><input type="text"></td>
-                      <td id="a05Eu"><input type="text"></td>
-                   </tr>
-                   <!--Este renglon esta en blanco solo para colocolar el botón de aceptar-->
-                   <tr>
-                       <td></td>
-                       <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                       <td> <input class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated type="submit" id="ajustar" name="ajustar" value="Listo"></td>
-                   </tr>
-                </tbody>
-            </table>
-            </form>
-            </div>
-            <div class="panel-footer text-right">
-            </div>
-        </div>
-    </div>   
 
 <!--Recuadro con la información sobre las divisas de investing.com-->
 <div class="row" >

@@ -125,8 +125,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="dotacion.php"><i class="fa fa-angle-double-right"></i> Dotación</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Arqueo</a></li>
+                                <li><a href="dotacion.php"><i class="fa fa-angle-double-right"></i> Dotación <small class="badge pull-right bg-green">Disponible</small></a></li>
+                                <li><a href="arqueo.php"><i class="fa fa-angle-double-right"></i> Arqueo</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> Asignación</a></li>
                             </ul>
                         </li>
