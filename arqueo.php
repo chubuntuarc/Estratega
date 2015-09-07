@@ -10,13 +10,12 @@
     <meta name="author" content="Jesus Arciniega">
     <title>Estratega Venta Dólares</title>
     <script src="js/script.js"></script>
-    <!--Funciones de desglose y conversión de divisas-->
-    <script src="js/desglose.js"></script>
     <!--Elementos adicionales-->
     <link rel="stylesheet" type="text/css" href="css/tabla.css">
     <link rel="stylesheet" type="text/css" href="css/vendedor.css">
     <link rel="icon" type="image/png" href="favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/arqueo.css">
+    <script src="js/arqueo.js"></script>
     <!-- Elementos por defecto-->
     <link href="css/vendor.min.css" rel="stylesheet">
     <link href="css/theme-core.min.css" rel="stylesheet">
@@ -151,8 +150,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos1000; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla1000Pesos" name="fajilla1000Pesos" onkeypress="convertir1000fp(this.form)"></td>
+            <td><input type="text" id="moneda1000Pesos" name="moneda1000Pesos" onkeypress="convertir1000p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly=""></td>
@@ -177,8 +176,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos500; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla500Pesos" name="fajilla500Pesos" onkeypress="convertir500fp(this.form)"></td>
+            <td><input type="text" id="moneda500Pesos" name="moneda500Pesos" onkeypress="convertir500p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly=""></td>
@@ -203,8 +202,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos200; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla200Pesos" name="fajilla200Pesos" onkeypress="convertir200fp(this.form)"></td>
+            <td><input type="text" id="moneda200Pesos" name="moneda200Pesos" onkeypress="convertir200p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly=""></td>
@@ -228,8 +227,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos100; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla100Pesos" name="fajilla100Pesos" onkeypress="convertir100fp(this.form)"></td>
+            <td><input type="text" id="moneda100Pesos" name="moneda100Pesos" onkeypress="convertir100p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $dolares100; ?>"></td>
@@ -254,8 +253,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos50; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla50Pesos" name="fajilla50Pesos" onkeypress="convertir50fp(this.form)"></td>
+            <td><input type="text" id="moneda50Pesos" name="moneda50Pesos" onkeypress="convertir50p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $dolares50; ?>"></td>
@@ -280,8 +279,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos20; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla20Pesos" name="fajilla20Pesos" onkeypress="convertir20fp(this.form)"></td>
+            <td><input type="text" id="moneda20Pesos" name="moneda20Pesos" onkeypress="convertir20p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $dolares20; ?>"></td>
@@ -306,8 +305,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos10; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla10Pesos" name="fajilla10Pesos" onkeypress="convertir10fp(this.form)"></td>
+            <td><input type="text" id="moneda10Pesos" name="moneda10Pesos" onkeypress="convertir10p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $dolares10; ?>"></td>
@@ -332,8 +331,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos5; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla5Pesos" name="fajilla5Pesos" onkeypress="convertir5fp(this.form)"></td>
+            <td><input type="text" id="moneda5Pesos" name="moneda5Pesos" onkeypress="convertir5p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $dolares5; ?>"></td>
@@ -358,8 +357,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos2; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla2Pesos" name="fajilla2Pesos" onkeypress="convertir2fp(this.form)"></td>
+            <td><input type="text" id="moneda2Pesos" name="moneda2Pesos" onkeypress="convertir2p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $dolares2; ?>"></td>
@@ -384,8 +383,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos1; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla1Pesos" name="fajilla1Pesos" onkeypress="convertir1fp(this.form)"></td>
+            <td><input type="text" id="moneda1Pesos" name="moneda1Pesos" onkeypress="convertir1p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $dolares1; ?>"></td>
@@ -410,8 +409,8 @@
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly="" value="<?php echo $pesos05; ?>"></td>
             <td><input type="text" readonly="" id="divisionPeso"></td>
-            <td><input type="text" ></td>
-            <td><input type="text" ></td>
+            <td><input type="text" id="fajilla05Pesos" name="fajilla05Pesos" onkeypress="convertir05fp(this.form)"></td>
+            <td><input type="text" id="moneda05Pesos" name="moneda05Pesos" onkeypress="convertir05p(this.form)"></td>
             <td><input type="text" readonly="" id="division"></td>
             <td><input type="text" readonly=""></td>
             <td><input type="text" readonly=""></td>
@@ -432,7 +431,7 @@
             <td><input type="text" ></td>
         </tr> 
          <tr>
-            <td></td>
+            <td>Totales</td>
             <td></td>
             <td><input id="totalPesos" name="totalPesos" type="text" value="<?php echo $sumaPesos; ?>" readonly></td>
             <td></td>
@@ -459,22 +458,17 @@
 
         </tr> 
          <tr>
-            <td>Cambio</td>
             <td></td>
-            <td><input id="totalDif" name="totalDif" type="hidden" placeholder="Diferencia" readonly></td>
+            <td></td>
+            <td></td>
              <td></td>
-            <td><input id="totalDllDif" type="hidden" placeholder="Diferencia" readonly></td>
             <td></td>
-            <td><input id="totalDifS" name="totalDifS" type="hidden" placeholder="Diferencia" readonly></td>
+            <td></td>
+            <td></td>
         </tr> 
         <tr>
             <td></td>
             <td></td>
-            <input type="hidden" id="dolaresInsertar" name="dolaresInsertar">
-            <input type="hidden" id="cambioInsertar" name="cambioInsertar">
-            <input type="hidden" id="pesosInsertar" name="pesosInsertar">
-            <input type="hidden" id="subtotal" name="subtotal">
-            <input type="hidden" id="subtotalDll" name="subtotalDll">
             <td></td>
             <td></td>
             <td></td>
