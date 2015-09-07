@@ -152,77 +152,77 @@
         <tbody class="manejoT">
         <tr>
             <td>1000.00</td>
-            <td><input type="text" placeholder="0" id="f1" onkeypress="fajilla1000P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f1" name="f1" onkeypress="fajilla1000P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaPMill" name="fajillaPMill" value="0" >
             <td><input id="MIL" name="MIL" type="text" placeholder="0" tabindex=4 onkeypress="pesos1000(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoValMil" name="pesoValMil" value="0">
         </tr>
         <tr>
             <td>500.00</td>
-            <td><input type="text" placeholder="0" id="f2" onkeypress="fajilla500P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f2" name="f2" onkeypress="fajilla500P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP500" name="fajillaP500" value="0" >
             <td><input id="500" name="500" type="text" placeholder="0" tabindex=5 onkeypress="pesos500(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal500" name="pesoVal500" value="0">
         </tr>
         <tr>
             <td>200.00</td>
-            <td><input type="text" placeholder="0" id="f3" onkeypress="fajilla200P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f3" name="f3" onkeypress="fajilla200P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP200" name="fajillaP200" value="0" >
             <td><input id="200" name="200" type="text" placeholder="0" tabindex=6 onkeypress="pesos200(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal200" name="pesoVal200" value="0">
         </tr>
         <tr>
             <td>100.00</td>
-            <td><input type="text" placeholder="0" id="f4" onkeypress="fajilla100P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f4" name="f4" onkeypress="fajilla100P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP100" name="fajillaP100" value="0" >
             <td><input id="100" name="100" type="text" placeholder="0" tabindex=7 onkeypress="pesos100(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal100" name="pesoVal100" value="0">
         </tr>
         <tr>
             <td>50.00</td>
-            <td><input type="text" placeholder="0" id="f5" onkeypress="fajilla50P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f5" name="f5" onkeypress="fajilla50P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP50" name="fajillaP50" value="0" >
             <td><input id="50" name="50" type="text" placeholder="0" tabindex=8 onkeypress="pesos50(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal50" name="pesoVal50" value="0">
         </tr>  
         <tr>
             <td>20.00</td>
-            <td><input type="text" placeholder="0" id="f6" onkeypress="fajilla20P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f6" name="f6" onkeypress="fajilla20P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP20" name="fajillaP20" value="0" >
             <td><input id="20" name="20" type="text" placeholder="0" tabindex=9 onkeypress="pesos20(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal20" name="pesoVal20" value="0">
         </tr> 
         <tr>
             <td>10.00</td>
-            <td><input type="text" placeholder="0" id="f7" onkeypress="fajilla10P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f7" name="f7" onkeypress="fajilla10P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP10" name="fajillaP10" value="0" >
             <td><input id="10" name="10" type="text" placeholder="0" tabindex=10 onkeypress="pesos10(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal10" name="pesoVal10" value="0">
         </tr> 
         <tr>
             <td>5.00</td>
-            <td><input type="text" placeholder="0" id="f8" onkeypress="fajilla5P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f8" name="f8" onkeypress="fajilla5P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP5" name="fajillaP5" value="0" >
             <td><input id="5" name="5" type="text" placeholder="0" tabindex=11 onkeypress="pesos5(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal5" name="pesoVal5" value="0">
         </tr> 
         <tr>
             <td>2.00</td>
-            <td><input type="text" placeholder="0" id="f9" onkeypress="fajilla2P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f9" name="f9" onkeypress="fajilla2P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP2" name="fajillaP2" value="0" >
             <td><input id="2" name="2" type="text" placeholder="0" tabindex=12 onkeypress="pesos2(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal2" name="pesoVal2" value="0">
         </tr> 
         <tr>
             <td>1.00</td>
-            <td><input type="text" placeholder="0" id="f10" onkeypress="fajilla1P(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f10" name="f10" onkeypress="fajilla1P(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaP1" name="fajillaP1" value="0" >
             <td><input id="1" name="1" type="text" placeholder="0" tabindex=13 onkeypress="pesos1(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal1" name="pesoVal1" value="0">
         </tr> 
          <tr>
             <td>0.50</td>
-            <td><input type="text" placeholder="0" id="f11" onkeypress="fajilla50C(this.form)" autocomplete="off"></td>
+            <td><input type="text" placeholder="0" id="f11" name="f11" onkeypress="fajilla50C(this.form)" autocomplete="off"></td>
             <input type="hidden" id="fajillaC50" name="fajillaC50" value="0" >
             <td><input id="05" name="05" type="text" placeholder="0" tabindex=14 onkeypress="pesos05(this.form)" autocomplete="off"></td>
             <input type="hidden" id="pesoVal05" name="pesoVal05" value="0">
